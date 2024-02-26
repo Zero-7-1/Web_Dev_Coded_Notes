@@ -1,0 +1,60 @@
+/*
+Postioning specifies type of postion method for an element. 
+It is a layout technique used to control the placement of elements on a web page. 
+After specifying the postion type the top, left, buttom and right
+properties are used to adjust the postioning. 
+*/
+
+/* 1. Static postion is the default postion of an element that is not 
+       positoned in any special way. Static positioned elements are not 
+    affected by the top, bottom, left, and right properties. */
+.static {
+    height: 100px;
+    width: 130px;
+    border: 3px solid rgb(23, 23, 22);
+    background-color: rgb(146, 227, 16);
+}
+/* When we add another element under this, it just goes at buttom of previous element */
+
+
+/* 2. Relative Postion - positioned relative to its normal position, it takes that original 
+position and we can apply some changes or move it to realtive to where it should be */
+.relative {
+    height: 300px;
+    width: 500px;
+    position: relative; /*if we remove this then it will be under static div*/
+    top: 40px;
+    left: 350px;
+    border: 3px solid rgb(15, 15, 15);
+    background-color: rgb(152, 226, 14);
+}
+/* Simply relative means relative to its supposed or original location nothing else */
+
+
+/* 3. Absolute Postion - is positioned relative to the nearest positioned ancestor. 
+If there is no such ancestor, it's positioned relative to top left corner of web page 
+This makes element  moves along with page scrolling.
+Note: Absolute positioned elements are removed from the normal flow, 
+     and can overlap elements. */
+.absolute {
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    border: 3px solid black;
+    background-color: rgb(0, 55, 255);
+}
+/* 4. Fixed Postion - is positioned relative to the viewport, 
+which means it always stays in the same place even if the page is scrolled.*/ 
+.fixed {
+    position: fixed;
+    height: 50px;
+    width: 100px;
+    top: 0;
+    right: 0;
+    border: 3px solid yellowgreen;
+    background-color: aqua;
+}
+
+

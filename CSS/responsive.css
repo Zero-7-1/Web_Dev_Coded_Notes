@@ -1,0 +1,17 @@
+/*Ways to achieve responisve 
+1. Media Queries 
+2. CSS Grid 
+3. CSS Flexbox
+5. Framework - Bootsrtap*/
+
+/* Media Queries */
+/* Media queries in CSS allow us to apply different styles for different devices or screen sizes, 
+enabling you to create responsive designs that adapt to various viewing conditions.
+
+Mobile-First Approach
+Writing CSS styles with a mobile-first mindset.
+his means defining the default styles for smaller screens and then using media queries
+to enhance or modify them for larger screens.*/ 
+
+
+

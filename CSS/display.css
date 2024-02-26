@@ -1,0 +1,93 @@
+/* Every HTML element has a default display value, inline or block. Display property 
+allows to change this default display value. 
+
+For example,
+we have block level elements like <div>, <h1>..<h6>, <p>, <form>, <table>, <li> etc.
+these elements always start with a new line and takes up full width available though
+its content may not take that much width.
+Whereas,
+inline elements like <span>, <img>, <a> etc. do not start on new line and only takes up 
+neccessary width for content.
+*/  
+
+/* We can't apply width and height to inline elements and we can in block level, so we have
+inline-block value for display where element itself is formatted as an inline element,
+but we can apply height and width values */
+
+/* 
+h3 {
+    border: 5px solid rgb(8, 8, 8);
+    height: 50px;
+}
+
+p {
+    display: inline;
+    border: 5px solid rgb(8, 8, 8);
+    height: 50px;
+}
+*/
+
+
+
+h3 {
+    display: inline-block;
+    border: 5px solid rgb(8, 8, 8);
+    height: 50px;
+}
+p {
+    display: inline-block;
+    border: 5px solid rgb(8, 8, 8);
+    height: 40px;
+    width: 150px;
+}
+
+
+
+/* display: none; is commonly used with JavaScript (changes it block or inline) 
+to hide and show elements */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+/* float is another important layout where an element is taken out of its normal flow 
+of the document and can be placed along with left or right side of the containing block, 
+allowing content to flow around it.  
+*/
+
+.demoIMG {
+    height: 200px;
+    width: 160px;
+    float: left;
+}
+
+
+/* Normally div elements will be displayed on top of each other. 
+However, if we use float: left we can let elements float next to each other.*/ 
+
+.div-float1 {
+    float: left;
+    clear: left;
+    padding: 15px;
+    background-color:bisque;
+}
+.div-float2 {
+    float: left;
+    padding: 15px;
+    background-color:rgb(94, 63, 25);
+}
+.div-float3 {
+    float: left;
+    padding: 15px;
+    background-color:rgb(20, 15, 10);
+}
+
+/* When we use the float property, and we want the next element below 
+    (not on right or left), we will have to use the clear property. */
