@@ -1,3 +1,7 @@
+// refer modules.js (part for react)
+
+
+
 import { addTwo } from "./modules"; 
 // see like this, now we can use addTwo here, consider this a calculator program. 
 
@@ -6,8 +10,8 @@ result = addTwo(2, 4);
 console.log(result);
 
 
-/* Ok understand this will not run - we need to ensure that our JavaScript file 
-             is recognized as a module. 
+/* Ok understand, this will not run - we need to ensure that our JavaScript file 
+                                     is recognized as a module. 
              There are few ways to this (not try here)
              -> Package.json Configuration: we can configure our project to 
              recognize .js files as ES modules by adding "type": "module" to our 
