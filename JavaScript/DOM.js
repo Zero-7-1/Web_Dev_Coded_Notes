@@ -1,22 +1,18 @@
 /* When the browser loads a web page, it creates a structure, 
-like a tree of interconnected parent and child objects (HTML Elements) \
+like a tree of interconnected parent and child objects (HTML Elements) 
 of the web document in the memory, that is what we call DOM - Document Object Model */
 
+console.log(window); // 1 for helping to look in browser console 
+/* Window is the global object in the browser enviroment representing the browser frame.
+Note it is not global object outside browser like if we're in node.js.
+This window object has various child ojects like:
+- document object - contains all of the HTML and others that makes up loaded page.
 
- 
+- location object - contains details of URL of current page.
 
-console.log(window);
-/* Window is the global object in the browser enviroment representing the frame of browser.
-Note it is not global object outside browser like here in node.js.
-This window object has various child ojects like 
+- history object - contains details of the browser’s previously visited pages.
 
-document object - contains all of the HTML and others that makes up loaded page.
-
-location object - contains details of URL of current page.
-
-history object - contains details of the browser’s previously visited pages.
-
-navigator object - stores details of the browser type, version, and capabilities
+- navigator object - stores details of the browser type, version, and capabilities
 
 The notation we use to represent objects uses the dot or period
 parent.object 
@@ -25,58 +21,30 @@ This notation can be extended as many times as necessary to represent any object
 tree like object1.object2.object3 where 3 being child of 2 which being child of 1. 
 For example, 
 The <body> section of our HTML page is represented in the DOM as a child element of the 
-document object; we would access it like this window.document.body (see after this comment).
+document object; we would access it like this 
+window.document.body (see after this comment).
 
-As a shortcut, we use document instead of window.document—this also refers to the 
+As a shortcut, we use document instead of window.document— this also refers to the 
 current document.
-
+Note: 
 If we have several windows open, or in case using a frameset, there will be a
 separate window and document object for each window or frame. To refer to one of
 these documents, we need to use the relevant window name and document name belonging
 to the window or frame in question. 
 
 */
+console.log(document); // 2 
+console.dir(document); // dir provides a more structured and detailed view    3
+console.log(document.body);   // 4
+ 
 
-
-
-
-
-console.log(document.body);
-
-console.log(document); // This will show elements 
-
-console.dir(document); // This shows both properties and methods 
-
-
-
-
-// lets play around with dot notation and accessing objects 
-console.log(document.domain); // accessing through of docs
-console.log(document.URL);  
+/* lets play around with dot notation and accessing elements with direct
+properties but note that we have better ways using methods */
+console.log(document.links[0]);  // 5
 console.log(document.title);
 // here lets change the title 
 document.title = "Understand DOM";  
 console.log(document.title);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 Actually, DOM is called a Programming Interface (API) for web documents as it allows 
@@ -114,6 +82,17 @@ Accessing and updating the DOM tree involves two steps:
 2: Use its text content, child elements, and attributes.
 
 */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
