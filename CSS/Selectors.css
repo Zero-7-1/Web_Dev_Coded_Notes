@@ -58,24 +58,6 @@ input:focus {
     background: #e6e9c5;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* :first-child pesudo-class  selects and styles the first child element of its parent. And here we have 
 to use .class-name first so that we know parent.*/
 .parent-container p:first-child {
@@ -101,7 +83,6 @@ li:nth-child(odd) {
 :lang(fr) {
     color: red;
 }
-
 
 /*-----------------------------------------------------------Selector::pseudo-element {
                                                                     property: value
@@ -130,6 +111,16 @@ p.firstletter::first-letter{
     color: #ff0000;
     font-size: xx-large;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /*------------------------------------------------------------ -----Attribute Selectors 
@@ -168,6 +159,17 @@ h2[class*="se"] {
 /*Attribute Selectors are most helpful in forms without using class and id */
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*----------------------------------------------------------------Combinator Selectors*/ 
 /* A CSS selector can contain more than one simple selector. Between the simple selectors, 
 we can include a combinator that explains the relationship between the selectors */
@@ -203,24 +205,50 @@ and "adjacent" means "immediately following".*/
 
 
 
-/*-------------------------------------------------------------------Simple Selectors*/
 
 
 
-/* Universal Selector 
-   *  {
-      codes here... 
-       }                            selects all html elements    */
 
-/*A common practice to do this in all css files */
-/*    * {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------Simple Selectors */
+
+
+
+/* Universal Selector selects all html elements 
+   
+
+*  {
+      ... 
+   }                             */
+
+
+/*A common practice to do this in all css files 
+   * {
           padding: 0;
           margin: 0;
           box-sizing: border-box;
           font-family: 'Times New Roman', Times, serif;
        }
-*/
-/* This is a css reset or also called normalization. It removes the default 
+*/ 
+
+/* Above is a css reset or also called normalization. It removes the default 
 margin and padding that browsers apply to some elements. The font family sets 
 deafult font family for entire document. border-box ensures that the width and height 
 of an element inlcude padding and border but not include the margin. 
@@ -228,10 +256,10 @@ of an element inlcude padding and border but not include the margin.
 box-sizing:
 This property is all about how total width and height of an element is calculated. 
 By default box-sizing is set to content-box, this means when we give something 
-like heigth and width we are not setting it to the element rather to its 
+like heigt and width we are not setting it to the element rather to its 
 content box or the area surronding it, In other words padding and margin are 
-ignored in this way. 
-So to include padding and margin we use border-box. Note margin is avoided. 
+ignored and margin is included in the calulation. 
+So to include padding and margin we use border-box. and  margin is avoided. 
  (see this in box model file too). */
 
 .content-box {
@@ -259,15 +287,84 @@ the padding and border of the element not to conetent area. This can be helpful 
 predictable layout, especially when dealing with elements that have padding and borders.*/
 
 
+/* ID Selector uses id attribute of an html element. ID of an element is used to select
+only one unique element whereas class selectors can style many elemnts sharing common 
+class name. Note: Id/class can not start with a number. 
+                  # for id names and . for class names  
+                  
+Besides this we can directly target html elements by their name and also can group
+them like
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+Another important selector which we may come across 
+element.class Selector
+is used to select the specified element with the specified class.
+For example, p.intro selects only <p> elements with class="intro"
+*/
 
 
 
 
 
 
-/* ID Selector uses id attribute of an html element. ID of an element is used to select only one 
-unique element unlike class that can style many elemnts sharing common class name.Id/class can not start 
-with a number. # for ids and . for class  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* A note about <div> tag of html which is commonly used for styling 
+
+<div> tag is used as conatiner for HTML elements and is used to group various sections 
+or parts of web page together. Understanding its usage is very crucial. 
+
+<div> by default is a block element, meaning that it takes all available width, 
+and comes with line breaks before and after.
+
+It doesn't have any attrbutes but rather class or id name.
+
+There are lots of ways to center a div which we shall look but the most simple ones 
+is to set margin property to auto and this works for div element with not 100% width. 
+
+<div> is widly used in float, flex and grid which we shall see their respective files 
+like aligning <div> elements side by side. 
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
