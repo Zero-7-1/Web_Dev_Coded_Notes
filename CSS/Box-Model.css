@@ -182,6 +182,7 @@ of padding or border we use box-sizing.
 The box-sizing property can be used to control how the 
 width and height of an element are calculated, taking into 
 account or ignoring padding and borders.
+
 By default, the box-sizing property is set to content-box, 
 which means that an element's specified width and height 
 apply only to its content, and the padding and border are 
@@ -197,6 +198,6 @@ and border, and the content space is adjusted accordingly.
 /* Since the result of using the box-sizing: border-box; 
 is so much better, many developers want all elements on 
 their pages to work this way. So this generally applied 
-at the start universal for all elemnents */
+at the start universal for all elemnents (see this in selectors files)*/
 
 

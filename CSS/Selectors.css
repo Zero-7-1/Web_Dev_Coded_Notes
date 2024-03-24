@@ -103,10 +103,11 @@ li:nth-child(odd) {
 }
 
 
-/*--------------------------------------------------------------------------Selector::pseudo-element {
-                                                                                      property: value
-                                                                                                 }    
-Styles specific parts of an element's content or generate content that is not present in the actual HTML*/
+/*-----------------------------------------------------------Selector::pseudo-element {
+                                                                    property: value
+                                                                 }    
+Styles specific parts of an element's content or generate content that is not present 
+in the actual HTML*/
 
 /*::before & ::after Pseudo-element is used to insert content before & after the actual 
 content of an element */
@@ -131,7 +132,7 @@ p.firstletter::first-letter{
 }
 
 
-/*-----------------------------------------------------------------------------Attribute Selectors 
+/*------------------------------------------------------------ -----Attribute Selectors 
 - The [attribute] selector is used to select elements with a specified attribute. 
 - They select an element using the presence of a given attribute or attribute value. 
 - Attribute selectors can be used with various types of operators that change the selection 
@@ -167,7 +168,7 @@ h2[class*="se"] {
 /*Attribute Selectors are most helpful in forms without using class and id */
 
 
-/*------------------------------------------------------------------------------Combinator Selectors*/ 
+/*----------------------------------------------------------------Combinator Selectors*/ 
 /* A CSS selector can contain more than one simple selector. Between the simple selectors, 
 we can include a combinator that explains the relationship between the selectors */
 /* descendant selector (space) matches all elements that are descendants of a specified element.*/
@@ -192,14 +193,26 @@ and "adjacent" means "immediately following".*/
 }
 
 
-/*-------------------------------------------------------------------------------Simple Selectors*/
 
 
 
-/* Universal Selector *  {
-    }                            selects all html elements    */
 
-/*A common practice to do this */
+
+
+
+
+
+
+/*-------------------------------------------------------------------Simple Selectors*/
+
+
+
+/* Universal Selector 
+   *  {
+      codes here... 
+       }                            selects all html elements    */
+
+/*A common practice to do this in all css files */
 /*    * {
           padding: 0;
           margin: 0;
@@ -207,25 +220,27 @@ and "adjacent" means "immediately following".*/
           font-family: 'Times New Roman', Times, serif;
        }
 */
-/* This is a css reset or also called normalization. It removes the default margin and padding that 
-browsers apply to some elements. The font family sets deafult font family for entire document. 
-border-box ensures that the width and height of an element inlcude padding and border but not 
-include the margin. 
+/* This is a css reset or also called normalization. It removes the default 
+margin and padding that browsers apply to some elements. The font family sets 
+deafult font family for entire document. border-box ensures that the width and height 
+of an element inlcude padding and border but not include the margin. 
 
 box-sizing:
 This property is all about how total width and height of an element is calculated. 
-By default box-sizing is set to content-box this means when we give something like heigth and 
-width we are not setting it to the element rather to its content box or area, In 
-other words padding and margin are ignored in this way. So to include padding and margin
-we use border-box. Note margin is avoided.  (see box model). */
+By default box-sizing is set to content-box, this means when we give something 
+like heigth and width we are not setting it to the element rather to its 
+content box or the area surronding it, In other words padding and margin are 
+ignored in this way. 
+So to include padding and margin we use border-box. Note margin is avoided. 
+ (see this in box model file too). */
 
 .content-box {
     width: 500px;
    
     background: yellow;
     border: 2px solid red; /*This makes content area wider 2px + 2px */ 
-       /* This make content area wider i.e. 500px + left padding + right padding + 4px= 
-                                550px*/
+  /* This make content area wider i.e. 500px + left padding + right padding + 4px= 
+                                                                        550px*/
 }
 .scale {
     width: 500px;
