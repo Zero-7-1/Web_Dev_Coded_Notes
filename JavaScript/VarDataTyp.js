@@ -1,11 +1,9 @@
-//-------------------------------------------------------------- JS Varibales and Data Types 
+// JS Varibales and Data Types 
 /*
-JavaScript is different from other complied languages where the entire code is translated 
-into machine code or an intermediate code before execution.
+JavaScript is different from other complied languages where the entire code is translated into machine code or an intermediate code before execution.
 In the case of JavaScript, the source code is delivered to the browser, and the browser's 
 JavaScript engine parses and executes the code on-the-fly. This process is known as 
-interpretation. To be more specific modern browsers engines V8 of Chrome and SpiderMonkey use
-a combination of interpretation and compilation which is known as JIT (Just in Time) 
+interpretation. To be more specific modern browsers engines V8 of Chrome and SpiderMonkey use a combination of interpretation and compilation which is known as JIT (Just in Time) 
 compilation (or simply run time compilation). 
 */
 
