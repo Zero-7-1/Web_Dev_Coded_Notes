@@ -1,11 +1,116 @@
-/* When the browser loads a web page, it creates a structure, 
+/* When the browser loads a web page, it creates a structure of our web document  
 like a tree of interconnected parent and child objects (HTML Elements) 
-of the web document in the memory, that is what we call DOM - Document Object Model */
+that is what we call DOM - Document Object Model 
 
-console.log(window); // 1 for helping to look in browser console 
-/* Window is the global object in the browser enviroment representing the browser frame.
-Note it is not global object outside browser like if we're in node.js.
-This window object has various child ojects like:
+It is important to note that DOM is neither part of HTML, nor part of JavaScript; 
+it is a separate set of rules whiich are implemented by all major browser makers, 
+and covers two primary areas
+1. MAKING A MODEL OF THE
+HTML PAGE
+
+2. ACCESSING AND CHANGING
+THE HTML PAGE (for this we have various methods and properties)
+
+We don't have to be suprise when people call the DOM an
+Application Programming Interface (API).
+As we should know, User interfaces let humans interact with
+programs likewise APls let programs/scripts
+communicate to each other.
+The DOM states what our script can ask the browser about the
+current page, and how to tell the browser to update what is being shown to the user.
+So here simple DOM is acting as a messenger between scripts and web document
+*/
+
+
+
+
+
+/*
+DOM tree that is stored in browser's memory which consits of 4 types of Nodes:
+Wait ! What exactly is a node ? 
+well it is nothing but a part of the document tree. 
+Every element, attribute, and piece of text in the HTML is represented by 
+its own DOM node.
+
+Each node is an object with methods and properties.
+Scripts access and update this DOM tree (not the source HTML file).
+Any changes made to the DOM tree are reflected in the browser
+ in short, 
+These are nothing but different parts of DOM tree.. 
+
+
+
+1. Document node - it represents the entire page, corresponds to the document object,
+                   starting point for all visits to the DOM tree.
+
+
+2. Elements node - represts all html elements  
+
+
+
+3. Attribute node - if elements have attributes, they are part of elements, not children.
+(Once we access an element, there are specific JavaScript
+methods and properties to read or change that
+element's attributes. For example, it is common to
+change the values of class attributes to trigger new
+CSS rules that affect their presentation)
+
+4. Text node - Actual text within the element, text nodes cannot have children
+
+Accessing and updating the DOM tree involves two steps:
+1: Locate the node that represents the element we want to work with.
+2: Use its text content, child elements, and attributes.
+
+we will get to this .. 
+
+
+*/
+
+
+// while woriking with DOM, we have to see console in browser
+  // it will not work in node.js 
+
+console.log(window);
+/* Window is the global object (top level) in the browser enviroment 
+   representing the browser frame.
+   Note it is not global object outside browser like if we're in node.js
+
+The window object has many methods and properties which can seen in console, 
+out them most popular ones are: 
+alert() - method to pop up an information dialog for the user, takes a
+          message string as its argument
+confirm() - method is similar to alert() but provides user with a
+            choice; instead of a single OK button, the user may select 
+            between OK and Cancel
+Qust. Why we need a variable for confirm() ?
+We pass the returned value of true or false (for OK and Cancel) to a variable so that
+we can later test its value and have our script take appropriate action depending on the
+result. Something like this   
+
+var answer = confirm("Are you happy to continue?");
+if (answer) {
+    // User clicked "OK"
+    // Perform some action here
+} else {
+    // User clicked "Cancel" or closed the dialog
+    // Handle the cancellation or exit gracefully
+}
+
+Note* term modal means that script execution pauses, and all user interaction with
+the page is suspended, until the user clears the dialog. So basically the dialog boxes
+of confirm, alert are called modal dialog
+
+prompt() - The prompt() method is yet another way to open up a modal dialog. In this case,
+           though, the dialog invites the user to enter information.
+           The prompt method also allows for an optional second argument,
+           giving a default response in case the user clicks OK without typing anything.
+           like this var answer = prompt("What is your full name?", "John Doe");
+           and if the user dismisses the dialog (that is, by clicking Cancel,
+           then the prompt method returns null
+
+
+
+The window object has various child ojects like:
 - document object - contains all of the HTML and others that makes up loaded page.
 
 - location object - contains details of URL of current page.
@@ -15,73 +120,41 @@ This window object has various child ojects like:
 - navigator object - stores details of the browser type, version, and capabilities
 
 The notation we use to represent objects uses the dot or period
-parent.object 
-ex - window.location 
-This notation can be extended as many times as necessary to represent any object in the DOM 
-tree like object1.object2.object3 where 3 being child of 2 which being child of 1. 
-For example, 
+parent.object , ex - window.location 
+This notation can be extended as many times as necessary to represent any object 
+in the DOM tree like object1.object2.object3 where 3 being child of 2 which being 
+child of 1. For example, 
 The <body> section of our HTML page is represented in the DOM as a child element of the 
 document object; we would access it like this 
 window.document.body (see after this comment).
 
-As a shortcut, we use document instead of window.document— this also refers to the 
+As a shortcut, we use just document instead of window.document— this also refers to the 
 current document.
 Note: 
 If we have several windows open, or in case using a frameset, there will be a
 separate window and document object for each window or frame. To refer to one of
 these documents, we need to use the relevant window name and document name belonging
 to the window or frame in question. 
-
 */
-console.log(document); // 2 
-console.dir(document); // dir provides a more structured and detailed view    3
-console.log(document.body);   // 4
- 
+
+console.log(document); // this will show elements 
+console.dir(document); // dir shows properties and methods 
+console.log(document.body);  // this will actual body element 
+
+/* we use properties like innerHTML and innerText */
+   // console.log(document.body.innerHTML);
+   // console.log(document.body.innerText);
 
 /* lets play around with dot notation and accessing elements with direct
 properties but note that we have better ways using methods */
-console.log(document.links[0]);  // 5
+console.log(document.links[0]);  // gives collection links with index nums 
 console.log(document.title);
-// here lets change the title 
-document.title = "Understand DOM";  
-console.log(document.title);
+ // here lets change the title 
+ document.title = "Understand DOM";  
+ console.log(document.title);
 
-/*
-Actually, DOM is called a Programming Interface (API) for web documents as it allows 
-programs (that are written in JS) to interact and manipulate the contents of web document 
-using objects, methods and properties. 
-The DOM acts as an intermediary between the web page's structure and 
-the scripting language. 
-Note that DOM is platform and language-neutral interface not core part
-of JS or HTML. 
-*/
 
-/* DOM consits of 4 types of Nodes:
-Wait ! What exactly is a node ? 
-well it is nothing but a part of the document tree. 
-Each node has properties and methods that can used for manipulation.
-Note jQuery was used for a while to do this but now we handle with pure js. 
 
-1. Document node - already discussed
-
-2. Elements node - represts all html elements 
-
-3. Attribute node - if elements have attributes, they are part of elements not children.
-(Once we access an element, there are specific JavaScript
-methods and properties to read or change that
-element's attributes. For example, it is common to
-change the values of cl ass attributes to trigger new
-CSS rules that affect their presentation)
-
-4. Text node - Actual text within the element, text nodes cannot have children
-
-These are nothing but different parts of DOM tree.. 
-
-Accessing and updating the DOM tree involves two steps:
-1: Locate the node that represents the element you want to work with.
-2: Use its text content, child elements, and attributes.
-
-*/
 
 
 
