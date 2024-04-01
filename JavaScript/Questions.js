@@ -27,6 +27,8 @@ JS Interview RapidFire🔥
 20. Explain what is DOM ? Is it part of JS or HTML ?
 21. What is window object ? What is document object ?  
 22. Why we need a variable for confirm() ?
+23. What do you mean by a node in DOM tree ? How many types of nodes are there ? 
+
 
 
 

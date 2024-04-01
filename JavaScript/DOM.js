@@ -6,7 +6,7 @@ It is important to note that DOM is neither part of HTML, nor part of JavaScript
 it is a separate set of rules whiich are implemented by all major browser makers, 
 and covers two primary areas
 1. MAKING A MODEL OF THE
-HTML PAGE
+HTML PAGE 
 
 2. ACCESSING AND CHANGING
 THE HTML PAGE (for this we have various methods and properties)
@@ -155,6 +155,42 @@ console.log(document.title);
 
 
 
+
+
+
+ // SELECT AN INDIVIDUAL ELEMNET NODE 
+    
+      /* 1.  document object's getElementByID() Uses the value of an element's
+            id attribute (which should be unique within the page)  
+            (also refer DOM.html file) */
+
+     console.log(document.getElementById('header-title'));
+     
+          // getting specific attribute 
+     console.log(document.getElementById('header-title').getAttribute('id'));
+
+
+         // set attributes 
+         document.getElementById('header-title').id = 'new-title'; 
+         document.getElementById('new-title').setAttribute('class', 'title');
+
+
+         const title = document.getElementById('new-title');
+         console.log(title);
+
+         // get or change content 
+         console.log(title.textContent);
+         title.textContent = 'Document Object Model';
+         title.innerText = 'Understand DOM'; // does same thing as textContent 
+
+         // if we want use html tags then we have 
+         title.innerHTML ='<em> Understand DOM </em>';
+
+
+
+ /* 2. querySe1ector() used to find all HTML elements that matchs a 
+     specified CSS selector, this widely replaced jQuery which was used for 
+     DOM manipulation. */
 
 
 
