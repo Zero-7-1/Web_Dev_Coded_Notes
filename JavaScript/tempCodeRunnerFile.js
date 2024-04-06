@@ -1,6 +1,3 @@
-import { addTwo } from "./modules"; 
-// see like this, now we can use addTwo here, consider this a calculator program. 
-
-
-result = addTwo(2, 4);
-console.log(result);
+console.log('myName', myName);
+var myName = 'John Wick';
+console.log('myName', myName);
