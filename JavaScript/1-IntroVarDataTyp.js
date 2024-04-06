@@ -1,28 +1,65 @@
-// JS Varibales and Data Types 
+/*----Codes here written in node.js enviroment which can run selected lines 
+of code easily inside VS code terminal without browser console-----------*/
+
+
+
+
+
+
 /*
-JavaScript is different from other complied languages where the entire code is translated into machine code or an intermediate code before execution.
-In the case of JavaScript, the source code is delivered to the browser, and the browser's 
-JavaScript engine parses and executes the code on-the-fly. This process is known as 
-interpretation. To be more specific modern browsers engines V8 of Chrome and SpiderMonkey use a combination of interpretation and compilation which is known as JIT (Just in Time) 
-compilation (or simply run time compilation). 
+JavaScript is different from other complied languages where the entire code is 
+translated into machine code or an intermediate code before execution.
+In the case of JavaScript, the source code is delivered to the browser, and 
+the browser's JavaScript engine parses and executes the code on-the-fly. 
+This process is known as interpretation. To be more specific modern browsers 
+engines V8 of Chrome and SpiderMonkey use a combination of interpretation and 
+compilation which is known as JIT (Just in Time) compilation 
+(or simply run time compilation). 
 */
 
+ /*   
+ In most cases js codes will run fine without semicolon and we might think that it is 
+ optional or no need like python but it important to enforce use of semicolon in js.
+ In js we have a mechanism called automatic semicolon insertion (ASI), this gives 
+ the appearance that semicolons are optional but it might casue problems like one
+ below 
+ */
+// problem we might face if we habbituate js without semicolon 
+ function foo() {
+  return
+  {
+      bar: 'hello'
+  };
+}
+
+console.log(foo());     // undefined
+/* ASI automatically inserts a semicolon after return, 
+resulting in the function returning undefined rather than the intended object 
+{ bar: 'hello' }. */
 
 
-// JS variables can be declared automatically when used (not recommended)
+
+
+
+
+
+/* JS variables can be declared directly without any data type or keyword 
+     when used (not recommended) *
 z = 5;
 p = 5;
 r = z+p;
 console.log(r);
-/* In these cases js treats variables as global variables & attaches it to global 
-object i.e. window for browsers . */
+/* In these cases js treats above variables as global variables & attaches it to global 
+object i.e. window for browsers. */
 
-// Only use var to support old browsers, it doesn't have block level scope rather 
-    // scoped to the containing function or script
+/* Only use var to support old browsers, it doesn't have block level 
+it would be very bad idea to use var in a block level statement 
+like function or if statement etc.. 
+*/
 
-/* We use const if we are absolutely sure about the value doesn't change as const cant't be 
-redeclared, reassigned and has block level scope i.e. they are accessible in which block they 
-were declared. We should use const when we declare:
+/* We use const if we are absolutely sure about the value doesn't change as const 
+cant't be redeclared, reassigned and has block level scope i.e. they are accessible 
+in which block they were declared. We should use const when we declare:
 A new Array
 A new Object
 A new Function
@@ -38,24 +75,76 @@ powers.Yellow="changed";
 powers.black="dark"; // can add 
 console.log(powers);
 
-/* CAN:
+/* 
+CAN:
 Change the elements of const ARRAY
-Change the properties of consT OBJECT */
+   Change the properties of const OBJECT 
+*/
 
-// use let for other cases and better option than var 
-// let can't be redeclared but can be reassigned and have block level scope
-// let and const has to be declared before use and have block level scope 
-// var can be used without declaration and var is hoisted 
+/*
+use let for other cases 
+let can't be redeclared but can be reassigned and have block level scope
+let and const has to be declared before use and have block level scope 
 
-// Hoisting - JS's default behaviour of moving declarations (only) to top of current scope. 
-/* i.e. It apperars that variables or functions can be declared after its usage 
-(or we can say it can be used before declaration). */
+let and const declared outside a block can have global scope 
+*/
 
-x = 5; 
-console.log(x);  
-var x;   // declaration here
+let dr = "Sam"; // global let variable 
+dr = "Ram";     // now dr is Ram , Reassignment 
+// let dr = "Dan"  -- this is redeclare which will sytax error 
+console.log(dr); // it will give no error 
 
-/* Hoisting with var - Only declarations moves to top but not initializations */
+
+const mr = "John"; // global const 
+mr = "Sam"; // trying reassign, vs code will not show syntax error but 
+console.log(mr); // here at runtime we get 'Assignment to constant variable error' 
+
+
+
+
+
+/* Block Scope 
+Block-level scope refers to the scope of variables or identifiers 
+declared within a block of code. In many programming languages, including JavaScript,
+a block is defined by a pair of curly braces {}. Examples of blocks include if 
+statements, for loops, while loops, and function definitions.
+
+In languages with block-level scope, variables declared within a block are 
+only accessible within that block and any nested blocks. 
+Once the block is exited, the variables declared within it are no longer accessible.
+ */
+
+
+
+
+
+// var can be used without declaration and var is hoisted globally
+//  (another reason for var downfall) we shall see scope later in deatils 
+
+
+
+
+/* In the beggining we saw that we can use variables directly without declaring them 
+and it was not recommeded - reason Hoisting and var has the same problem. 
+
+Hoisting: 
+js engine runs through our codes 2x 
+1. Creation phase - goes through the code and allocates memory for declarations 
+2. Execution phase - actually executing the code, going through line by line, 
+                     doing assignment, calling functions etc.. 
+In short declarations comes first then assignment
+*/
+console.log('myName', myName); // myName undefined here 
+var myName = 'John Wick';   
+console.log('myName', myName);
+/* No matter how we are declaring, js will always go through 
+   1. Declaration 2. Initialization 3. Utilization so according to this 
+  
+   js will first check for declaration and allocates memory and here in the
+   above code the value of the memory space will be undefiend and in second 
+   run it will assign actual value  */
+
+/* Hoisting wit var  */
 console.log(x)        // initialized with undefined 
 var x = 5;           // var x; is hoisted but not x = 5.
 //This leads to unexpected results and bugs  
@@ -64,15 +153,38 @@ var x = 5;           // var x; is hoisted but not x = 5.
 console.log(x)  
 let x = 10; // reference error 
   
+// we limit here to variable hoisting, we shall see other like function hoisting later  
+  
 /* Tips:  
-- Use let and const instead of var or auto declaration as they provide block level scope, 
+- Use let and const instead of var or auto declaration as 
+  they provide block level scope 
 - always declare variables at the beiginning of the scope */ 
+
+
+
+
 
 /* Identifiers - Unique names of variables 
 rules of naming - case-sensitive, must beigin with letter(also $ and _), meaningful
 
 Literals - Just the values associated with variables like numeric literals, string literls
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // DATA TYPES 
