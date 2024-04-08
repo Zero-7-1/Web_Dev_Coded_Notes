@@ -4,47 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"    href="../CSS/Selectors.css">  
+    <link rel="stylesheet"    href="../CSS/1-Selectors.css">  
     <!-- rel attribute of link is important for linking css to html -->
     <title> Basic CSS 1 </title>
 </head>
 <body>
+    
+    <!-- understand pseudo class selector -->
+
+
+    <!-- An html element is a fundamental building block that defines the 
+    structure and content of web page and attributes provides additional info
+    about html element -->
+    
     <a class="link-style" 
     href="https://en.wikipedia.org/wiki/Stoicism#:~:text=Stoicism%20teaches%20the%20development%20of,the%20universal%20reason%20(logos)." 
-    target="_blank"> LINK X </a>
+    target="_blank"> LINK X - STOIC </a>
     <!-- 
-          target attribute of Anchor:
+         target attribute of Anchor:
         - Specifies where the linked document should be displayed 
-        - _self opens in the same window (Default & best practice)
+        - _self opens in the same window
         - _blank opens in the new window 
     -->
-<p><a class="highlight" href="https://twitter.com/home?"> LINK Y </a> </p>
-<p><a class="highlight" href="https://twitter.com/SuD7xX"> LINK Z  </a> </p>
 
-<div class="demo"> HOVER ON DIV </div>
+        <!-- separate class than above link-style -->
+<p><a class="highlight" href="https://twitter.com/home?"> LINK of X </a> </p>
+<p><a class="highlight" href="https://twitter.com/"> LINK of X  </a> </p>
 
+
+<!-- Hover Effect -->
+<div class="hover-div"> HOVER ON DIV </div>
+
+
+<!--  focus in user input -->
 <label for="username">Username:</label>
 <input type="text" id="username" name="username">
 
+
+<!-- understand first child -->
 <div class="parent-container">
     <p>This is the first paragraph.</p>
     <p>This is the second paragraph.</p>
     <p>This is the third paragraph.</p>
 </div>
 
-<ul>
+<!-- understand nth-child() pseudo class -->
+ <ul>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
     <li>Item 4</li>
     <li>Item 5</li>
-</ul>
+ </ul>
+ <!-- Understand language pseudo class -->
+ <p lang="fr">Ce paragraphe est en français.</p>
 
-<p lang="fr">Ce paragraphe est en français.</p>
 
-<h1> THIS DEMONSTRATES :: before applied to h1 </h1>
-<h2> THIS DEMONSTRATES :: after applied to h2</h2>
 
+
+ <!-- understand before and after -->
+<h1> THIS DEMONSTRATES ':: before' applied to h1 </h1>
+<h2> THIS DEMONSTRATES ':: after' applied to h2</h2>
+
+<!-- understand ::first-line and ::first-letter -->
 <p class="firstline"> Ancient Rome was a great Civilisation. <br>
     It formed the base of what we see today
     especially in the west.
@@ -64,12 +86,11 @@
 
 
 
-
+<!-- Understand attribute Selector -->
 <img src="sansa-stark-game-of-thrones-uhdpaper.com-4K-99.jpg" 
 alt="demo" title="sansa"  width="150" height="113">
 <img src="sansa-stark-game-of-thrones-uhdpaper.com-4K-99.jpg" 
 alt="demo" title="sansa-"  width="150" height="113">
-
 <p class="jon snow"> You Know Nothing Jon Snow </p>
 <p class="snow jon">You Know Everything JOn </p>
 

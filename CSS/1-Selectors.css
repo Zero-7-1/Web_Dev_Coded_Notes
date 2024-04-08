@@ -1,74 +1,90 @@
-/* Slectors */ 
+/* Slectors, simple ones in last 
+What concepts covered in this file:
+1. Pseudo-class selectors 
+2. Pesudo-element selectors
+3. Attribute selectors 
+4. Combinator selectors 
+5. Simple selectors
 
-/* --------------------------------------------------------Slector:pseudo-class {
+
+*/ 
+
+/* ------------------------------------                       Slector:pseudo-class {
                                                                    property: value; 
                                                                     } 
-Pseudo class selectors is used to target and style elements based on thier state, 
+Pseudo class selectors is used to target and style elements based on their state, 
 adding a bit interactivity.
-   */
-/* For example: Styling Visted and Unvisted Links Differently,
-                Styling an element when a user mouses over it,
-                Styling an element when it gets focus etc
-            */
-  /*  .link-style: pseudo-class {
-  }   WRONG WAY - we dont apply class along with pseudo class 
-                  rather we use selector direcly. */
-  
+For example
+*/
+
+/* Styling Visted and Unvisted Links Differently  */                  
+
 /* Unisited Links */
 a:link {
-    color: rgb(164, 219, 26);
+    color: rgb(12, 4, 156);
 }
 /* Visted links */
 a:visited{
- color: rgb(0, 85, 255);   
+ color: rgb(92, 141, 239);   
 }
 
+
+/* Hover Pseudo-class */
 /* Selects and styles an element when the mouse pointer is over it */
 a:hover {
     color: white;
-
-  }
+}
 /* Selects and styles an element that is being activated by user */
 a:active {
     color: black;
 }
-/* Note that these two styles only applied to stoic.
-Another thing here :hover called pesudo-class whereas a is the selctor targeting element <a> */
+/* Note that these two styles only applied to stoic. WHY ? 
+                                and WHY link Stoic has a yellow highlight ? 
 
-/* We can also combine pseudo-class with html class */
+Another thing here ':hover' called pesudo-class whereas 'a' is the selctor 
+targeting element <a> */
+
+/* We can also combine pseudo-class with html class */ 
 a.highlight:hover {
-    color: rgb(186, 226, 43);
+    color: rgb(15, 15, 13);
     font-size: 22px;
 }
 
+
 /* Hover on div */
-.demo {
+.hover-div {
     background-color: blueviolet;
     text-align: center;
 }
-div.demo:hover {
+.hover-div:hover {
     color: white;
     background-color: brown;
 
 }
+
+
 
 /* :focus pseudo-class selects and styles element when it receives focus by user */
 input:focus {
     border: 5px solid #c7d343;
     background: #e6e9c5;
 }
+/* This would be great visually appealing for log in and reg forms */
 
-/* :first-child pesudo-class  selects and styles the first child element of its parent. And here we have 
-to use .class-name first so that we know parent.*/
+
+
+
+/* :first-child pesudo-class  selects and styles the first child element 
+of its parent. And here we have to use .class-name first so that we know parent.*/
 .parent-container p:first-child {
     font-weight: bold;
     color: blue;
-}   /*Here <div> has 3 childs and style we applied to first one */
+}   /* Here <div> has 3 childs and style we applied to first one */
+   /* similarly we have :last-child*/ 
+  
+   /* :nth-child(n) pseudo class selects and styles nth children of a parent and 
+  n determines which child should be selected. */
 
-/* similarly we have :last-child*/ 
-
-/* :nth-child(n) pseudo class selects and styles nth children of a parent and n determines which child 
-should be selected. */
 /* Style even-numbered list items */
 li:nth-child(even) {
     background-color: #f2f2f2;
@@ -84,33 +100,61 @@ li:nth-child(odd) {
     color: red;
 }
 
-/*-----------------------------------------------------------Selector::pseudo-element {
+/* Re-look of imp pesudo classes
+   1. Whether link is visted or not - :link for not visted and :visted
+   2. Hovering mouse pointer - :hover
+   3. user click activation - :active 
+   4. input focus - :focus 
+   5. first child of a parent - :first-child 
+   6. nth child of a parent -   :nth-child()
+   7. for a different language - :lang() 
+   and simply pseudo class targets elements state, denoted by : single colon 
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------                Selector::pseudo-element {
                                                                     property: value
                                                                  }    
 Styles specific parts of an element's content or generate content that is not present 
-in the actual HTML*/
+in the actual HTML, denoted by :: double colon       */
 
 /*::before & ::after Pseudo-element is used to insert content before & after the actual 
 content of an element */
 h1::before {
     content: "🔍";
-    color: blue;
+
+
 }
 h2::after {
     content: "🔍";
-    color: blue
 }
 
-/* ::first-line pseudo-element is used to add a special style to the first line of a text */
+/* ::first-line pseudo-element is used to add a special style to the first line of 
+   a text */
 p.firstline::first-line{
     font-weight: bold;
 }
-
-/* ::first-letter pseudo-element is used to add a special style to the first letter of a text */
+/* similarly ::first-letter pseudo-element is used to add a 
+  special style to the first letter of a text */
 p.firstletter::first-letter{
     color: #ff0000;
     font-size: xx-large;
-}
+}   /* this could have more practical use */
 
 
 
@@ -123,24 +167,28 @@ p.firstletter::first-letter{
 
 
 
-/*------------------------------------------------------------ -----Attribute Selectors 
+/*----------------------------------------------                 Attribute Selectors 
+
 - The [attribute] selector is used to select elements with a specified attribute. 
 - They select an element using the presence of a given attribute or attribute value. 
-- Attribute selectors can be used with various types of operators that change the selection 
-criteria accordingly */
+- Attribute selectors can be used with various types of operators that change the 
+selection criteria accordingly */
 
-/* [attribute="value"] Selector used to select elements with a specified attribute and value */
+/* [attribute="value"] Selector used to select elements with a specified attribute 
+   and value */
 a[target="_blank"] {
     background-color: yellow;
-  }
+  }   /* here lies the answer to why link stoic appears yellow */
+
+
 
 /*[attribute~="value"] Selector used to select elements with an attribute value 
 containing a specified word*/
 img[title~="sansa"] {
     border: 5px solid yellow;
   }
-/*[attribute$="value"] selector used to select elements whose attribute value ends with a 
-       specified value.*/
+/*[attribute$="value"] selector used to select elements whose attribute value 
+   ends with a specified value.*/
 p[class$="snow"] {
     background: aqua;
 }
@@ -156,7 +204,7 @@ h1[class|="top"] {
 h2[class*="se"] {
     background-color: hotpink;
 }
-/*Attribute Selectors are most helpful in forms without using class and id */
+/* Attribute Selectors are most helpful in forms without using class and id */
 
 
 
@@ -166,13 +214,15 @@ h2[class*="se"] {
 
 
 
+ 
 
 
 
+/*-------------------------------------------------------------Combinator Selectors*/ 
+/* A CSS selector can contain more than one simple selector. 
+Between the simple selectors, we can include a combinator that explains 
+the relationship between the selectors */
 
-/*----------------------------------------------------------------Combinator Selectors*/ 
-/* A CSS selector can contain more than one simple selector. Between the simple selectors, 
-we can include a combinator that explains the relationship between the selectors */
 /* descendant selector (space) matches all elements that are descendants of a specified element.*/
 .descendant p{
     background-color: #0d0e0d;
@@ -227,7 +277,7 @@ and "adjacent" means "immediately following".*/
 
 
 
-/* -------------------------------------------------------------------Simple Selectors */
+/* ---------------------------------------------------------------Simple Selectors */
 
 
 
@@ -239,7 +289,7 @@ and "adjacent" means "immediately following".*/
    }                             */
 
 
-/*A common practice to do this in all css files 
+/*A common practice to do this in all css files (refer box-model)
    * {
           padding: 0;
           margin: 0;
@@ -287,10 +337,20 @@ the padding and border of the element not to conetent area. This can be helpful 
 predictable layout, especially when dealing with elements that have padding and borders.*/
 
 
+
+
+
+
+
+
+
+
+
 /* ID Selector uses id attribute of an html element. ID of an element is used to select
 only one unique element whereas class selectors can style many elemnts sharing common 
-class name. Note: Id/class can not start with a number. 
-                  # for id names and . for class names  
+class name. 
+Note: Id/class can not start with a number. 
+      # for id names and . for class names  
                   
 Besides this we can directly target html elements by their name and also can group
 them like
@@ -301,9 +361,14 @@ h1, h2, p {
 }
 
 Another important selector which we may come across 
-element.class Selector
-is used to select the specified element with the specified class.
+element.class Selector which is used to select the specified element 
+with the specified class.
 For example, p.intro selects only <p> elements with class="intro"
+
+Another important thing to note that we can have more than one class within one 
+html element separated by commas. 
+
+
 */
 
 
