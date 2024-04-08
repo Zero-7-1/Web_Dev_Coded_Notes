@@ -186,7 +186,8 @@ let x = 10; // reference error, can not access x before initialization
 /* Identifiers - Unique names of variables 
 rules of naming - case-sensitive, must beigin with letter(also $ and _), meaningful
 
-Literals - Just the values associated with variables like numeric literals, string literls
+Literals - Just the values associated with variables like numeric literals, 
+string literls
 */
 
 
@@ -207,44 +208,50 @@ Literals - Just the values associated with variables like numeric literals, stri
 
 
 // DATA TYPES 
-/* JS is a dynamically typed language - it will automatically figure out the data type based 
-on the value we assign to the variable at run time and these types can also change. */
+/* JS is a dynamically typed language - it will automatically figure out the data type
+based on the value we assign to the variable at run time and these types can also 
+change. */
 
 let foo = 42; // foo is a number
 foo = "Liku"; //  foo is now string 
 console.log(foo);  
 
-/* Also JS is weakly typed i.e. it performs type conversion when mismatch with types instead 
-throwing errors.
+/* Also JS is weakly typed i.e. it performs type conversion when mismatch with
+types instead throwing errors.
+
 Type Conversion (Implicit)- JS Converts one or more values to a common data type
-for any operation to proceed. 
+                            for any operation to proceed. 
 Implicit Rules like:
 - String Concatenation: When we use the + operator to concatenate values, js will 
 convert non-string values to strings.
 - Arithmetic Operations: JS tries to convert non-numeric values to numbers. 
-- When we use comparison operators (e.g., ==, !=, >, <), js may convert values to a common data 
-type before comparing them. 
+- When we use comparison operators (e.g., ==, !=, >, <), js may convert values to a 
+common data type before comparing them. 
 */
 let equality = 5 == "5";  // Result: true (automatic type conversion for equality)
 console.log(equality);
 /* The == operator performs type coercion if the operands are of different types. 
-In this example, the string is automatically converted to a number for the equality comparison. */
+In this example, the string is automatically converted to a number for the 
+equality comparison. */
 
 
-let logicalAnd = "hello" && true;  // Result: true (automatic type conversion to boolean)
+let logicalAnd = "hello" && true;  // Result: true (type conversion to boolean)
 /* Logical operations may involve type coercion to boolean values. 
+
 In this example, the non-boolean operand is automatically converted to a boolean 
 for the logical AND operation.
+
 To avoid issues related to automatic type conversion, some developers prefer to 
 use strict equality (===) and inequality (!==) operators, 
 which do not perform type coercion and require both value and type to be the 
-same for equality.*/
+same for equality.  */
 
 /*
-This type conversion can lead to unexpected results if we're not careful. So it's often a 
-good practice to be explicit about data types and use type casting.
+This type conversion can lead to unexpected results if we're not careful. 
+So it's often a good practice to be explicit about data types and use type casting.
 
-Type Casting (Explicit)- Explicitly changing the data type of a value using some functions. */
+Type Casting (Explicit)- Explicitly changing the data type of a value using 
+some functions. */
 
 // - Number() function casts a value to number. 
 let ExpNum = Number("8.14");
@@ -254,16 +261,20 @@ let EmpStr = Number("");
 console.log(EmpStr);  // why 0 ? coz it's default for number 
 
 let NotNum = Number("John");
-console.log(NotNum); // Returns NaN (but type is of number) if conversion is not possible. 
+console.log(typeof(NotNum)); // NaN (but type is number) if conversion is not possible. 
 
 // - parseInt() converts to an integer or whole number
-/* note: - parses the string from left to right until it encounters a 
-          character that is not a valid part of the integer, and then it stops.
-         - The function takes two parameters - the string to be parsed and takes an 
+
+/* note:   parses the string from left to right until it encounters a 
+           character that is not a valid part of an integer, and then it stops.
+         
+           The function takes two parameters - the string to be parsed and takes an 
            optional second argument represents the radix or base for parsing 
            the string. By default, it assumes base 10.
-         - ignores leading white space.
-         - parsing stops at the first non-numeric character
+           
+           ignores leading white space.
+          
+           parsing stops at the first non-numeric character
 */
 const intNum = parseInt("123"); // Converts to an integer
 console.log(typeof(intNum)); 
