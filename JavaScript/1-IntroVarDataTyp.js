@@ -112,14 +112,14 @@ statements, for loops, while loops, and function definitions.
 In languages with block-level scope, variables declared within a block are 
 only accessible within that block and any nested blocks. 
 Once the block is exited, the variables declared within it are no longer accessible.
+
+We shall see scope later in details 
  */
 
 
 
 
 
-// var can be used without declaration and var is hoisted globally
-//  (another reason for var downfall) we shall see scope later in deatils 
 
 
 
@@ -128,37 +128,56 @@ Once the block is exited, the variables declared within it are no longer accessi
 and it was not recommeded - reason Hoisting and var has the same problem. 
 
 Hoisting: 
-js engine runs through our codes 2x 
-1. Creation phase - goes through the code and allocates memory for declarations 
+js engine runs through our codes twice 
+
+1. Creation phase - goes through the code and allocates memory for declarations of 
+                    variables and functions but not their initializations 
+                    in this phase variable's value would be undefined 
+                    (js engine is setting up execution enviroment) 
+
 2. Execution phase - actually executing the code, going through line by line, 
-                     doing assignment, calling functions etc.. 
-In short declarations comes first then assignment
+                     doing assignment, calling functions etc
+                     (Actual Execution)
+
+Definition of 'Hoisting' - The default behaviour of JavaScript to process 
+variable and function declarations before executing the rest of the code, 
+which can sometimes lead to unexpected behavior if not understood properly.
 */
 console.log('myName', myName); // myName undefined here 
 var myName = 'John Wick';   
 console.log('myName', myName);
 /* No matter how we are declaring, js will always go through 
-   1. Declaration 2. Initialization 3. Utilization so according to this 
-  
-   js will first check for declaration and allocates memory and here in the
-   above code the value of the memory space will be undefiend and in second 
-   run it will assign actual value  */
+   1. Declaration 2. Initialization 3. Utilization 
+ */
 
-/* Hoisting wit var  */
+
 console.log(x)        // initialized with undefined 
 var x = 5;           // var x; is hoisted but not x = 5.
-//This leads to unexpected results and bugs  
+//This can lead to unexpected results and bugs  
 
-/* But in case  let and const we can't access the variable before declaration.*/ 
+/* Let and const are hoisted in block scope whereas var is hoisted in global scope. */
+
+
+/* But in case  let and const we can't access the variable before declaration. */ 
 console.log(x)  
-let x = 10; // reference error 
-  
+let x = 10; // reference error, can not access x before initialization 
+     // but why ? we got this error ? and why not in var ? 
+
+  // because of  Temporal Dead Zone(TDZ)
+  /* It is the time taken between declaring the variable (using let or const) and 
+     initializing the variable. During this period accessing the variable will 
+     give reference error  */
+ let lang;  //Beginning of the temporal dead zone
+ console.log(lang); // ReferenceError as accessed in the TDZ.
+ myName = 'Javascript'; // Ending of the temporal dead zone
+
 // we limit here to variable hoisting, we shall see other like function hoisting later  
   
 /* Tips:  
 - Use let and const instead of var or auto declaration as 
   they provide block level scope 
-- always declare variables at the beiginning of the scope */ 
+- always declare variables at the beiginning of the scope 
+*/ 
 
 
 

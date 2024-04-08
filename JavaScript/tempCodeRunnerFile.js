@@ -1,3 +1,2 @@
-console.log('myName', myName);
-var myName = 'John Wick';
-console.log('myName', myName);
+console.log(x)  
+let x = 10; // reference error 
