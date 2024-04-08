@@ -35,16 +35,38 @@ position and we can apply some changes or move it to realtive to where it should
 If there is no such ancestor, it's positioned relative to top left corner of web page 
 This makes element  moves along with page scrolling.
 Note: Absolute positioned elements are removed from the normal flow, 
-     and can overlap elements. */
-.absolute {
+     and can overlap elements. 
+     
+If we want to adjust position of a child div within a parent then make child absolute 
+
+     
+     */
+.absolute-1 {
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    top: 0;
+    border: 3px solid black;
+    background-color: rgb(0, 55, 255);
+}
+
+.absolute-2 {
     height: 50px;
     width: 100px;
     position: absolute;
     right: 5px;
     bottom: 0;
     border: 3px solid black;
-    background-color: rgb(0, 55, 255);
+    background-color: rgb(157, 234, 13);
 }
+
+
+
+
+
+
 /* 4. Fixed Postion - is positioned relative to the viewport, 
 which means it always stays in the same place even if the page is scrolled.*/ 
 .fixed {
