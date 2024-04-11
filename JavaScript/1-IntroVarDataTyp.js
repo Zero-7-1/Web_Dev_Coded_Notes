@@ -4,7 +4,8 @@ of code easily inside VS code terminal without browser console-----------*/
 
 
 
-
+// Q. JAVASCRIPT IS WHAT KIND LANGUAGE ? 
+   // Interpreated, Weak, Dynamic 
 
 /*
 JavaScript is different from other complied languages where the entire code is 
@@ -16,6 +17,10 @@ engines V8 of Chrome and SpiderMonkey use a combination of interpretation and
 compilation which is known as JIT (Just in Time) compilation 
 (or simply run time compilation). 
 */
+
+
+
+// Q. IS SEMICOLON NECCESSARY FOR JS CODES ? 
 
  /*   
  In most cases js codes will run fine without semicolon and we might think that it is 
@@ -52,6 +57,10 @@ console.log(r);
 /* In these cases js treats above variables as global variables & attaches it to global 
 object i.e. window for browsers. */
 
+
+// WHY VAR IS NOT USED ANYMORE ? 
+
+
 /* Only use var to support old browsers, it doesn't have block level 
 it would be very bad idea to use var in a block level statement 
 like function or if statement etc.. 
@@ -65,20 +74,33 @@ A new Object
 A new Function
 */
 
+// array 
 const Colors= ["red", "blue", "green"];
 Colors[0] ="Pink";  // replacing in the place of red. 
 Colors.push("Yellow"); // we CAN do this but can't directly reassign
+Colors.pop(); // removes last element, so we can also remove 
 console.log(Colors);
 
+// Attempting to reassign the constant array
+Colors = [1,2,3];  // This will result in an runtime error
+console.log(Colors); 
+
+// this will also result error, re-declare
+const Colors = [1,2,4];
+
+
+// object 
 const powers = {Fire:"Red", Sky:"Blue", Yellow:"Soil"};
 powers.Yellow="changed";
 powers.black="dark"; // can add 
 console.log(powers);
 
+
+
 /* 
-CAN:
+CAN: (What we can in const)
 Change the elements of const ARRAY
-   Change the properties of const OBJECT 
+Change the properties of const OBJECT (not only value not Key)
 */
 
 /*
@@ -91,13 +113,13 @@ let and const declared outside a block can have global scope
 
 let dr = "Sam"; // global let variable 
 dr = "Ram";     // now dr is Ram , Reassignment 
-// let dr = "Dan"  -- this is redeclare which will sytax error 
-console.log(dr); // it will give no error 
+// let dr = "Dan"  -- this is redeclare which will give syntax error 
+console.log(dr); 
 
 
 const mr = "John"; // global const 
 mr = "Sam"; // trying reassign, vs code will not show syntax error but 
-console.log(mr); // here at runtime we get 'Assignment to constant variable error' 
+console.log(mr); // at runtime we get 'Assignment to constant variable error' 
 
 
 
@@ -121,11 +143,13 @@ We shall see scope later in details
 
 
 
-
+ // Q. WHAT IS 'HOISTING' IN JAVASCRIPT ? 
 
 
 /* In the beggining we saw that we can use variables directly without declaring them 
-and it was not recommeded - reason Hoisting and var has the same problem. 
+and it was not recommeded - reason Hoisting and var has the same problem, infact 
+let and const has hoisting but they are hoisted in block level whereas var is 
+hoisted in global scope. 
 
 Hoisting: 
 js engine runs through our codes twice 
@@ -155,13 +179,20 @@ console.log(x)        // initialized with undefined
 var x = 5;           // var x; is hoisted but not x = 5.
 //This can lead to unexpected results and bugs  
 
-/* Let and const are hoisted in block scope whereas var is hoisted in global scope. */
+
+// Q. IS HOISTING EXCLUSIVE FOR VAR ? WHAT ABOUT LET AND CONST ?  
+  
+/* Let and const are also hoisted but in block scope 
+   whereas var is hoisted in global scope. */
 
 
-/* But in case  let and const we can't access the variable before declaration. */ 
+/* In case  let and const we can't access the variable because of TDZ. */ 
 console.log(x)  
 let x = 10; // reference error, can not access x before initialization 
-     // but why ? we got this error ? and why not in var ? 
+     // but why ? we got this error ? and why not in var ?
+      // because in var variable was given 'undefined' value 
+
+// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ' IN JAVASCRIPT 
 
   // because of  Temporal Dead Zone(TDZ)
   /* It is the time taken between declaring the variable (using let or const) and 
@@ -173,7 +204,7 @@ let x = 10; // reference error, can not access x before initialization
 
 // we limit here to variable hoisting, we shall see other like function hoisting later  
   
-/* Tips:  
+/* Best Practice:   
 - Use let and const instead of var or auto declaration as 
   they provide block level scope 
 - always declare variables at the beiginning of the scope 
@@ -228,6 +259,10 @@ convert non-string values to strings.
 - When we use comparison operators (e.g., ==, !=, >, <), js may convert values to a 
 common data type before comparing them. 
 */
+
+
+
+
 let equality = 5 == "5";  // Result: true (automatic type conversion for equality)
 console.log(equality);
 /* The == operator performs type coercion if the operands are of different types. 
@@ -241,6 +276,10 @@ let logicalAnd = "hello" && true;  // Result: true (type conversion to boolean)
 In this example, the non-boolean operand is automatically converted to a boolean 
 for the logical AND operation.
 
+// Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION SCNARIOS AND HOW WE CAN 
+         // AVOID THESE TYPE CONVERSIONS ? 
+
+
 To avoid issues related to automatic type conversion, some developers prefer to 
 use strict equality (===) and inequality (!==) operators, 
 which do not perform type coercion and require both value and type to be the 
@@ -250,17 +289,19 @@ same for equality.  */
 This type conversion can lead to unexpected results if we're not careful. 
 So it's often a good practice to be explicit about data types and use type casting.
 
+// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES. 
+
 Type Casting (Explicit)- Explicitly changing the data type of a value using 
-some functions. */
+some functions or methods. */
 
 // - Number() function casts a value to number. 
 let ExpNum = Number("8.14");
 console.log(typeof(ExpNum));  
 
-let EmpStr = Number("");
+let EmpStr = Number(""); // this example is important
 console.log(EmpStr);  // why 0 ? coz it's default for number 
 
-let NotNum = Number("John");
+let NotNum = Number("John"); // also this one 
 console.log(typeof(NotNum)); // NaN (but type is number) if conversion is not possible. 
 
 // - parseInt() converts to an integer or whole number
@@ -311,57 +352,70 @@ const weString = String(aNum);
 console.log(weString);
 console.log(typeof(weString));
 
-/* Note that Scenarios where we should consider using explicit type conversion in JavaScript 
-are while user input processing. */
+/* Note that Scenarios where we should consider using explicit type conversion in 
+JavaScript are-  while user input processing. */
  
+
+// DIFFERENTIATE BETWEEN PRIMITIVES AND NON-PRIMITIVE DATA TYPES IN JS ? 
+
 /* Primtive vs Reference- 
 - Primitive data types are simple data types, its values can not be changed directly 
-like objects and any operations that appears to change primitive value actually creates
-a new value but it doesn't change the original value which will be still in the memory but is 
-is not accessible by the current variable which now refers to new value. 
+like we chaneg in objects and any operations that appears to change primitive value 
+actually creates a new value but it doesn't change the original value which will be 
+still in the memory but is is not accessible by the current variable which now refers 
+to new value. 
+
 For example suppose we have x = 3.17 and if we do  
 x = 9.11 then this value overides the previous value 
 which is not essentially a direct change but rather reassignment.
 
--Also Primitives stores single vlaue unlike objects which stores many value.
-and Primitive types stores a copy of exact value directly in the memory 
-but reference types store reference to the memory location rather exact value.
+-Also Primitives stores single vlaue unlike non primitives like objects 
+which stores many value. and Primitive types stores a copy of exact value directly 
+in the memory but non primitives store reference to the memory location rather
+exact value.
 
 - Operations with primitives are faster. */
+
+
+// WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  METHODS & PROPERTIES.  
 
 // JS has 7 primitive data types and 1 reference data type (Object)
 
 // 1. Strings - textual data within single or double quotes 
 
 let text = "Sudhanshu Sekhar Barik"
-let lenghth = text.length   // length property note this not a function or method 
+let lenghth = text.length   // length property (note this not a function or method)
 console.log("Your name's lenghth is " + lenghth + " including spaces");
 
-// slicing 
+// slicing - substring() with two index no. to slice in between  
 let originalString = "Sudhanshu";
-let slicedString = originalString.substring(0,1); 
+let slicedString = originalString.substring(0,5); 
 console.log(slicedString);
 
 // upper casing and lower casing 
 let originalString2 = "John Wick";
-let upperCase_name = originalString2.toUpperCase();  // note that these do not take parameters
+let upperCase_name = originalString2.toUpperCase();  // do not take parameters
 let lowerCase_name = originalString2.toLowerCase();
 console.log(upperCase_name);
 console.log(lowerCase_name);
-/* To lowercase only specific characters in a string, we can manually manipulate the string by 
-targeting those characters. This can be done by converting string to arrays and then 
-modify specific elements (best way) */
+
+/* To lowercase only specific characters in a string, we can manually manipulate the 
+string by targeting those characters. This can be done by converting string to arrays 
+and then modify specific elements (best way) */
 // split() method splits a string to an array of substrings 
-// '' is used as separator, string is split between words 
+// '' is used as separator otherwise the entire string will be treated as a 
+     //  single element in the resulting array
+
 let originalString3 = 'john wick';
 let charArray = originalString3.split('');
+console.log(charArray);
 charArray[0] = charArray[0].toUpperCase();
 charArray[5] = charArray[5].toUpperCase();
 // joining the array back to string 
 let newString = charArray.join('');
 console.log(newString);
 
-// there are many more methods & things related to string (refer bookmarked WP) .. 
+// there are many more methods related to string we shall look over when in need  .. 
 
 
 // 2. Numbers - with and without decimals 
