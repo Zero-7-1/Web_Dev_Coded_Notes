@@ -2,6 +2,8 @@
 like a tree of interconnected parent and child objects (HTML Elements) 
 that is what we call DOM - Document Object Model 
 
+// Q. EXPLAIN WHAT IS DOM ? 
+
 It is important to note that DOM is neither part of HTML, nor part of JavaScript; 
 it is a separate set of rules whiich are implemented by all major browser makers, 
 and covers two primary areas
@@ -136,14 +138,17 @@ separate window and document object for each window or frame. To refer to one of
 these documents, we need to use the relevant window name and document name belonging
 to the window or frame in question. 
 */
-
+ 
 console.log(document); // this will show elements 
 console.dir(document); // dir shows properties and methods 
-console.log(document.body);  // this will actual body element 
+console.log(document.body);  // this is actual body element which is inside document 
 
-/* we use properties like innerHTML and innerText */
+/* we use properties like innerHTML and innerText to see contents of body */
    // console.log(document.body.innerHTML);
    // console.log(document.body.innerText);
+
+
+
 
 /* lets play around with dot notation and accessing elements with direct
 properties but note that we have better ways using methods */
@@ -168,7 +173,7 @@ console.log(document.title);
      
           // getting specific attribute 
      console.log(document.getElementById('header-title').getAttribute('id'));
-
+ 
 
          // set attributes 
          document.getElementById('header-title').id = 'new-title'; 
@@ -185,14 +190,33 @@ console.log(document.title);
 
          // if we want use html tags then we have 
          title.innerHTML ='<em> Understand DOM </em>';
+        
+         // changing styles 
+         title.style.color ='Blue';
+         title.style.backgroundColor = 'yellow'; // note - of css will not work here
+                                                 // instead use came case 
+        
 
-
-
- /* 2. querySe1ector() used to find all HTML elements that matchs a 
+    
+/* 2. querySe1ector() used to find all HTML elements that matchs a 
      specified CSS selector, this widely replaced jQuery which was used for 
-     DOM manipulation. */
+     DOM manipulation as for getElementByID a ID was necessary. */
 
 
+  console.log(document.querySelector('h2'));  // selects just one, first one if many 
+                                             // but usaully we select a class from it 
+  console.log(document.querySelector('.container'));
+  console.log(document.querySelector('#new-title'));
+ // attributes 
+  console.log(document.querySelector('button[type="button"]'));
+ // pseudo selectors 
+ console.log(document.querySelector('li:nth-child(2)').innerText); 
+
+ let list = document.querySelector('li:nth-child(2)');
+ list.innerHTML = "They are taking the hobbits to Isengard";
+ list.style.backgroundColor = "brown";
+
+ // we could use these methods on other elements not just document  
 
 
 
