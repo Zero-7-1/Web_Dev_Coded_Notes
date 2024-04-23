@@ -1,3 +1,6 @@
-let originalString3 = 'john wick';
-let charArray = originalString3.split();
-console.log(charArray);
+import { addTwo } from "./modules"; 
+// see like this, now we can use addTwo here, consider this a calculator program. 
+
+
+result = addTwo(2, 4);
+console.log(result);
