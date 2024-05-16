@@ -1,5 +1,16 @@
-/*----Codes here written in node.js enviroment which can run selected lines 
-of code easily inside VS code terminal without browser console-----------*/
+/*    **********
+      
+      KEY CONCPETS COVERED:    
+      ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
+      ---> VARIABLES - VAR, CONST, LET - HOISTING 
+      ---> DATA TYPES - CONVERSION - METHODS & PROPERTIES OF TYPES 
+      ---> MATH OBJECT - DATA OBJECT   
+      TARGET REVISON TIME - WITHIN 1 HOUR                       
+      
+      ************
+*/
+
+
 
 
 
@@ -8,6 +19,8 @@ of code easily inside VS code terminal without browser console-----------*/
    // Interpreated, Weak, Dynamic 
 
 /*
+Q. WHAT'S THE DIFFERENCE BETWEEN COMPLIED LANGUAGES AND INTERPRETED LANGUAGES ? 
+
 JavaScript is different from other complied languages where the entire code is 
 translated into machine code or an intermediate code before execution.
 In the case of JavaScript, the source code is delivered to the browser, and 
@@ -192,7 +205,7 @@ let x = 10; // reference error, can not access x before initialization
      // but why ? we got this error ? and why not in var ?
       // because in var variable was given 'undefined' value 
 
-// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ' IN JAVASCRIPT 
+// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ) IN JAVASCRIPT 
 
   // because of  Temporal Dead Zone(TDZ)
   /* It is the time taken between declaring the variable (using let or const) and 
@@ -352,15 +365,16 @@ const weString = String(aNum);
 console.log(weString);
 console.log(typeof(weString));
 
+// WHERE WE SHOULD USE EXPLICIT TYPE CONVERSION ? 
 /* Note that Scenarios where we should consider using explicit type conversion in 
 JavaScript are-  while user input processing. */
  
 
-// DIFFERENTIATE BETWEEN PRIMITIVES AND NON-PRIMITIVE DATA TYPES IN JS ? 
+// DIFFERENTIATE BETWEEN PRIMITIVES AND NON-PRIMITIVE DATA TYPES ? 
 
 /* Primtive vs Reference- 
 - Primitive data types are simple data types, its values can not be changed directly 
-like we chaneg in objects and any operations that appears to change primitive value 
+like we change in objects and any operations that appears to change primitive value 
 actually creates a new value but it doesn't change the original value which will be 
 still in the memory but is is not accessible by the current variable which now refers 
 to new value. 
@@ -371,7 +385,7 @@ which is not essentially a direct change but rather reassignment.
 
 -Also Primitives stores single vlaue unlike non primitives like objects 
 which stores many value. and Primitive types stores a copy of exact value directly 
-in the memory but non primitives store reference to the memory location rather
+in the memory but non-primitives store reference to the memory location rather
 exact value.
 
 - Operations with primitives are faster. */
@@ -399,46 +413,50 @@ let lowerCase_name = originalString2.toLowerCase();
 console.log(upperCase_name);
 console.log(lowerCase_name);
 
+// Q. SUPPOSE USERS INPUTS HIS NAME IN ALL LOWERCASE BUT WE NEED FIRST LETTER OF 
+   // FIRSTNAME AND LASTNAME TO BE UPPER CASE ONLY, HOW CAN WE DO THIS ? 
 /* To lowercase only specific characters in a string, we can manually manipulate the 
 string by targeting those characters. This can be done by converting string to arrays 
 and then modify specific elements (best way) */
 // split() method splits a string to an array of substrings 
 // '' is used as separator otherwise the entire string will be treated as a 
      //  single element in the resulting array
-
 let originalString3 = 'john wick';
 let charArray = originalString3.split('');
 console.log(charArray);
 charArray[0] = charArray[0].toUpperCase();
 charArray[5] = charArray[5].toUpperCase();
 // joining the array back to string 
-let newString = charArray.join('');
+let newString = charArray.join(''); // joining back using join() 
 console.log(newString);
 
-// there are many more methods related to string we shall look over when in need  .. 
+// there are many more methods related to string we shall look over when in need  
+  // in a speparate dedicated strings methods file 
 
 
 // 2. Numbers - with and without decimals 
-// Extra large or extra small numbers can be written with scientific (exponent) notation
+// Extra large or extra small numbers can be written with scientific notation
 let a = 123e5;
 let b = 123e-5;
 console.log(a);
 console.log(b);
-// Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+// Integers (numbers without exponent notation) are accurate up to 15 digits.
 let c = 999999999999999;
 let d = 9999999999999999; // loses accuracy 
 console.log(c);
 console.log(d);
 // Floating point arithmetic is not always 100% accurate.
-/* NaN (Not a Number) indicates that the number is not legal, it is a special value we get due
-of meaningless operations on numbers
+
+
+// Q. WHAT IS NAN ? 
+/* NaN (Not a Number) indicates that the number is not legal, it is a special 
+value we get due of meaningless operations on numbers
 */
 let x = 100/"Ten"; // NaN  
-let y = 100/"10"; // is valid but o/p will be string 
+let y = 100/"10"; // is valid but o/p will be string Q. WHY ? 
 console.log(x);
 console.log(y);
-
-// To check if a value is NaN, you can use the isNaN() function
+// To check if a value is NaN, we can use the isNaN() function
 let value = NaN;
 console.log(isNaN(value));
 // a direct equality check with === will return false
@@ -447,25 +465,21 @@ console.log(isNaN(value));
 
 // There are various number methods like 
 const num = 3.14159265359;
-const formattedNum = num.toFixed(1); // Formats  decimal places
+const formattedNum = num.toFixed(2); // Formats  decimal places
 console.log(formattedNum); // Output: "3.14"
-console.log(typeof(formattedNum)); // note that all methods will return string (why ?)
+console.log(typeof(formattedNum)); // note that all methods will return string Q. why?
 
 const num2 = 12345.6789;
 const formattedNum2 = num2.toPrecision(7); // formats with a significant digits. 
 console.log(formattedNum2); //  note that outputs are rounded. 
+console.log(typeof(formattedNum2)); //  note that outputs are rounded. 
 
 const num3 = 12345.6789;
 const formattedNum3 = num3.toExponential(2); // formats to exponential notation  
 console.log(formattedNum3); // Output: "1.23e+4"
 
 
-
-
-// checking data types 
-let g= typeof(originalString2);
-console.log(g);
-
+// Q. WHAT THE DIFFERENCE BETWEEN JS NUMBER AND BIGINT ? 
 // 3. BigInt - 
 /* BigInt can be used to store integer values that are too 
 big to be represented by a normal JavaScript Number. As we know JavaScript integers 
@@ -475,9 +489,9 @@ let MyBigInt2 = BigInt(999999999999999); // using BigInt constructor
 console.log(MybigInt);
 console.log(MyBigInt2);
 /* Note that when using the BigInt() constructor, it will truncate any decimal part of 
-the number so appending n at end is the best method */
+the number so appending n at end is the best method, Q. WHY ?  */
 
-// Numbers methods & Properties -- refer WP Bookmark
+// Numbers methods & Properties -- will have a dedicated file soon 
 
 let t = 500;
 let tX = t.toString(); //returns a number as string
@@ -488,11 +502,12 @@ let d3 = d2.toFixed(2); // returns a string number with specified no. of decimal
 console.log("d3 value is " + d3); 
 
 
-// 4. Boolean - TWO values T or F 
+// 4. Boolean - Two values T or F 
 //  Basis for all JavaScript comparisons and conditions.
 let Boo = (10<5);
 console.log(Boo); // false 
 
+// Q. IS UNDEFINED AND NULL ARE DATA TYPES IN JS ? WHATS THE DIFFERENCE ? 
 // 5. Undefined - represents a variable that is declared but not assigned 
 let MyVar;
 console.log(MyVar);
@@ -511,29 +526,21 @@ let uniqueSymbol = Symbol(); // Creating a symbol without a description
 let symbolWithDescription = Symbol('mySymbol'); // Creating a symbol with a description
 console.log(uniqueSymbol);
 console.log(symbolWithDescription);
-/* Symbols are commonly used as keys for object properties when you want to avoid naming 
-conflicts and ensure uniqueness. They are often employed in scenarios where the specific
-identity of a property is more critical than its value. */
+/* Symbols are commonly used as keys for object properties when we want to avoid naming 
+conflicts and ensure uniqueness. They are often employed in scenarios where the 
+specific identity of a property is more critical than its value. */
 let myObj = {};
 let mySymbol = Symbol('uniqueKey');
 
 myObj[mySymbol] = 'Hello, Symbol!';
 
-console.log(myObj[mySymbol]);  // Hello, Symbol!   
-
-
-
-
-
-
-
-
-
-
+console.log(myObj[mySymbol]);  // Hello, Symbol!  
 
 
 
 // js non-primitive (reference types)
+
+
 /* There are actually 2 types of memory i.e. Stack and Heap. 
 Primitives are stored directly in the stack memory whereas reference types are 
 stored in the heap memory and accessed by reference  */

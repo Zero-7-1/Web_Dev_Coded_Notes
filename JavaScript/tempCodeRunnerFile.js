@@ -1,6 +1,3 @@
-import { addTwo } from "./modules"; 
-// see like this, now we can use addTwo here, consider this a calculator program. 
-
-
-result = addTwo(2, 4);
-console.log(result);
+// checking data types 
+let g= typeof(originalString2);
+console.log(g);
