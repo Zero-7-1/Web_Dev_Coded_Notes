@@ -6,8 +6,7 @@
       ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
       ---> VARIABLES - VAR, CONST, LET - HOISTING 
       ---> DATA TYPES - CONVERSION - METHODS & PROPERTIES OF TYPES 
-      ---> MATH OBJECT - DATA OBJECT   
-      TARGET REVISON TIME - WITHIN 1 HOUR                       
+      ---> MATH OBJECT - DATA OBJECT                          
       
 
       ************
