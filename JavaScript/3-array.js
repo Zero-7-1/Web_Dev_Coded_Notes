@@ -1,4 +1,19 @@
-/* Array is a special variable which can hold more than one value, it is also a 
+/*
+ *************
+ KEY CONCEPTS COVERED:
+ ---> ARRAY - SPECIAL VARIBALE AND AN OBJECT 
+
+
+ *************
+ 
+*/
+
+
+
+
+
+
+/* Arrays are special type of variable which can hold more than one value, it is also a 
 special type of object and also a js data structure.
 typeof operator in JavaScript returns "object" for arrays
 */
@@ -43,7 +58,7 @@ console.log(p);
 
 
 
-// ------------------------------------------------------------------------- Array Methods 
+//  Array Methods 
 
 // toString() converts an array to a string of (comma separated) array values
 const fruits = ["Banana", "Orange", "Apple", "Mango"];

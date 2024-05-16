@@ -1,4 +1,6 @@
-/*    **********
+/*    
+      **********
+      
       
       KEY CONCPETS COVERED:    
       ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
@@ -7,6 +9,7 @@
       ---> MATH OBJECT - DATA OBJECT   
       TARGET REVISON TIME - WITHIN 1 HOUR                       
       
+
       ************
 */
 

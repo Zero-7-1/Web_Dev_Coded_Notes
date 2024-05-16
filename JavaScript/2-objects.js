@@ -1,4 +1,23 @@
-// I. CONCEPT OF OBJECTS
+/*
+  ***************
+  KEY CONCEPTS COVERED: 
+  ---> OBJECTS - NON-PRIMITIVE DATA TYPE 
+  ***************
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+// CONCEPT OF OBJECTS
 /* 
 - Objects in js are non-primitive data types which represents a collection of key value 
 pairs i.e. Properties of the object, where keys are Strings or Symbol and value is any data type (including other objects).
