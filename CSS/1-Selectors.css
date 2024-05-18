@@ -1,13 +1,192 @@
-/* Slectors, simple ones in last 
-What concepts covered in this file:
-1. Pseudo-class selectors 
-2. Pesudo-element selectors
-3. Attribute selectors 
-4. Combinator selectors 
-5. Simple selectors
+/*
+     ******************
+
+     KEY CONCEPTS COVERED:
+     ---> ADDING CSS TO HTML - INLINE, INTERNAL, EXTERNAL
+     ---> SELECTORS - 
+
+     ******************
+
+
+*/
+
+
+
+/* There are 3 ways we add CSS to any HTML document one being used generally and 
+   that is external.
+   
+   In inline we use 'style' attribute to add css directly to HTML tags. 
+   e.g. <html style="background: red"> </html> 
+
+   In internal we add css within <style> element inside head tag.
+   e.g. <head>
+           <style>
+            html {
+                background: red;
+            }
+           </style>
+        </head> 
+
+   Finally, we use mostly external CSS, where we keep all styles in separate file and 
+   link to html using link tag in head. Additionally we need to mention relation of 
+   file linked with html that is "stylesheet" with rel attribute and we href attribute 
+   will have to address to the folder containing CSS. 
+   e.g. <link rel="stylesheet" href="../location"> 
+   
+   */
+
+
+
+
+/* As the name suggests selectors selects the html elements that we want to style and
+  we various types slectors in CSS: 
+
+  1. Simple or Basic selectors
+  2. Pseudo-class selectors 
+  3. Pesudo-element selectors
+  4. Attribute selectors 
+  5. Combinator selectors 
+
 
 
 */ 
+
+/* ----------------------------------------------  1.  Simple or Basic Selectors */
+
+/* Universal Selector selects all html elements 
+   
+
+*  {
+      ... 
+   }                           
+   
+   
+   
+   
+*/
+
+
+/*A common practice to do this in all css files (refer box-model)
+   * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: 'Times New Roman', Times, serif;
+       }
+*/ 
+
+/* Above is a css reset or also called normalization. It removes the default 
+margin and padding that browsers apply to some elements. The font family sets 
+deafult font family for entire document. border-box ensures that the width and height 
+of an element inlcude padding and border but not include the margin. 
+
+box-sizing:
+This property is all about how total width and height of an element is calculated. 
+By default box-sizing is set to content-box, this means when we give something 
+like height and width, it includes only the content ignoring padding, border 
+and margin. SO when we set it to border-box the width and height properties 
+include content as well as border and padding. Note here margin is ignored. 
+
+ (see this in box model file too). */
+
+ .content-box {
+    width: 500px;
+    background: yellow;
+    padding: 20px;   /*This makes content area wider 20px + 20px */ 
+    border: 10px solid red; /*This makes content area wider 10px + 10px */ 
+  /* Assigned width of div 500px but Actual width is  
+     500px + left padding + right padding + left border + right border 
+=    500px + 20px + 20px + 10px + 10px 
+=    560px (actual assigned 500px) 
+Note that margin would not be considered for calculation as it is outside the box. 
+*/
+
+}
+.scale {
+    width: 500px; // acts as a measurer to check 500px width below 
+    height: 50px;
+    background: wheat;
+    
+}
+.border-box {
+    box-sizing: border-box;  /* This will eliminate above content-box behaivour */
+    width: 500px;
+    padding: 50px; // included within assigned width 
+    border: 1px solid red;  // content is adjusted according to assigned width
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ID Selector uses id attribute of an html element. ID of an element is used to select
+only one unique element whereas class selectors can style many elemnts sharing common 
+class name. 
+Note: Id/class can not start with a number. 
+      # for id names and . for class names  
+                  
+Besides this we can directly target html elements by their name and also can group
+them like
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+Another important selector which we may come across 
+element.class Selector which is used to select the specified element 
+with the specified class.
+For example, p.intro selects only <p> elements with class="intro"
+
+Another important thing to note that we can have more than one class within one 
+html element separated by commas. 
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------------------------------------                       Slector:pseudo-class {
                                                                    property: value; 
@@ -255,121 +434,6 @@ and "adjacent" means "immediately following".*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------------------Simple Selectors */
-
-
-
-/* Universal Selector selects all html elements 
-   
-
-*  {
-      ... 
-   }                             */
-
-
-/*A common practice to do this in all css files (refer box-model)
-   * {
-          padding: 0;
-          margin: 0;
-          box-sizing: border-box;
-          font-family: 'Times New Roman', Times, serif;
-       }
-*/ 
-
-/* Above is a css reset or also called normalization. It removes the default 
-margin and padding that browsers apply to some elements. The font family sets 
-deafult font family for entire document. border-box ensures that the width and height 
-of an element inlcude padding and border but not include the margin. 
-
-box-sizing:
-This property is all about how total width and height of an element is calculated. 
-By default box-sizing is set to content-box, this means when we give something 
-like heigt and width we are not setting it to the element rather to its 
-content box or the area surronding it, In other words padding and margin are 
-ignored and margin is included in the calulation. 
-So to include padding and margin we use border-box. and  margin is avoided. 
- (see this in box model file too). */
-
-.content-box {
-    width: 500px;
-   
-    background: yellow;
-    border: 2px solid red; /*This makes content area wider 2px + 2px */ 
-  /* This make content area wider i.e. 500px + left padding + right padding + 4px= 
-                                                                        550px*/
-}
-.scale {
-    width: 500px;
-    height: 50px;
-    background: wheat;
-    
-}
-.border-box {
-    box-sizing: border-box;  /* This will eliminate above content-box behaivour */
-    width: 500px;
-    padding: 25px;
-    border: 2px solid blueviolet;
-}
-/* So When we set the box-sizing to border-box, the width and height properties include 
-the padding and border of the element not to conetent area. This can be helpful in maintaining a more 
-predictable layout, especially when dealing with elements that have padding and borders.*/
-
-
-
-
-
-
-
-
-
-
-
-/* ID Selector uses id attribute of an html element. ID of an element is used to select
-only one unique element whereas class selectors can style many elemnts sharing common 
-class name. 
-Note: Id/class can not start with a number. 
-      # for id names and . for class names  
-                  
-Besides this we can directly target html elements by their name and also can group
-them like
-
-h1, h2, p {
-  text-align: center;
-  color: red;
-}
-
-Another important selector which we may come across 
-element.class Selector which is used to select the specified element 
-with the specified class.
-For example, p.intro selects only <p> elements with class="intro"
-
-Another important thing to note that we can have more than one class within one 
-html element separated by commas. 
-
-
-*/
 
 
 
