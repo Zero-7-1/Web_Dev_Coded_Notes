@@ -6,6 +6,7 @@
       ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
       ---> VARIABLES - VAR, CONST, LET - HOISTING 
       ---> DATA TYPES - CONVERSION - METHODS & PROPERTIES OF TYPES 
+      ---> strict mode 
       ---> MATH OBJECT - DATA OBJECT                          
       
 
@@ -632,6 +633,22 @@ console.log(date2);
 
 
 
+
+// Strict Mode - it will not work here but just for understanding 
+/*
+"use strict";    // this should be in the first statement in the code 
+
+-> it forbids us to do certain things like using undeclared varibales, using objects 
+   before declaration, deleting is not allowed duplicate parameter names of functions
+   not allowed etc.
+-> it creates visible errors in dev console where generally js would be silent 
+-> introduced in ECMAScript version 5 
+-> Declared inside a function, it has local scope (only the code inside the function 
+   is in strict mode)
+-> overall we use to write more secure and clean js codes and is recommeded to use 
+   before writing the codes 
+
+*/ 
 
 
 
