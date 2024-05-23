@@ -1,3 +1,40 @@
+/*
+************************
+KEY CONCEPTS COVERED:
+--> BASIC OPERATORS AND PRECEDENCE 
+--> IF/ELSE STATEMENTS - IF, IF..ELSE & NESTING 
+--> SWTICH 
+--> TRUTHY AND FASLY VALUES 
+--> EQUALITY OPERATORS 
+--> BOOLEAN LOGIC AND LOGICAL OPERATORS, LOGICAL ASSIGNMENT  
+--> STATEMENT VS EXPRESSIONS 
+--> TERNARY OPERATORS 
+--> LOOPS - FOR, BREAK, CONTINUE & WHILE/DO WHILE LOOPS 
+
+*************************
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Control flow refers to the order in which statements are exceuted. 
 These statements allows us to make decisions, repeat actions, and control
 the flow of excecution of in our code. These are fundamentals to any 
@@ -361,3 +398,5 @@ while (i2<=5) {
 
 
 
+
+ 

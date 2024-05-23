@@ -19,7 +19,7 @@ typeof operator in JavaScript returns "object" for arrays
 */
 
 
-// Array using literal method 
+// Creatio of Array using literal method 
 const arr_name = ["item1", 
                 "item2", 
                 "and so on"];   // spaces and line breaks are not important 

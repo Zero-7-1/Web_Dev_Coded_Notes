@@ -6,9 +6,8 @@
       ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
       ---> VARIABLES - VAR, CONST, LET - HOISTING 
       ---> DATA TYPES - CONVERSION - METHODS & PROPERTIES OF TYPES 
-      ---> strict mode 
-      ---> MATH OBJECT - DATA OBJECT                          
-      
+      ---> MATH OBJECT - DATA OBJECT   
+      ---> strict mode                        
 
       ************
 */
@@ -151,7 +150,7 @@ In languages with block-level scope, variables declared within a block are
 only accessible within that block and any nested blocks. 
 Once the block is exited, the variables declared within it are no longer accessible.
 
-We shall see scope later in details 
+We shall see scope again in functions file 
  */
 
 
@@ -433,8 +432,7 @@ charArray[5] = charArray[5].toUpperCase();
 let newString = charArray.join(''); // joining back using join() 
 console.log(newString);
 
-// there are many more methods related to string we shall look over when in need  
-  // in a speparate dedicated strings methods file 
+// there are many more methods related to string we shall refer internet when needed   
 
 
 // 2. Numbers - with and without decimals 
@@ -494,7 +492,7 @@ console.log(MyBigInt2);
 /* Note that when using the BigInt() constructor, it will truncate any decimal part of 
 the number so appending n at end is the best method, Q. WHY ?  */
 
-// Numbers methods & Properties -- will have a dedicated file soon 
+// Numbers methods & Properties 
 
 let t = 500;
 let tX = t.toString(); //returns a number as string

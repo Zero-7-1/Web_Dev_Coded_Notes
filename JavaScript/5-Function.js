@@ -1,4 +1,12 @@
+/*
+  *****************
+  KEY CONCEPTS COVERED:
+  ---> FUNCTION - DECLARATION, EXPRESSION AND ARROW FUNCTION
 
+
+  *****************
+
+*/
 
 
   /*
@@ -8,7 +16,7 @@
    to the function, function can also return data too.  
 
    Functions in js are actually just values, its not a type, so if its a value 
-   we can store it in a variable 
+   we can store it in a variable, we will get back to this later. 
 */
 
 

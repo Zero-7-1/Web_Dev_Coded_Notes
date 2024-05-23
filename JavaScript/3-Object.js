@@ -1,7 +1,9 @@
 /*
   ***************
   KEY CONCEPTS COVERED: 
+  (BASICS)
   ---> OBJECTS - NON-PRIMITIVE DATA TYPE 
+  ---> OBJECT CREATION 
   ***************
 
 
@@ -10,58 +12,53 @@
 */
 
 
-
-
-
-
-
-
-
-// CONCEPT OF OBJECTS
 /* 
+  Q. DEFINE OBJECT
 - Objects in js are non-primitive data types which represents a collection of key value 
-pairs i.e. Properties of the object, where keys are Strings or Symbol and value is any data type (including other objects).
-- Objects can also be defined as variables but not with single value rather multiple values.
+  pairs i.e. Properties of the object, where keys are Strings or Symbol and value 
+  is any data type (including other objects).
+- Objects can also be defined as variables but not with single value rather 
+  multiple values.
 - Examples of objects are:
-1. Date, Maths & RegExp       // ( All are Instances of built in classes)
+1. Date, Maths & RegExp ( All are the Instances of a built in classes)
 2. Arrays 
 3. Functions
-4. Boolean, number & string (when used with new keyword) - Primitive types can be coverted 
-    to objects (rarely done) when used with new keyword. This is known as autoboxing. 
-    e. g. var num = new Number(42); // Creates a Number object
-- Primitive values (strings, numbers, booleans) in JavaScript behave like immutable objects
- in the sense that operations on them return new values without modifying the original. 
- While they are not technically objects in the JavaScript type system, they exhibit behaviors 
- that resemble object-like behavior. 
-- JavaScript object also inherits the properties of another object, known as its “prototype.”
+4. Boolean, number & string (when used with new keyword) 
+   Primitive types can be coverted 
+   to objects (rarely done) when used with new keyword. 
+   This is known as autoboxing.    Q. CAN YOU SAY WHAT IS AUTOBOXING IN JS ? 
+   e. g. var num = new Number(42); // Creates a Number object
 
+- JavaScript object also inherits the properties of another object, 
+  known as its “prototype.” (later in OOPS)
+
+Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ? 
 - Categories of JavaScript Objects:
 1. Native Object: Defined by the ECMAScript specification, such as arrays, functions, 
-dates, and regular expressions.
+                  dates, and regular expressions.
 2. Host Object: An object defined by the host environment (e.g., a web browser) 
-in which the JavaScript interpreter is embedded. HTMLElement objects in web browsers are 
-examples of host objects.
+                in which the JavaScript interpreter is embedded. 
+                HTMLElement objects in web browsers are 
+                examples of host objects which we use for DOM Manipulation.
 3. User-Defined Object: Any object created by the execution of JavaScript code.
 */
 
 
+//     Object Creation  Q. EXPALIN VARIOUS WAYS OF OBJECT CREATION.
 
-
-// ------------------------------------------------------------ Object Creation 
-
-/* 1. Creating object simply by using literal method i.e. using curly brace and defining 
-key-value pairs to initialize object's properties. 
+/* 1. Creating object simply by using literal method i.e. using curly brace and 
+defining key-value pairs to initialize object's properties. 
 */ 
 
 const Hotel = {    
-hotelName:"StarLight", //Hotel object is a single insatance of a generic or specific hotel 
-rooms:200,                  // from the real world. 
-booked:120,   // key-vlaue pairs i.e. properties. 
-roomTypes:["Single", "Double", "Triple"],  // Array (look array.js) of room types.  
+hotelName:"StarLight",  
+rooms:200,                  
+booked:120,    
+roomTypes:["Single", "Double", "Triple"],  // Array (refer Array.js) 
 checkAvailability: function() {      
     return this.rooms - this.booked
-      /* this keyword is used to indicate that it is using the rooms and booked properties 
-                  of this object*/ 
+      /* this keyword is used to indicate that it is using the rooms and 
+      booked properties of this object, we shall see this later in details*/ 
   }
 };
 console.log(Hotel.checkAvailability());  
@@ -84,8 +81,8 @@ In general, property names that are reserved words must be quoted in ECMAScript 
 
 console.log(point2);                    
 /*  Accessing properties or functions using dot notation 
-the dot is known as memeber  operator which has object to its left and properties or 
-functions to its right */
+    the dot is known as memeber  operator which has object to its left and 
+    properties or functions to its right */
 
 
 // 2. Creating object by Constructor Notation
@@ -117,7 +114,7 @@ function myFunc() {
    to the object's property.
 */
 
-// Anonymous Functions (refer fun.js)
+// Anonymous Functions (Also refer Function.js)
 const myNewObject2 = new Object();
 myNewObject2.info2 = 'I am a shiny new object';
 myNewObject2.showInfo2 = function() {
@@ -142,7 +139,7 @@ this.funName = function() {     // this is too anonymous function.
 }
 }
 /* 'this' Keyword indicates that properties and methods belongs to the object 
-that this function creates.(refer this.js file) */
+that this function creates.(we shall see this later ) */
 
 const Person1 = new Person("John", "Wick", 45);
 Person1.firstName = "Johnathan";  // Changing the property. 
