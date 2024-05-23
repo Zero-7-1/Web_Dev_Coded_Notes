@@ -125,14 +125,16 @@ function cutFruit(fruit){
 
 }
 
-
-
-
-
 function jucieMaker(apple, orange) {
-    const jucie = `Jucie with ${apple} apple and ${orange} oranges`;
+    const applePiece = cutFruit(apple); // calling cutFruit()
+    const OrangePiece = cutFruit(orange); // calling function in another function 
+    const jucie = `Jucie with ${applePiece} apple pieces and 
+                   ${OrangePiece} oranges pieces`;
     return jucie;
 }
 
 myJuice = jucieMaker(1,3);
-console.log(myJuice); // return say juice with no of fruits 
+console.log(myJuice); // return say juice with no of fruits pieces  
+
+
+
