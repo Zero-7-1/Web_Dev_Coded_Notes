@@ -394,14 +394,14 @@ exact value.
 
 
 // WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  METHODS & PROPERTIES.  
-
+ 
 // JS has 7 primitive data types and 1 reference data type (Object)
 
 // 1. Strings - textual data within single or double quotes 
 
 let text = "Sudhanshu Sekhar Barik"
-let lenghth = text.length   // length property (note this not a function or method)
-console.log("Your name's lenghth is " + lenghth + " including spaces");
+let length = text.length   // length property (note this not a function or method)
+console.log("Your name's lenghth is " + length + " including spaces");
 
 // slicing - substring() with two index no. to slice in between  
 let originalString = "Sudhanshu";
@@ -432,11 +432,13 @@ charArray[5] = charArray[5].toUpperCase();
 let newString = charArray.join(''); // joining back using join() 
 console.log(newString);
 
-// there are many more methods related to string we shall refer internet when needed   
+// there are many more methods related to string we shall refer internet or
+// ChatGPT when needed   
 
 
 // 2. Numbers - with and without decimals 
 // Extra large or extra small numbers can be written with scientific notation
+// Q. SOMETIMES WE HAVE 'E' WITHIN A NUMBER, WHAT IS IT ? 
 let a = 123e5;
 let b = 123e-5;
 console.log(a);
@@ -454,9 +456,9 @@ console.log(d);
 value we get due of meaningless operations on numbers
 */
 let x = 100/"Ten"; // NaN  
-let y = 100/"10"; // is valid but o/p will be string Q. WHY ? 
+let y = 100/"10"; // is valid but o/p number Q. WHY ? 
 console.log(x);
-console.log(y);
+console.log(typeof(y));
 // To check if a value is NaN, we can use the isNaN() function
 let value = NaN;
 console.log(isNaN(value));
@@ -465,16 +467,19 @@ console.log(isNaN(value));
 // similarly infininty indicate that number outside the largest possible number  
 
 // There are various number methods like 
+// toFiexed()
 const num = 3.14159265359;
 const formattedNum = num.toFixed(2); // Formats  decimal places
 console.log(formattedNum); // Output: "3.14"
 console.log(typeof(formattedNum)); // note that all methods will return string Q. why?
 
+// toPrecision()
 const num2 = 12345.6789;
 const formattedNum2 = num2.toPrecision(7); // formats with a significant digits. 
 console.log(formattedNum2); //  note that outputs are rounded. 
 console.log(typeof(formattedNum2)); //  note that outputs are rounded. 
 
+// toExponential 
 const num3 = 12345.6789;
 const formattedNum3 = num3.toExponential(2); // formats to exponential notation  
 console.log(formattedNum3); // Output: "1.23e+4"
@@ -494,13 +499,10 @@ the number so appending n at end is the best method, Q. WHY ?  */
 
 // Numbers methods & Properties 
 
+// toString
 let t = 500;
 let tX = t.toString(); //returns a number as string
-console.log(500 + tX); 
-
-let d2 = 4.1234;
-let d3 = d2.toFixed(2); // returns a string number with specified no. of decimals 
-console.log("d3 value is " + d3); 
+console.log(500 + tX);  
 
 
 // 4. Boolean - Two values T or F 
@@ -539,6 +541,11 @@ console.log(myObj[mySymbol]);  // Hello, Symbol!
 
 
 
+
+
+
+
+
 // js non-primitive (reference types)
 
 
@@ -550,6 +557,13 @@ stored in the heap memory and accessed by reference  */
    -> Arrays 
    -> Functions 
    -> Date & Math Objects  */
+
+
+
+
+
+
+
 
 
 /* The JavaScript Math object helps us to perform mathematical tasks on numbers. */

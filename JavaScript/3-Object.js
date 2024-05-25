@@ -16,13 +16,15 @@
   Q. DEFINE OBJECT
 - Objects in js are non-primitive data types which represents a collection of key value 
   pairs i.e. Properties of the object, where keys are Strings or Symbol and value 
-  is any data type (including other objects).
+  is any data type (including other objects). It is a data structure too like arrray. 
 - Objects can also be defined as variables but not with single value rather 
   multiple values.
 - Examples of objects are:
 1. Date, Maths & RegExp ( All are the Instances of a built in classes)
+
 2. Arrays 
 3. Functions
+
 4. Boolean, number & string (when used with new keyword) 
    Primitive types can be coverted 
    to objects (rarely done) when used with new keyword. 
@@ -41,12 +43,22 @@ Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ?
                 HTMLElement objects in web browsers are 
                 examples of host objects which we use for DOM Manipulation.
 3. User-Defined Object: Any object created by the execution of JavaScript code.
+
+
+Q. WHICH ONE YOU SHOULD USE OBJECT OR ARRAY ? AND WHY ? 
+Arrays and Objects both data strcutures are used to essentially group together 
+different variables that belongs together. The big difference is that in Objects the 
+order does not matter while retrieval but in Arrays the order in which specify the
+element matter while retreival. Hence we should use Arrays for more ordered data and
+Objects is best for unstructured data.  
+
+
 */
 
 
-//     Object Creation  Q. EXPALIN VARIOUS WAYS OF OBJECT CREATION.
+//  Object Creation  Q. EXPALIN VARIOUS WAYS OF OBJECT CREATION.
 
-/* 1. Creating object simply by using literal method i.e. using curly brace and 
+/* Creating object simply by using literal method i.e. using curly brace and 
 defining key-value pairs to initialize object's properties. 
 */ 
 
@@ -61,7 +73,161 @@ checkAvailability: function() {
       booked properties of this object, we shall see this later in details*/ 
   }
 };
-console.log(Hotel.checkAvailability());  
+  
+/*  Q. WHAT ARE THE DIFFERENT WAYS OF ACCESIING DATA THAT IS PROPERTIES AND METHODS 
+       IN AN OBJECT ? WHAT IS THE BEST WAY AND WHY ? 
+    Accessing properties or functions using dot notation 
+    the dot is known as memeber  operator which has object to its left and 
+    properties or functions to its right
+    Another method to access data in object is Bracket Notataion */
+
+console.log(Hotel);
+console.log(Hotel.hotelName); // dot will retrive data from Hotel Object 
+console.log(Hotel.checkAvailability()); 
+console.log(Hotel['checkAvailability']());  // bracket notation, key name as string
+
+
+/*
+Q. WHATS THE DIFFERENCE BETWEEN THE USAGE OF DOT AND BRACKET NOATION ? 
+
+We generally use dot notation when we know the name of the property, and is a 
+valid identifier for the value (that is no spaces, starts with letter etc.). Whereas 
+we use bracket notation when property name is stored in a variable, contains special
+character or is not valid identifier. 
+
+In the bracket notation we can actually use an expression which computes to a value 
+and this value severs as key for accessing property.
+
+Dot Notation only allows static keys while Bracket Notation accepts dynamic keys. 
+Static key here means that the key is typed directly, while Dynamic key  means 
+that the key is evaluated from an expression.
+
+*/
+let personX = {
+  "name": "Alice",
+  "age": 25,
+  "favorite color": "blue"
+};
+console.log(personX["name"]); // normal bracket notation
+let prop = "name";   // property name is stored in a variable outside object 
+console.log(personX[prop]); // ["prop"] wrong, no need of quotes for variable here 
+
+const ehh = {
+  "firstName":"ABC",
+  "lastName":"XYZ"
+}
+const nameKey = "Name";
+console.log(ehh['first' + nameKey]); // evaluates to firstName 
+console.log(ehh['last' + nameKey]);  // evaluates to lastName 
+
+
+
+
+// Q. EXPLAIN REAL-WORLD SCENES WHERE WE WOULD WANT TO USE BRACKET NOTATION ? 
+/* When we need to compute the property name first then we must use bracket 
+   notation */
+
+// 1. When property name has spaces or any other special characters
+// For example an object conataining CSS styles  
+let styles = {
+  "background-color": "blue",
+  "font-size": "14px"
+};
+console.log(styles["background-color"]); 
+
+// 2. When property name starting with a number 
+let data = {
+  "2020": 100,
+  "2021": 200
+};
+console.log(data["2020"]); 
+
+// 3. Property names defined at runtime 
+/* suppose we are building an object that based on user input or data 
+from API 
+*/
+let userInput = "favoriteColor"; // let it be a user feild 
+let value = "blue";  // user choice 
+
+let userPreferences = {}; // let it empty object 
+userPreferences[userInput] = value; // Using bracket notation to set the property
+console.log(userPreferences.favoriteColor); // Outputs: blue
+
+// 4. Accessing nested properties dynamically 
+// 5. Accessing properties in loops 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Accessing Propertires 
+const College = {
+  name: "IMIT",
+  type: "State Govt."
+};   
+College.city = "Cuttack"; // Adding new Property 
+console.log(College.type);  // Dot Notation 
+console.log(College.city); // Vewing newly added property 
+
+const College2 = {
+  name: "NIT",
+  type: "Central Govt."
+};   
+College2["City"] = "Rourkela";    // Adding new property 
+const PropertyName = "type"
+console.log(College2["name"]);       // Bracket Notation 
+console.log(College2[PropertyName]); // using another variable
+console.log(College2["City"]);     // Viewing new property
+/* Bracket notation allows to access object properties dynamically which 
+can be helpful we don't know the property name in advance.
+Sometimes, property names in objects can contain spaces or special characters 
+that are not valid for dot notation. Bracket notation allows us to access 
+these properties without any issues.*/
+
+/* Deletion - delete keyword is used like delete College.city or 
+                                             delete College2["City"] */
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // More complex values like point2 
 const point = {
@@ -72,17 +238,29 @@ const point2 = {
 x:point.x,
 y: point.y + 1
 };
-/* The x property is assigned the same value as the x property of another object called point,
- and the y property is assigned a value that is one greater than the y property of the point 
- object. */
+/* The x property is assigned the same value as the x property of another 
+   object called point, and the y property is assigned a value that is 
+   one greater than the y property of the point object. */
 
 /* In ECMAScript 5, reserved words may be used as property names without quoting but
 In general, property names that are reserved words must be quoted in ECMAScript 3*/
 
 console.log(point2);                    
-/*  Accessing properties or functions using dot notation 
-    the dot is known as memeber  operator which has object to its left and 
-    properties or functions to its right */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 2. Creating object by Constructor Notation
@@ -221,63 +399,76 @@ class testClass {
  
  
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
- // III. OBJECTS PROPERTIES -------------------------------------------------------------------------- 
+ // More about Object Properties  
  
  /* Object's - Together the key-value pair is also known as property of a object. */
-// Accessing Propertires 
- const College = {
-  name: "IMIT",
-  type: "State Govt."
-};   
-College.city = "Cuttack"; // Adding new Property 
-console.log(College.type);  // Dot Notation 
-console.log(College.city); // Vewing newly added property 
 
-const College2 = {
-  name: "NIT",
-  type: "Central Govt."
-};   
-College2["City"] = "Rourkela";    // Adding new property 
-const PropertyName = "type"
-console.log(College2["name"]);       // Bracket Notation 
-console.log(College2[PropertyName]); // using another variable
-console.log(College2["City"]);     // Viewing new property
-/* Bracket notation allows to access object properties dynamically which 
-can be helpful we don't know the property name in advance.
-Sometimes, property names in objects can contain spaces or special characters 
-that are not valid for dot notation. Bracket notation allows us to access these properties 
-without any issues.*/
-
-/* Deletion - delete keyword is used like delete College.city or delete College2["City"] */
-
-// for...in statement loops through the properties of the object
-// Bracket notation is used for this case too. 
-const forLoop = {
-  firstIteration: "John",
-  SecondIteration: "Doe",
-  ThirdIteration: 7
-};
-for (const Looping in forLoop) {
-  console.log(Looping, forLoop[Looping]);
-}
-/*for...in is commonly used when we need to iterate over the properties of an object 
-without knowing the property names in advance, such as when serializing objects to JSON, 
-implementing generic object manipulations, or performing tasks like deep object traversal.*/
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
  
  
  /* Properties can usually be changed, added, and deleted, but some are read only. 
