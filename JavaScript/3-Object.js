@@ -1,9 +1,13 @@
 /*
   ***************
   KEY CONCEPTS COVERED: 
-  (BASICS)
+  --BASICS--
   ---> OBJECTS - NON-PRIMITIVE DATA TYPE 
   ---> OBJECT CREATION 
+  ---> ACCESSING OBJECT DATA - DOT VS BRACKET NOTATION 
+
+  --ADVANCED--
+  ---> 
   ***************
 
 
@@ -51,8 +55,6 @@ different variables that belongs together. The big difference is that in Objects
 order does not matter while retrieval but in Arrays the order in which specify the
 element matter while retreival. Hence we should use Arrays for more ordered data and
 Objects is best for unstructured data.  
-
-
 */
 
 
