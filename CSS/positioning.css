@@ -3,7 +3,14 @@ Postioning specifies type of postion method for an element.
 It is a layout technique used to control the placement of elements on a web page. 
 After specifying the postion type the top, left, buttom and right
 properties are used to adjust the postioning. 
+Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND 
+   RELATIVE POSTIONS. EXPLAIN FIXED POSTION.  
+
 */
+
+
+
+
 
 /* 1. Static postion is the default postion of an element that is not 
        positoned in any special way. Static positioned elements are not 
@@ -17,50 +24,122 @@ properties are used to adjust the postioning.
 /* When we add another element under this, it just goes at buttom of previous element */
 
 
-/* 2. Relative Postion - positioned relative to its normal position, it takes that original 
-position and we can apply some changes or move it to realtive to where it should be */
-.relative {
+
+
+
+
+
+
+
+
+
+/* 2. Relative Postion - Generally we make parent element relative and its children
+      inside the parent we make absolute. By this we can now postion the child 
+      elements anywhere inside the parent.  */
+
+
+/* Just adjustment of relative postion name*/    
+.Relative{
+    padding-top: 50px;
+}
+
+
+.parent-div {
+    position: relative; /*if we remove this then it will be under static div*/
     height: 300px;
     width: 500px;
-    position: relative; /*if we remove this then it will be under static div*/
     top: 40px;
-    left: 350px;
+    margin-left: 350px; /* We could just write top, buttom, left, right 
+                              while using positions, no need to mention margin */
     border: 3px solid rgb(15, 15, 15);
     background-color: rgb(152, 226, 14);
 }
-/* Simply relative means relative to its supposed or original location nothing else */
 
 
-/* 3. Absolute Postion - is positioned relative to the nearest positioned ancestor. 
-If there is no such ancestor, it's positioned relative to top left corner of web page 
-This makes element  moves along with page scrolling.
-Note: Absolute positioned elements are removed from the normal flow, 
-     and can overlap elements. 
-     
-If we want to adjust position of a child div within a parent then make child absolute 
+/* 3. Absolute Postion - Elements with position absolute are positioned relative 
+      to their nearest positioned ancestor. If no such ancestor exists, 
+      they are positioned relative to the initial containing block 
+      (usually the <html> or <body>). We can set postions of these elements with
+      respect to its ancestor element generally a relative. 
 
-     
-     */
-.absolute-1 {
+*/
+
+
+
+
+.child-div-1 {
+    position: absolute;
     height: 50px;
     width: 100px;
-    position: absolute;
-    right: 5px;
-    bottom: 0;
-    top: 0;
-    border: 3px solid black;
+    right: 0px;     
+    bottom: 0px; /* When both top and buttom is used top takes precedence and 
+                    buttom is ignored so if we want this div to be in buttom
+                    we have to remove top see second div. Also same goes for 
+                    left and right, left will take precedence */
+    top: 0px;
+    border: 3px solid red;
     background-color: rgb(0, 55, 255);
 }
-
-.absolute-2 {
+  
+.child-div-2 {
+    position: absolute;
     height: 50px;
     width: 100px;
-    position: absolute;
-    right: 5px;
-    bottom: 0;
-    border: 3px solid black;
-    background-color: rgb(157, 234, 13);
+    left: 0px;
+    bottom: 0px;
+    border: 3px solid red;
+    background-color:pink;
 }
+
+
+.child-div-3 {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    right: 0px;
+    bottom: 0px;
+    border: 3px solid red;
+    background-color: yellow;
+}
+
+.child-div-4 {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    left: 0px;
+    top: 0px;
+    border: 3px solid red;
+    background-color: white;
+}
+
+/* Centering inside div using calculations 
+  Centering Horizonatlly - Total Width of Paren Div - Width of children div 
+                                                       (should be same)  
+                            = Result / 2  
+  Centering Vertically - take height rest is same  
+  This is a method we have better ways like transfrom which we shall see */
+.child-div-5 {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    left: 200px;
+    top: 125px;
+    border: 3px solid pink;
+    background-color: red;
+}
+
+/*   
+  Q. WHAT IS THE DEFAULT POSTIONING OF AN ELEMENT WITH POSITION ABSOLUTE ? 
+    By Default, an element with postion absolute is positioned at top-left (0,0)
+    corner of its containing parent 
+
+  Q. HOW CAN WE ENSURE THAT AN ELEMENT WITH POSTION ABSOLUTE IS POSITIONED RELATIVE
+     TO THE ENTIRE VIEWPORT ? 
+     By ensuring that its none of its ancestors have a position property set other than
+     default one static. 
+
+
+*/
 
 
 
@@ -68,7 +147,8 @@ If we want to adjust position of a child div within a parent then make child abs
 
 
 /* 4. Fixed Postion - is positioned relative to the viewport, 
-which means it always stays in the same place even if the page is scrolled.*/ 
+which means it always stays in the same place even if the page is scrolled.
+Generally used for menu bar or nav bar.*/ 
 .fixed {
     position: fixed;
     height: 50px;
@@ -78,5 +158,25 @@ which means it always stays in the same place even if the page is scrolled.*/
     border: 3px solid yellowgreen;
     background-color: aqua;
 }
+ 
 
+
+
+
+/*5. Sticky - An element with position sticky is positioned based on the 
+     user's scroll position, In other words it acts as fixed only in its 
+     container or specified div and after that we scrolls down the div it 
+     goes.
+     It is a hybrid of relative and fixed position
+*/
+
+  .sticky-div {
+    background-color: yellow;
+    margin-top:60px;
+    padding-top: 2px;
+  }
+  .makemesticky {
+    position: sticky;
+    top:0;
+  }
 
