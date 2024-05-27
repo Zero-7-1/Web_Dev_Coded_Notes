@@ -54,7 +54,7 @@ const snacks = new Array('Biscuit', 'KurKure', 'Cake');
 p = `My favourite Snacks is ${snacks[0]}`;
 console.log(p);
 
-
+  
 
 
 

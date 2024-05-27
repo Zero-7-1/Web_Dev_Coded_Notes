@@ -10,7 +10,7 @@
   ---> 
   ***************
 
-
+  
 
 
 */
@@ -24,12 +24,12 @@
 - Objects can also be defined as variables but not with single value rather 
   multiple values.
 - Examples of objects are:
-1. Date, Maths & RegExp ( All are the Instances of a built in classes)
+  1. Date Object, Maths Object & RegExp 
 
-2. Arrays 
-3. Functions
+  2. Arrays 
+  3. Functions
 
-4. Boolean, number & string (when used with new keyword) 
+  4. Boolean, number & string (when used with new keyword) 
    Primitive types can be coverted 
    to objects (rarely done) when used with new keyword. 
    This is known as autoboxing.    Q. CAN YOU SAY WHAT IS AUTOBOXING IN JS ? 
@@ -37,6 +37,10 @@
 
 - JavaScript object also inherits the properties of another object, 
   known as its “prototype.” (later in OOPS)
+
+- As we know from OOPs languages that objects are instances of class. But here in js 
+  it is bit different from other oops languages. JS uses prototype based inheritence.
+  When we create an object in JS, it is based on object.prototype. (refer OOPs.js file)
 
 Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ? 
 - Categories of JavaScript Objects:
@@ -52,8 +56,8 @@ Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ?
 Q. WHICH ONE YOU SHOULD USE OBJECT OR ARRAY ? AND WHY ? 
 Arrays and Objects both data strcutures are used to essentially group together 
 different variables that belongs together. The big difference is that in Objects the 
-order does not matter while retrieval but in Arrays the order in which specify the
-element matter while retreival. Hence we should use Arrays for more ordered data and
+order does not matter while retrieval but in Arrays the order in which we specify the
+element matters while retreival. Hence we should use Arrays for more ordered data and
 Objects is best for unstructured data.  
 */
 
@@ -87,6 +91,7 @@ console.log(Hotel);
 console.log(Hotel.hotelName); // dot will retrive data from Hotel Object 
 console.log(Hotel.checkAvailability()); 
 console.log(Hotel['checkAvailability']());  // bracket notation, key name as string
+console.log(Hotel['roomTypes']);       // note where we keep () in function in bracket way
 
 
 /*
@@ -114,20 +119,22 @@ console.log(personX["name"]); // normal bracket notation
 let prop = "name";   // property name is stored in a variable outside object 
 console.log(personX[prop]); // ["prop"] wrong, no need of quotes for variable here 
 
+// evaluates to an expression corresponding to key 
 const ehh = {
   "firstName":"ABC",
   "lastName":"XYZ"
 }
-const nameKey = "Name";
-console.log(ehh['first' + nameKey]); // evaluates to firstName 
-console.log(ehh['last' + nameKey]);  // evaluates to lastName 
+const nameKey = "Name";  // ignoring first and last here 
+console.log(ehh['first' + nameKey]); // evaluates to firstName through concatnation 
+console.log(ehh['last' + nameKey]);  // evaluates to lastName through concatnation 
 
 
 
 
 // Q. EXPLAIN REAL-WORLD SCENES WHERE WE WOULD WANT TO USE BRACKET NOTATION ? 
 /* When we need to compute the property name first then we must use bracket 
-   notation */
+   notation
+   Examples  */
 
 // 1. When property name has spaces or any other special characters
 // For example an object conataining CSS styles  
@@ -155,83 +162,36 @@ let userPreferences = {}; // let it empty object
 userPreferences[userInput] = value; // Using bracket notation to set the property
 console.log(userPreferences.favoriteColor); // Outputs: blue
 
-// 4. Accessing nested properties dynamically 
-// 5. Accessing properties in loops 
-
- 
+// there are some more and we should come back to it later 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// Accessing Propertires 
+ // Accessing Propertires using Dot and Bracket Notations 
 const College = {
   name: "IMIT",
   type: "State Govt."
-};   
-College.city = "Cuttack"; // Adding new Property 
-console.log(College.type);  // Dot Notation 
-console.log(College.city); // Vewing newly added property 
+};  
+
+College.city = "Cuttack"; // Adding new Property using dot notation 
+console.log(College); // Vewing newly added property 
 
 const College2 = {
   name: "NIT",
   type: "Central Govt."
 };   
-College2["City"] = "Rourkela";    // Adding new property 
-const PropertyName = "type"
-console.log(College2["name"]);       // Bracket Notation 
-console.log(College2[PropertyName]); // using another variable
+
+College2["City"] = "Rourkela";    // Adding new property  using bracket notation 
 console.log(College2["City"]);     // Viewing new property
-/* Bracket notation allows to access object properties dynamically which 
-can be helpful we don't know the property name in advance.
-Sometimes, property names in objects can contain spaces or special characters 
-that are not valid for dot notation. Bracket notation allows us to access 
-these properties without any issues.*/
+// Similarly we could create functions in object 
 
-/* Deletion - delete keyword is used like delete College.city or 
-                                             delete College2["City"] */
+/* Deletion - delete keyword is used like  
+                     delete  College.city or 
+                     delete  College2["City"] */
 
 
 
 
 
-
-
-
-
-
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// More complex values like point2 
+// More complex values in objects like in point2 
 const point = {
   x:1, 
   y:1
@@ -254,21 +214,10 @@ console.log(point2);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// 2. Creating object by Constructor Notation
-/* The 'new' keyword and the object constructor creates a blank object, then we can add properties and 
-methods to the object using dot noation. */ 
-const hotel2 = new Object(); // this constructor function is part of js lang used to create objects. 
+// Another way for Creating objects is by Constructor Notation
+/* The 'new' keyword and the object constructor creates a blank object, 
+then we can add properties and methods to the object using dot noation. */ 
+const hotel2 = new Object(); 
 hotel2.name = "MoonKnight";
 hotel2.rooms = 40;
 hotel2.booked = 20;
@@ -283,16 +232,16 @@ console.log(hotel2.name);
 
 const myNewObject = new Object();
 myNewObject.info = 'I am a shiny new object';
-function myFunc() {
+function myFunc() {  // note that we have not assigned this function to object property 
   console.log(this.info);
   };
-  myNewObject.showInfo = myFunc;  // do not use here () as we are just assigning not calling  
+  myNewObject.showInfo = myFunc;  // no () here as we are just assigning not calling  
   myNewObject.showInfo();
 
-  /* In the first case, the method is defined directly when assigning it to the object property.
-  In the second case, the method is defined separately as a named function (myFunc) and then assigned
-   to the object's property.
-*/
+  /* In the first case, the method is defined directly when assigning it to the object 
+    property. In the second case, the method is defined separately as a named function 
+    (myFunc) and then assigned to the object's property.
+  */
 
 // Anonymous Functions (Also refer Function.js)
 const myNewObject2 = new Object();
@@ -301,8 +250,116 @@ myNewObject2.showInfo2 = function() {
   console.log(this.info2);
   }
 myNewObject2.showInfo2();
-// haven’t needed to give a name to our function prior to assigning it, this
+// not needed to give a name to our function prior to assigning it, this
 //       technique is referred to as using an anonymous function.
+
+
+
+// Explanation of 'this' keyword  Q. EXPLAIN 'THIS' KEYWORD ? 
+
+const myProfile = {
+  myName:"Sudhanshu",
+  BirthYear: 1999,
+  hasDriversLicense: true,
+  calculateAge: function(BirthYear) {
+                let currentDate = new Date() // created data object inside the function 
+                let CurrentYear = currentDate.getFullYear();
+                return CurrentYear - BirthYear
+                  }
+};
+console.log(myProfile.calculateAge(1999));
+/* Note that we already have this year in the object and so again passing 
+   the year here in function is not ideal, so what if we could use that mentioned 
+   year in object directly in function. Well thats possible using 'this'. 
+   
+   The this keyword in JavaScript is a special identifier that refers to the 
+   context in which a function is executed. The value of this can vary depending on 
+   how a function is called. 
+   Like here in When a function is called as a method of an 
+   object, this refers to the object that owns the method.
+
+   In an event handler, this refers to the element that received the event.
+
+   Arrow functions do not have their own this context. Instead, they inherit this 
+   from the enclosing lexical context. (see Function.js)
+
+   In the global execution context (outside any function), this refers to the 
+   global object. In a browser, this is typically window.   
+   Q. IN GLOBAL EXCECUTION CONTEXT OUTSIDE ANY FUNCTION THIS REFERS TO WHAT ? 
+    */
+
+
+   // better version using this 
+   const myProfile2 = {
+    myName:"Sudhanshu",
+    BirthYear: 1999,
+    hasDriversLicense: true,
+    calculateAge: function(BirthYear) {
+                  let currentDate = new Date() // created data object inside the function 
+                  let CurrentYear = currentDate.getFullYear();
+                  return CurrentYear - this.BirthYear 
+                    }
+  };
+  console.log(myProfile2.calculateAge());
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -356,68 +413,6 @@ console.log(person3);
 person3.sayHello();
 
  
-
-
-
-
-
-// JavaScript includes built-in constructors for native types.
-const myArray= new Array(1,2,3);
-console.log(myArray);    //OP-Line-4 
-const Today= new Date();
-console.log(Today);     // OP-Line-5 
-/* The RegExp constructor is used to create 
-regular expressions for pattern matching */
-const pattern = new RegExp("JS", "i");
-let text = "JavaSricpt is awesome";
-console.log(pattern.test(text));      // OP-Line-6
-let myString = new String("Hello JS");
-console.log(myString.charAt(0));     // OP-Line-7
-/* JS primitives can behave like objects too when used with new */ 
-
-
-
-/* 3. Class Syntax new to ES6  */
-class testClass {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
- }
- let myName = new testClass("Sudhanshu", "Sekhar Barik");
- console.log(myName);
- console.log(myName.firstName);  //  Accessing particular property 
-// (More detailed study about class in class.js)
-
-// there are some more ways but for now lets work on these. 
-
-
-
-
-
-
-
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
