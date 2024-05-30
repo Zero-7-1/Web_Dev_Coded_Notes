@@ -17,7 +17,7 @@
 
 
 /* 
-  Q. DEFINE OBJECT
+  Q. EXPLAIN WHAT IS OBJECT IN JS ? 
 - Objects in js are non-primitive data types which represents a collection of key value 
   pairs i.e. Properties of the object, where keys are Strings or Symbol and value 
   is any data type (including other objects). It is a data structure too like arrray. 
@@ -54,6 +54,7 @@ Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ?
 
 
 Q. WHICH ONE YOU SHOULD USE OBJECT OR ARRAY ? AND WHY ? 
+   (IMP)
 Arrays and Objects both data strcutures are used to essentially group together 
 different variables that belongs together. The big difference is that in Objects the 
 order does not matter while retrieval but in Arrays the order in which we specify the
@@ -90,31 +91,29 @@ checkAvailability: function() {
 console.log(Hotel);
 console.log(Hotel.hotelName); // dot will retrive data from Hotel Object 
 console.log(Hotel.checkAvailability()); 
-console.log(Hotel['checkAvailability']());  // bracket notation, key name as string
+console.log(Hotel['checkAvailability']());  // bracket notation, key name as a string
 console.log(Hotel['roomTypes']);       // note where we keep () in function in bracket way
 
 
 /*
-Q. WHATS THE DIFFERENCE BETWEEN THE USAGE OF DOT AND BRACKET NOATION ? 
-
-We generally use dot notation when we know the name of the property, and is a 
-valid identifier for the value (that is no spaces, starts with letter etc.). Whereas 
-we use bracket notation when property name is stored in a variable, contains special
-character or is not valid identifier. 
-
-In the bracket notation we can actually use an expression which computes to a value 
-and this value severs as key for accessing property.
-
-Dot Notation only allows static keys while Bracket Notation accepts dynamic keys. 
-Static key here means that the key is typed directly, while Dynamic key  means 
-that the key is evaluated from an expression.
-
+Q. WHATS THE DIFFERENCE BETWEEN THE USAGE OF DOT AND BRACKET NOTATION ? OR 
+   WHEN WE SHOULD CONSIDER TO USE BRACKET NOTATION ?
+  (V.IMP)
+  The simplest and the easiest way is to use dot notation especially when we know 
+  the property that we're going to use very well. But there are many cases where we have to 
+  use bracket notations. And the advantage of bracket notation is that we can use an 
+  expression which computes to a value and this value severs as key for accessing property.
+  This is most helpful when we don'nt know the property yet or property name is not a
+  valid js identifer.
 */
 let personX = {
-  "name": "Alice",
-  "age": 25,
-  "favorite color": "blue"
-};
+  name: "Alice",
+  age: 25,
+  "favorite color": "blue"  
+ };  /* Note that it's not necessary to enclose keys in double quotes unless 
+        they contain special characters, spaces, or are not valid JavaScript 
+        identifiers. */
+
 console.log(personX["name"]); // normal bracket notation
 let prop = "name";   // property name is stored in a variable outside object 
 console.log(personX[prop]); // ["prop"] wrong, no need of quotes for variable here 
@@ -128,15 +127,7 @@ const nameKey = "Name";  // ignoring first and last here
 console.log(ehh['first' + nameKey]); // evaluates to firstName through concatnation 
 console.log(ehh['last' + nameKey]);  // evaluates to lastName through concatnation 
 
-
-
-
-// Q. EXPLAIN REAL-WORLD SCENES WHERE WE WOULD WANT TO USE BRACKET NOTATION ? 
-/* When we need to compute the property name first then we must use bracket 
-   notation
-   Examples  */
-
-// 1. When property name has spaces or any other special characters
+// When property name has spaces or any other special characters
 // For example an object conataining CSS styles  
 let styles = {
   "background-color": "blue",
@@ -151,7 +142,7 @@ let data = {
 };
 console.log(data["2020"]); 
 
-// 3. Property names defined at runtime 
+// Property names defined at runtime 
 /* suppose we are building an object that based on user input or data 
 from API 
 */
@@ -162,10 +153,10 @@ let userPreferences = {}; // let it empty object
 userPreferences[userInput] = value; // Using bracket notation to set the property
 console.log(userPreferences.favoriteColor); // Outputs: blue
 
-// there are some more and we should come back to it later 
 
 
- // Accessing Propertires using Dot and Bracket Notations 
+
+ // More Operations on Propertires using Dot and Bracket Notations 
 const College = {
   name: "IMIT",
   type: "State Govt."
@@ -188,10 +179,7 @@ console.log(College2["City"]);     // Viewing new property
                      delete  College2["City"] */
 
 
-
-
-
-// More complex values in objects like in point2 
+// We can have more complex values in objects like here in point2 exaple  
 const point = {
   x:1, 
   y:1
@@ -210,19 +198,34 @@ In general, property names that are reserved words must be quoted in ECMAScript 
 console.log(point2);                    
 
 
+// We will also have nested objects like this one below 
 
-
+const BioData = {
+  Name: "Sam",
+  Address:{
+    state: "Gujarat",
+    location: "surat"
+  },
+  Contact: {
+    mobile: 9923456880,
+    Email: "sks7@typeof.com"
+   }
+}; 
+console.log(BioData);
+console.log(BioData.Address.location);
 
 
 // Another way for Creating objects is by Constructor Notation
 /* The 'new' keyword and the object constructor creates a blank object, 
-then we can add properties and methods to the object using dot noation. */ 
+then we can add properties and methods to the object using dot noation. 
+
+Now what is Constructor, we will see this here only later */ 
 const hotel2 = new Object(); 
 hotel2.name = "MoonKnight";
 hotel2.rooms = 40;
 hotel2.booked = 20;
 hotel2.name ="BlackKnight";  // This changed the hotel name. 
-hotel2.checkAvailability2 = function() {
+hotel2.checkAvailability2 = function() {   // note this is an anynmous function 
   return this.rooms - this.booked;
 };
 console.log(hotel2.checkAvailability2());
@@ -237,8 +240,7 @@ function myFunc() {  // note that we have not assigned this function to object p
   };
   myNewObject.showInfo = myFunc;  // no () here as we are just assigning not calling  
   myNewObject.showInfo();
-
-  /* In the first case, the method is defined directly when assigning it to the object 
+/*  In the first case, the method is defined directly when assigning it to the object 
     property. In the second case, the method is defined separately as a named function 
     (myFunc) and then assigned to the object's property.
   */
@@ -255,7 +257,8 @@ myNewObject2.showInfo2();
 
 
 
-// Explanation of 'this' keyword  Q. EXPLAIN 'THIS' KEYWORD ? 
+
+// Explanation of 'this' keyword  Q. EXPLAIN 'THIS' KEYWORD ? (V.IMP)
 
 const myProfile = {
   myName:"Sudhanshu",
@@ -272,9 +275,10 @@ console.log(myProfile.calculateAge(1999));
    the year here in function is not ideal, so what if we could use that mentioned 
    year in object directly in function. Well thats possible using 'this'. 
    
-   The this keyword in JavaScript is a special identifier that refers to the 
-   context in which a function is executed. The value of this can vary depending on 
+   The 'this' keyword in JavaScript is a special identifier that refers to the 
+   the object which is being executed. The value of 'this' can vary depending on 
    how a function is called. 
+
    Like here in When a function is called as a method of an 
    object, this refers to the object that owns the method.
 
@@ -289,7 +293,7 @@ console.log(myProfile.calculateAge(1999));
     */
 
 
-   // better version using this 
+   // better version using 'this' 
    const myProfile2 = {
     myName:"Sudhanshu",
     BirthYear: 1999,
@@ -301,82 +305,28 @@ console.log(myProfile.calculateAge(1999));
                     }
   };
   console.log(myProfile2.calculateAge());
-  
 
 
 
+// Creating Many Objects Constructor notation (Object Constructor Functions)
+// Q. WHAT IS A CONSTRUCTOR OR CONSTRUCTOR FUNCTION IN JS ? (IMP)
+/* This works best when we want several objects to reperesent similar things. 
+   Here object constructor uses a function as a template for creating objects.
+   Sometimes we need to create many objects of the same type.
+   To create an object type we use an object constructor function. 
+  */ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 2. Creating Many Objects Constructor notation. 
-/*This works best when we want several objects to reperesent similar things. Here object constructor 
-uses a function as a template for creating objects. */ 
-function Person(fName, Lname, Age) {                 // constructor fun begins with a capital letter. 
-this.firstName=fName;
-this.Lastname=Lname;
+function Person(fName, Lname, Age) { // constructor fun begins with a capital letter. 
+this.firstName=fName;  // right hand side values should match fun paras 
+this.Lastname=Lname;   // we could use any name for property that is on left hand side 
 this.Age=Age;
-//this.Email=Email; this will not work.
-this.funName = function() {     // this is too anonymous function. 
+//this.Email=Email; this will not work as Email not defined as parameter 
+this.funName = function() {     
   return this.firstName + " " + this.Lastname;
 }
 }
-/* 'this' Keyword indicates that properties and methods belongs to the object 
-that this function creates.(we shall see this later ) */
+/* As learnt 'this' Keyword indicates that properties and methods belongs to the object 
+that this function creates.  */
 
 const Person1 = new Person("John", "Wick", 45);
 Person1.firstName = "Johnathan";  // Changing the property. 
