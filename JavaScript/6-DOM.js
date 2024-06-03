@@ -170,73 +170,53 @@ console.log(document.title);
 
  // METHOD FOR SELECTING AN INDIVIDUAL ELEMNET NODE 
     
-      /* 1.  document object's getElementByID() Uses the value of an element's
-            id attribute (which should be unique within the page)  
-            (also refer DOM.html file) */
+      /*     1.  document object's getElementByID() Uses the value of an element's
+                 id attribute (which should be unique within the page)  
+                (also refer DOM.html file) 
+      */
 
-     console.log(document.getElementById('head-title'));
+       console.log(document.getElementById('head-title'));
      
-          // getting specific attribute 
-     console.log(document.getElementById('header-title').getAttribute('id'));
+        // suppose we would like to get the attributes 
+       console.log(document.getElementById('head-title').id);
+        // for class we have className not just class 
+       console.log(document.getElementById('head-title').className);
+       // there's a better option getAttribute which works for all attributes 
+       console.log(document.getElementById('head-title').getAttribute('class')); 
+
+       // setting attribute 
+     // console.log(document.getElementById('head-title').className = "headClass");
+      // or better to use setAttribute Method 
+      console.log(document.getElementById('head-title').setAttribute("class", "heads"));
+       // note that it returns undefined when consoled but Q WHY ? 
+      
+       // we generally store these in a variable like this 
+       const title =  document.getElementById('head-title');
+
+   // Things generally we would do once we select an element from DOM 
+
+   console.log(title.textContent); // will show the text inside the element 
+   title.textContent = "DOM Manipulation"; // we changed the inner text 
+    // innerText does same thing but there's a little difference 
+   // similarly we have innerHTML property to get the content of an element
+
+   // changing styles 
+   title.style.backgroundColor="yellow";
+   // note we use camel case here instead of - 
+
+
+/*
+     2. document.querySelector() - game changer as previouly it came out we had to 
+     depend on getElementByID in which we must have id or class and for more control
+     we had to use external library for this (i.e. jQuery). 
+     Using this we could select anything like a h1 without any class or attribute 
+
+*/
  
-
-         // set attributes 
-         document.getElementById('header-title').id = 'new-title'; 
-         document.getElementById('new-title').setAttribute('class', 'title');
-
-
-         const title = document.getElementById('new-title');
-         console.log(title);
-
-         // get or change content 
-         console.log(title.textContent);
-         title.textContent = 'Document Object Model';
-         title.innerText = 'Understand DOM'; // does same thing as textContent 
-
-         // if we want use html tags then we have 
-         title.innerHTML ='<em> Understand DOM </em>';
-        
-         // changing styles 
-         title.style.color ='Blue';
-         title.style.backgroundColor = 'yellow'; // note - of css will not work here
-                                                 // instead use came case 
-        
-  
-    
-/* 2. querySe1ector() used to find all HTML elements that matchs a 
-     specified CSS selector, this widely replaced jQuery which was used for 
-     DOM manipulation as for getElementByID a ID was necessary. */
-
-
-  console.log(document.querySelector('h2'));  // selects just one, first one if many 
-                                             // but usaully we select a class from it 
-  console.log(document.querySelector('.container'));
-  console.log(document.querySelector('#new-title'));
- // attributes 
-  console.log(document.querySelector('button[type="button"]'));
- // pseudo selectors 
- console.log(document.querySelector('li:nth-child(2)').innerText); 
-
- let list = document.querySelector('li:nth-child(2)');
- list.innerHTML = "They are taking the hobbits to Isengard";
- list.style.backgroundColor = "brown";
-
- // we could use these methods on other elements not just document  
-
-
-
-
-
-
-
-
-
-
-
+ console.log(document.querySelector('h1'));
+ // note selects first one (h1 in this case) if we have multiple elements 
 
  
- 
-
-
+ console.log(document.querySelector('.container')); // can select .class or #id name 
 
 
