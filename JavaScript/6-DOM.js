@@ -12,6 +12,8 @@ HTML PAGE
 
 2. ACCESSING AND CHANGING
 THE HTML PAGE (for this we have various methods and properties)
+Q. WHY DOM IS CONSIDERED AN API ? 
+
 
 We don't have to be suprise when people call the DOM an
 Application Programming Interface (API).
@@ -75,7 +77,8 @@ we will get to this ..
 console.log(window);
 /* Window is the global object (top level) in the browser enviroment 
    representing the browser frame.
-   Note it is not global object outside browser like if we're in node.js
+   Note it is not global object outside browser like if we're in node.js, In 
+   Node.js we simply have the global object not window object.  
 
 The window object has many methods and properties which can seen in console, 
 out them most popular ones are: 
@@ -111,7 +114,7 @@ prompt() - The prompt() method is yet another way to open up a modal dialog. In 
            then the prompt method returns null
 
 
-
+Q. WHAT ARE THE VARIOUS CHILD OBJECTS OF WINDOW OBJECT ? 
 The window object has various child ojects like:
 - document object - contains all of the HTML and others that makes up loaded page.
 
@@ -143,8 +146,10 @@ console.log(document); // this will show elements
 console.dir(document); // dir shows properties and methods 
 console.log(document.body);  // this is actual body element which is inside document 
 
-/* we use properties like innerHTML and innerText to see contents of body */
-   // console.log(document.body.innerHTML);
+/* we use properties of DOM like innerHTML and innerText to see contents of body 
+   innerHTML - simply gets the inner html element
+   innerText - Gets the text inside html element */
+  //console.log(document.body.innerHTML);
    // console.log(document.body.innerText);
 
 
@@ -152,7 +157,7 @@ console.log(document.body);  // this is actual body element which is inside docu
 
 /* lets play around with dot notation and accessing elements with direct
 properties but note that we have better ways using methods */
-console.log(document.links[0]);  // gives collection links with index nums 
+console.log(document.links[0]);  // getting a link through links collection 
 console.log(document.title);
  // here lets change the title 
  document.title = "Understand DOM";  
@@ -163,13 +168,13 @@ console.log(document.title);
 
 
 
- // SELECT AN INDIVIDUAL ELEMNET NODE 
+ // METHOD FOR SELECTING AN INDIVIDUAL ELEMNET NODE 
     
       /* 1.  document object's getElementByID() Uses the value of an element's
             id attribute (which should be unique within the page)  
             (also refer DOM.html file) */
 
-     console.log(document.getElementById('header-title'));
+     console.log(document.getElementById('head-title'));
      
           // getting specific attribute 
      console.log(document.getElementById('header-title').getAttribute('id'));
@@ -196,7 +201,7 @@ console.log(document.title);
          title.style.backgroundColor = 'yellow'; // note - of css will not work here
                                                  // instead use came case 
         
-
+  
     
 /* 2. querySe1ector() used to find all HTML elements that matchs a 
      specified CSS selector, this widely replaced jQuery which was used for 
