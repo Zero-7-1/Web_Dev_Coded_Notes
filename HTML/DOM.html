@@ -20,22 +20,32 @@
             onclick="document.getElementById('getElement').style.fontSize='35px'">
                         Click Me!</button>
 
-    <!-- style property of element objects allows us to access the CSS style 
-        properties of the selected HTML element
-        note '-' is ignored like for background-color simply do backgroundColor 
-        camel case         -->
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
 
 
 
         <h2> I love JavaScript </h2>
         <ul>
-            <li> Lord of the Rings </li>
-            <li> The Hobbit        </li>
+            <li class="items"> Lord of the Rings </li>
+            <li class="items"> The Hobbit        </li>
         </ul>
+    </div>
+
+    <h1> Traversing the DOM (Element Nodes) </h1>
+    <div class="parent">
+        <div class="child"> Child 1 </div>
+        <div class="child"> Child 2 </div>
+        <div class="child"> Child 3 </div>
+    </div>
 
 
-
-
+    
+    <h1> Traversing the DOM (All Nodes) </h1>
+    <div class="parent2">
+        <div class="child2"> Child 1 </div>
+        <div class="child2"> Child 2 </div>
+        <div class="child2"> Child 3 </div>
     </div>
 
 <!--It's generally a good practice to place <script> 

@@ -168,7 +168,7 @@ console.log(document.title);
 
 
 
- // METHOD FOR SELECTING AN INDIVIDUAL ELEMNET NODE 
+ // Methods for selecting Individual Elements 
     
       /*     1.  document object's getElementByID() Uses the value of an element's
                  id attribute (which should be unique within the page)  
@@ -192,7 +192,7 @@ console.log(document.title);
       
        // we generally store these in a variable like this 
        const title =  document.getElementById('head-title');
-
+ 
    // Things generally we would do once we select an element from DOM 
 
    console.log(title.textContent); // will show the text inside the element 
@@ -218,5 +218,79 @@ console.log(document.title);
 
  
  console.log(document.querySelector('.container')); // can select .class or #id name 
+ console.log(document.querySelector('input[type="text"]'));// selecting attributes 
+ console.log(document.querySelector('li:nth-child(2)').innerHTML);                                       // selecting pesudo selectors 
+
+ const listItem = document.querySelector('li:nth-child(2)');
+ listItem.innerHTML = 'The Hobbit was Good Though'; // inner content of list is chnaged
 
 
+
+
+
+ // Methods for selecting Multiple Elements 
+
+ /* querySelectorAll() */
+
+ const listItems = document.querySelectorAll('.items');
+ console.log(listItems[1]);
+
+ // could'nt change style on direct nodelist though like this listItems.style 
+
+ 
+ listItems[1].style.backgroundColor = 'yellow';
+
+ // if we want to change all of them then we can do a for each loop 
+  listItems.forEach((item, index) => {
+   item.style.color = "red";
+  
+   // we generally would do something like these 
+   if (index === 1) {
+    item.innerHTML = "The Hobbit";
+   }
+ });
+
+
+
+ // Traversing the DOM - navigating around parent childrens 
+ // Element Nodes 
+ let output;
+
+ const parent = document.querySelector('.parent');
+ output = parent.children; // children is a property 
+ output = parent.children[1];
+
+ // working on parent and children 
+ parent.children[1].style.backgroundColor = 'yellow';
+ parent.firstElementChild.innerHTML = 'I M THE FIRST CHILD';
+ // similarly we have lastElementChild for last element 
+
+
+ // we could get parent element from child 
+ const child = document.querySelector('.child');
+ output = child.parentElement; // ouputing parent through child 
+
+ // getting  siblings elements 
+ const secondItem = document.querySelector('.child:nth-child(2)');
+ output = secondItem;
+ output = secondItem.nextElementSibling; // gives next one 
+// we also have previousElementSibling for previous to the item  
+ console.log(output);  // can use dir here to see what are available 
+
+
+
+
+ 
+ // Traversing the DOM - All Nodes
+ let output2;
+
+
+const parent2 = document.querySelector('.parent2')
+
+output2 = parent2.childNodes;
+output2 = parent2.childNodes[1].innerText = "Child ONE";
+/* As we had in Elements nodes, here also we would have similar
+   firstChild, lastChild, parentNode, nextSibling 
+ */
+console.log(output2);
+ 
