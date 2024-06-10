@@ -42,7 +42,7 @@ Any changes made to the DOM tree are reflected in the browser
  in short, 
 These are nothing but different parts of DOM tree.. 
 
-
+// Q. WHAT ARE THE DIFFERENT TYPES OF NODES IN A DOM TREE ? 
 
 1. Document node - it represents the entire page, corresponds to the document object,
                    starting point for all visits to the DOM tree.
@@ -52,8 +52,8 @@ These are nothing but different parts of DOM tree..
 
 
 
-3. Attribute node - if elements have attributes, they are part of elements, not children.
-(Once we access an element, there are specific JavaScript
+3. Attribute node - if elements have attributes, they are part of elements, 
+not children. (Once we access an element, there are specific JavaScript
 methods and properties to read or change that
 element's attributes. For example, it is common to
 change the values of class attributes to trigger new
@@ -79,6 +79,8 @@ console.log(window);
    representing the browser frame.
    Note it is not global object outside browser like if we're in node.js, In 
    Node.js we simply have the global object not window object.  
+
+ Q. WHAT IS THE TOP LEVEL OR GLOBAL OBJECT FOR A BROWSER AND NODE.JS ENVIROMENT ? 
 
 The window object has many methods and properties which can seen in console, 
 out them most popular ones are: 
@@ -112,6 +114,9 @@ prompt() - The prompt() method is yet another way to open up a modal dialog. In 
            like this var answer = prompt("What is your full name?", "John Doe");
            and if the user dismisses the dialog (that is, by clicking Cancel,
            then the prompt method returns null
+
+
+
 
 
 Q. WHAT ARE THE VARIOUS CHILD OBJECTS OF WINDOW OBJECT ? 
@@ -149,7 +154,7 @@ console.log(document.body);  // this is actual body element which is inside docu
 /* we use properties of DOM like innerHTML and innerText to see contents of body 
    innerHTML - simply gets the inner html element
    innerText - Gets the text inside html element */
-  //console.log(document.body.innerHTML);
+  // console.log(document.body.innerHTML);
    // console.log(document.body.innerText);
 
 
@@ -167,28 +172,32 @@ console.log(document.title);
 
 
 
-
- // Methods for selecting Individual Elements 
-    
+  // Q. GIVE ME SOME EXAMPLES OF VARIOUS METHODS THAT WE CAN USE FOR DOM MANIPULATION
+ 
+  // Methods for selecting Individual Elements 
+    // Q. WHICH METHOD IS USED FOR SELECTING INDIVIDUAL ELEMENTS ? 
       /*     1.  document object's getElementByID() Uses the value of an element's
                  id attribute (which should be unique within the page)  
-                (also refer DOM.html file) 
       */
 
        console.log(document.getElementById('head-title'));
      
+       // Q. HOW TO GET ATTRIBUTES WITHIN USING GETELEMENTBYID METHOD ? 
         // suppose we would like to get the attributes 
        console.log(document.getElementById('head-title').id);
         // for class we have className not just class 
        console.log(document.getElementById('head-title').className);
        // there's a better option getAttribute which works for all attributes 
-       console.log(document.getElementById('head-title').getAttribute('class')); 
+       console.log(document.getElementById('head-title').getAttribute('id')); 
+       
+       // HOW CAN SET A NEW OR CHANGE ATTRIBUTE OF AN ELEMENT ?  
 
        // setting attribute 
      // console.log(document.getElementById('head-title').className = "headClass");
       // or better to use setAttribute Method 
       console.log(document.getElementById('head-title').setAttribute("class", "heads"));
        // note that it returns undefined when consoled but Q WHY ? 
+         // but class indeed has been changed 
       
        // we generally store these in a variable like this 
        const title =  document.getElementById('head-title');
@@ -205,6 +214,7 @@ console.log(document.title);
    // note we use camel case here instead of - 
 
 
+   // Q. EXPLAIN THE METHOD USED FOR SELECTING MULTIPLE METHODS 
 /*
      2. document.querySelector() - game changer as previouly it came out we had to 
      depend on getElementByID in which we must have id or class and for more control
@@ -219,15 +229,16 @@ console.log(document.title);
  
  console.log(document.querySelector('.container')); // can select .class or #id name 
  console.log(document.querySelector('input[type="text"]'));// selecting attributes 
- console.log(document.querySelector('li:nth-child(2)').innerHTML);                                       // selecting pesudo selectors 
+ console.log(document.querySelector('li:nth-child(2)').innerHTML);// pseudo selector                                      // selecting pesudo selectors 
 
  const listItem = document.querySelector('li:nth-child(2)');
- listItem.innerHTML = 'The Hobbit was Good Though'; // inner content of list is chnaged
+ listItem.innerHTML = 'The Hobbit was Good Though'; 
+ // inner content of list is changed
 
 
 
 
-
+ // Q. WHAT IS THE METHOD USED FOR SELECTING MULTIPLE METHODS IN DOM ? 
  // Methods for selecting Multiple Elements 
 
  /* querySelectorAll() */
@@ -235,12 +246,16 @@ console.log(document.title);
  const listItems = document.querySelectorAll('.items');
  console.log(listItems[1]);
 
+ /* note that when console logged only listItems, it returns lists in the form of 
+ NodeList on which we can apply high order array methods but not in html collection 
+ directly, we need convert to array in case of html collections */
+ // Q. DIFFERENCE BETWEEN NODELIST AND HTML COLLECTION ? 
+
  // could'nt change style on direct nodelist though like this listItems.style 
 
  
  listItems[1].style.backgroundColor = 'yellow';
-
- // if we want to change all of them then we can do a for each loop 
+// if we want to change all of them then we can do a for each loop 
   listItems.forEach((item, index) => {
    item.style.color = "red";
   
@@ -252,8 +267,11 @@ console.log(document.title);
 
 
 
+
+ // HOW CAN WE TRAVERSE WITHIN DOM ? WHAT ARE VARIOUS METHODS FOR THAT ? 
  // Traversing the DOM - navigating around parent childrens 
  // Element Nodes 
+ 
  let output;
 
  const parent = document.querySelector('.parent');
@@ -279,7 +297,7 @@ console.log(document.title);
 
 
 
-
+// Q. DIFFERENCE BETWEEN VARIOUS TYPES NODES ? 
  
  // Traversing the DOM - All Nodes
  let output2;
