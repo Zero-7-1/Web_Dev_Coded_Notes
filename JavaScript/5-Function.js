@@ -10,10 +10,18 @@
 
 
   /*
-   DEFINE FUNCTION. 
+   Q. DEFINE JS FUNCTION. 
    Functions can hold many lines of codes which can declared and can be resused in 
    other parts of the code performing same tasks . Additionally we can pass data 
    to the function, function can also return data too.  
+   
+   Function's type is obejct.
+
+   JavaScript functions are defined with the 'function' keyword.
+
+   Functions can also be defined with a built-in JavaScript function constructor
+   called Function().
+
 
    Functions in js are actually just values, its not a type, so if its a value 
    we can store it in a variable, we will get back to this later. 
@@ -72,7 +80,8 @@ wallTwo = getArea(6,7);
 console.log(wallOne);
 console.log(wallTwo);
 
-// function usage 4 - returning more than one value usuing array 
+// Q. IS IT POSSIBLE TO RETURN MORE THAN ONE VALUE FROM A FUNCTION ? 
+// function usage 4 - returning more than one value using array only  
 
 function getSize(width, height, depth) {
     var area1 = width * height;
@@ -80,9 +89,7 @@ function getSize(width, height, depth) {
     var sizes = [area1, volume]; // Create an array and return it 
     return sizes; // Return the array containing both values
 }
-
 /* When to use */ 
-
 var sizes1 = getSize(3, 6, 8); // Call the function and get the array of sizes
 var area_result = sizes1[0]; // Access the area value at index 0
 console.log("Using Array for Area: " + area_result);
@@ -91,47 +98,60 @@ console.log("Using Array for Volume: " + volume_result);
 
 
 
+
+// Q. WHAT'S THE DIFFERNCE BETWEEN FUNCTION AND FUNCTION EXPRESSION
 // function expression
 
  let yourAge = function(presentYear, birthYear) {  // no name for function 
     return presentYear - birthYear;  
 };
 let age = yourAge(2024,1999);
-console.log("Hi your age is:  " + age);
-// Q. WHAT'S THE DIFFERNCE BETWEEN FUNCTION AND FUNCTION EXPRESSION 
+console.log("Hi your age is:  " + age); 
 
 /* In Function Expression, we don't use a name for the function (Anynomous Function), 
    rest everything is same but we store it in a varibale and that variable will be then 
-   the function  
+   caryy the function value.   
    Function declarations are hoisted and can be called before their declaration 
-   in the code.
-   Function expressions are not hoisted and can only be 
-   called after they have been defined in the code.*/ 
+   in the code. But Function expressions are not hoisted and can only be 
+   called after they have been defined in the code.
+*/ 
 
 
 
-
-  // Arrow Function - added in ES6 
-
+  // Arrow Function
+ // Q. EXPLAIN ABOUT ARROW FUNCTION IN JS AND WHY WE SHOULD USE IT ? 
   /*
-  It is a special form of function expression that is shorter and faster to write 
+  It is a special form of function expression that is shorter and faster to write.
+  Arrow functions do not have their own 'this'. 
+  They are not well suited for defining object methods.
+  Arrow functions are not hoisted. They must be defined before they are used.
 */
 
 // lets convert our function expression example to arrow function 
 let yourAge2 = (presentYear, birthYear) => presentYear - birthYear; 
 /* if there are not multiple parameters, we don't need to enclose them 
    in parentheses. 
-   => is used to separate the parameters from the function body. 
-   for single expression like this, we can omit the braces {} and the return keyword
+   => is used to separate the parameters from the function body.  
+   we can omit the braces {} and the return keyword if the function 
+   is a single statement
 */
+// above is same as this below one 
+const yourAge3 = (presentYear, birthYear) => { return presentYear - birthYear };
+let output = yourAge3(2024, 1999);
+console.log(output);
+
+// As we know functions are object so they have both methods and properties 
+// we may use arguments.length property which will returns the number of arguments
 
 
+
+
+// Q. CAN FUNCTION CALL ANOTHER FUNCTION ? 
 // Functions calling another function 
 
 function cutFruit(fruit){
     return fruit * 8; // say fruit is cut into 8 pieces before jucie
-
-}
+}; 
 
 function jucieMaker(apple, orange) {
     const applePiece = cutFruit(apple); // calling cutFruit()
@@ -139,10 +159,24 @@ function jucieMaker(apple, orange) {
     const jucie = `Jucie with ${applePiece} apple pieces and 
                    ${OrangePiece} oranges pieces`;
     return jucie;
-}
+};
 
 myJuice = jucieMaker(1,3);
 console.log(myJuice); // return say juice with no of fruits pieces  
 
 
+// Self-Invoking Functions or Immediately-Invoked Function Expression (IIFE)
+/*
+The primary purpose of an IIFE is to create a new scope for variables,
+preventing them from polluting the global scope. This can be particularly useful 
+for encapsulating code and avoiding variable name conflicts.
 
+The function is defined within parentheses ( and ). This ensures that the function 
+is treated as an expression rather than a declaration.
+The () at the end immediately invokes the function.
+
+*/
+(function () {
+    let x = "Hello!!";  // I will invoke myself
+  }
+) ();
