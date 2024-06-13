@@ -4,7 +4,9 @@ In CSS box model we consider every html element as a box which consists of 4 par
 and margins. */
 
 
-/* Border */
+/* Border 
+Q. HOW DO YOU SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROPERTY
+    AND ITS VALUES ? */
 .borderstyle {
     border-style: solid;
     border-width: 20px 10px 20px 30px; 
@@ -16,7 +18,11 @@ and margins. */
     border: 2px solid gold;
     border-radius: 10px; 
     /*We can define radius for rounded 
-    corners.*/
+    corners. Perfect circle with 50% value with width height value same 
+    and also we could serach internet for fancy border radius values.
+    Q. HOW CAN WE CREATE ROUNDED CORNERS FOR AN HTML ELEMENT'S BORDER ? 
+    Q. HOW MAKE PERFECT CIRCLE USING BORDER PROPERTY ? 
+    */
 } 
 /*We can also specify all the individual border
  properties for just one side*/
@@ -31,7 +37,10 @@ and margins. */
 
 
 /*Margin defines area outside an element's 
-defined border */
+defined border. Generraly we achieve space between two elements through margin 
+property. 
+Q. EXPLAIN MARGIN PROPERTY AND ITS SHORTHAND METHODS.
+*/
 .margin-demo{
     border: 5px solid burlywood;
     margin-top: 100px;
@@ -44,14 +53,23 @@ defined border */
     margin: 200px 100px ;
     border:1px solid gold ;
 }
-/* - One value means all 4 margin sides
+/*   Q. HOW TO KNOW WHICH SIDES IN MARGIN SHORTHAND PROPERTY ? 
+   - One value means all 4 margin sides
    - Two value means 1st part for buttom & top 
    and 2nd part for right & left. 
    - When we have three values then 1st part 
    is for top, 2nd part is for left & right and
    3rd part is for buttom. 
    - When we have four values then 
-    then top-right-buttom-left */
+    then top-right-buttom-left (clockwise) 
+*/
+
+
+/*
+Q. WHAT HAPPENS WHEN WE USE AUTO VALUE WITH MARGIN ?
+We could use margin: auto; to horizontally center an element within its container.
+This is commonly used for centering block level elements. 
+*/
    
 
 /* Sometimes we can Inherit the value from
@@ -64,7 +82,12 @@ width/height, padding too.*/
     margin: inherit;
   }
 
-/* Margin Collapse refers to a css behaviour 
+
+
+
+
+/* Q. EXPLAIN WHAT IS MARGIN COLLAPSE ? 
+Margin Collapse refers to a css behaviour 
 where top and bottom margins of elements are 
 sometimes collapsed into a single margin and 
 instead of adding two margins we get the value
@@ -114,15 +137,22 @@ collapse, the actual margin ends up being 5px.
 
 /* Padding is the space around an element's content, 
 inside of any defined borders 
-Note that padding shortcut is similar to margins. */
+Note that padding shortcut is similar to margins. 
+Q. EXPLAIN PADDING PROPERTY.*/
 .padding {
-    padding: 40px;
+    padding: 100px;
     border: 2px solid orange;
     
     
 }
 
 
+
+
+
+/*
+
+*/
 /* When we apply Height and Width, it is applied to the 
 content of element that is it do not include
 padding, margins or borders. It sets inside them.
@@ -157,15 +187,7 @@ property; the max-width property will be used
 
 
 
-
-
-
-
-
-
-
-
-/*
+/* Q. EXPLAIN WHAT IS BOX SIZING ? 
 Box Sizing:
 If an element has a specified width, the padding or border
 added to that element will be added to the total width of 
