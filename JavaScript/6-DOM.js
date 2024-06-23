@@ -171,7 +171,7 @@ console.log(document.title);
 
 
 
-
+   // *** 
   // Q. GIVE ME SOME EXAMPLES OF VARIOUS METHODS THAT WE CAN USE FOR DOM MANIPULATION
  
   // Methods for selecting Individual Elements 
@@ -181,29 +181,30 @@ console.log(document.title);
       */
 
        console.log(document.getElementById('head-title'));
-     
-       // Q. HOW TO GET ATTRIBUTES WITHIN USING GETELEMENTBYID METHOD ? 
+        
+       // Q. HOW TO GET ONLY ATTRIBUTES WITHIN USING GETELEMENTBYID METHOD ? 
         // suppose we would like to get the attributes 
        console.log(document.getElementById('head-title').id);
         // for class we have className not just class 
        console.log(document.getElementById('head-title').className);
        // there's a better option getAttribute which works for all attributes 
-       console.log(document.getElementById('head-title').getAttribute('id')); 
+       console.log(document.getElementById('head-title').getAttribute('class')); 
        
-       // HOW CAN SET A NEW OR CHANGE ATTRIBUTE OF AN ELEMENT ?  
+       // HOW CAN WE SET A NEW OR CHANGE ATTRIBUTE OF AN ELEMENT ?  
 
        // setting attribute 
      // console.log(document.getElementById('head-title').className = "headClass");
       // or better to use setAttribute Method 
-      console.log(document.getElementById('head-title').setAttribute("class", "heads"));
-       // note that it returns undefined when consoled but Q WHY ? 
-         // but class indeed has been changed 
+    console.log(document.getElementById('head-title').setAttribute("class", "heads"));
+       // note that it returns undefined when consoled but Q WHY (!Doubt) ? 
+         // but class indeed has been changed similarly we could try this for id 
       
        // we generally store these in a variable like this 
        const title =  document.getElementById('head-title');
  
    // Things generally we would do once we select an element from DOM 
 
+   // Q. WHICH DOM PROPTERY SHOWS THE INNER TEXT OF THE ELEMENT ? 
    console.log(title.textContent); // will show the text inside the element 
    title.textContent = "DOM Manipulation"; // we changed the inner text 
     // innerText does same thing but there's a little difference 
@@ -214,9 +215,13 @@ console.log(document.title);
    // note we use camel case here instead of - 
 
 
-   // Q. EXPLAIN THE METHOD USED FOR SELECTING MULTIPLE METHODS 
+
+
+
+
+   // Q. EXPLAIN THE METHOD USED FOR SELECTING MULTIPLE ELEMENTS 
 /*
-     2. document.querySelector() - game changer as previouly it came out we had to 
+     document.querySelector() - game changer as previouly it came out we had to 
      depend on getElementByID in which we must have id or class and for more control
      we had to use external library for this (i.e. jQuery). 
      Using this we could select anything like a h1 without any class or attribute 
@@ -238,10 +243,13 @@ console.log(document.title);
 
 
 
- // Q. WHAT IS THE METHOD USED FOR SELECTING MULTIPLE METHODS IN DOM ? 
- // Methods for selecting Multiple Elements 
+ // Q. WHAT IS THE DIFFERENCE BETWEEN QUERY SELECTOR AND QUERY SELECTOR ALL ? 
 
- /* querySelectorAll() */
+ /* We have another method querySelectorAll() 
+  The major difference between querySelector() and querySelectorAll() is that 
+
+ (! little Doubt here about difference)
+ */
 
  const listItems = document.querySelectorAll('.items');
  console.log(listItems[1]);
@@ -249,9 +257,9 @@ console.log(document.title);
  /* note that when console logged only listItems, it returns lists in the form of 
  NodeList on which we can apply high order array methods but not in html collection 
  directly, we need convert to array in case of html collections */
- // Q. DIFFERENCE BETWEEN NODELIST AND HTML COLLECTION ? 
+ // Q. DIFFERENCE BETWEEN NODELIST AND HTML COLLECTION ? (!Doubt)
 
- // could'nt change style on direct nodelist though like this listItems.style 
+ // could'nt change style on direct nodelist like this listItems.style 
 
  
  listItems[1].style.backgroundColor = 'yellow';
@@ -268,9 +276,9 @@ console.log(document.title);
 
 
 
- // HOW CAN WE TRAVERSE WITHIN DOM ? WHAT ARE VARIOUS METHODS FOR THAT ? 
+ // HOW CAN WE TRAVERSE WITHIN DOM ? WHAT ARE VARIOUS PROPERTIES FOR THAT ? 
  // Traversing the DOM - navigating around parent childrens 
- // Element Nodes 
+ // Here we will be travesring Element Nodes 
  
  let output;
 
@@ -297,9 +305,9 @@ console.log(document.title);
 
 
 
-// Q. DIFFERENCE BETWEEN VARIOUS TYPES NODES ? 
+// Q. DIFFERENCE BETWEEN ELEMENTS NODES AND ALL NODES ? (! littleDoubt)
  
- // Traversing the DOM - All Nodes
+ // Traversing the DOM - All Nodes (Previous ones was on Elements Nodes)
  let output2;
 
 

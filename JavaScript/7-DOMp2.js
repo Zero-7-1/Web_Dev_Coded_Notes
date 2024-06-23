@@ -95,7 +95,7 @@ createNewItem('Ketchup');
   and icons.We are setting the button to the return value of create button function
    , appending it to  list item and then ultimatley we are appending list item to 
    the ul in dom  */
-
+   
 
 
    // insert Elements, Text & HTML Other methods different to appendChild 
