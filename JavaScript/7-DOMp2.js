@@ -7,8 +7,8 @@ when an event is triggered i.e. insert, delete, etc.
 
 // Q. HOW CAN WE ADD OR CREATE AN ELEMENT THROUGH DOM TO THE DOCUMENT  ? 
 const div = document.createElement('div'); // a div has been created in memory 
-div.className = 'my-element'; // created class 
-div.id = 'element-id';
+div.className = 'my-element'; // given a class to an element  
+div.id = 'element-id';  // similarly we gave an id 
 div.setAttribute('title', 'my-element');
 
 // div.innerText ='The Element'; we could do this but 
@@ -49,8 +49,10 @@ createListItem('Eggs');
 function createNewListItem(item) {
    const li = document.createElement('li');
    li.appendChild(document.createTextNode(item));
+   
    const button = document.createElement('button');
    button.className = 'remove-item btn-link text-red';
+   
    const icon = document.createElement('i');
    icon.className ='fa-solid fa-xmark';
    button.appendChild(icon); // icons needs to appended inside button 
@@ -60,6 +62,11 @@ function createNewListItem(item) {
    document.querySelector('.items').appendChild(li);
 };
 createNewListItem('Curd');
+
+
+
+
+
 
 // Even much better resusable way (Refactor to Multiple Elements)
 
@@ -98,8 +105,7 @@ createNewItem('Ketchup');
    
 
 
-   // insert Elements, Text & HTML Other methods different to appendChild 
-     // inertAdjacentText 
-     // insertAdjacentHTML
-     // insertBefore
-     // time stamp -- 9hr:25mins 
+
+   // Other than appendChild we have other methods to Inset Elements, Text and HTML 
+   
+   
