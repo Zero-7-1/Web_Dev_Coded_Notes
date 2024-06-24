@@ -1,0 +1,14 @@
+/*
+Q. EXPLAIN WHAT IS Z-INDEX IN CSS ? 
+   The z-index property specifies the stack order of an element 
+   (which element should be placed in front of, or behind, the others).
+   
+   Note that, 
+   
+   z-index only works on positioned elements (position: absolute, position: relative, 
+   position: fixed, or position: sticky) and flex items (elements that are direct 
+   children of display: flex elements).
+
+   An element can have a positive or negative stack order
+
+*/

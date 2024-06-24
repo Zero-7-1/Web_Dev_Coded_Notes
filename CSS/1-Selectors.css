@@ -1,19 +1,5 @@
-/*
-     ******************
-
-     KEY CONCEPTS COVERED:
-     ---> ADDING CSS TO HTML - INLINE, INTERNAL, EXTERNAL
-     ---> SELECTORS - 
-
-     ******************
-
-
-*/
-
-
-
-/* There are 3 ways we add CSS to any HTML document one being used generally and 
-   that is external.
+/* Q. WHAT ARE THE VARIOUS WAYS WE CAN ADD CSS TO HTML ? 
+   There are 3 ways we add CSS to any HTML document
    
    In inline we use 'style' attribute to add css directly to HTML tags. 
    e.g. <html style="background: red"> </html> 
@@ -33,6 +19,10 @@
    will have to address to the folder containing CSS. 
    e.g. <link rel="stylesheet" href="../location"> 
    
+   Q. WHAT EXACTLY THIS . OR ../ CONVEYS IN LOCATION PATH ?
+      . (one dot) means current directory and ..(double dot) means parent directory 
+      of current directory. When we use '../' in a file path it refers to go up 
+      to one level in the directory structure.
    */
 
 
@@ -75,19 +65,20 @@
        }
 */ 
 
-/* Above is a css reset or also called normalization. It removes the default 
+/* Q. EXPLAIN WHAT IS CSS RESET OR NORMALIZATION ? WHY IT IS NEEDED ? ***  
+Above is a css reset or also called normalization. It removes the default 
 margin and padding that browsers apply to some elements. The font family sets 
 deafult font family for entire document. border-box ensures that the width and height 
 of an element inlcude padding and border but not include the margin. 
 
+
+Q. EXPLAIN WHAT IS BOX-SIZING AND DIFFERNCE BETWEEN BORDER-BOX AND CONTENT-BOX ? ***
 box-sizing:
 This property is all about how total width and height of an element is calculated. 
-By default box-sizing is set to content-box, this means when we give something 
-like height and width, it includes only the content ignoring padding, border 
-and margin. SO when we set it to border-box the width and height properties 
-include content as well as border and padding. Note here margin is ignored. 
-
- (see this in box model file too). */
+By default box-sizing is set to content-box, and that means when an elements has a 
+specified width or height and we add padding or border, it actual height and width
+gets changed. To avoid this and make our element's height and width unaffected by 
+adding padding or border we use border-box value.   */
 
  .content-box {
     width: 500px;
@@ -118,17 +109,10 @@ Note that margin would not be considered for calculation as it is outside the bo
 
 
 
-
-
-
-
-
-
-
-
-/* ID Selector uses id attribute of an html element. ID of an element is used to select
-only one unique element whereas class selectors can style many elemnts sharing common 
-class name. 
+/* EXPLAIN THE DIFFERENCE BETWEEN ID AND CLASS SELECTOR ?  
+ID Selector uses id attribute of an html element. ID of an element is used to 
+select only one unique element whereas class selectors can style many elementts 
+sharing common class name. 
 Note: Id/class can not start with a number. 
       # for id names and . for class names  
                   
@@ -141,7 +125,8 @@ h1, h2, p {
 }
 
 Another important selector which we may come across 
-element.class Selector which is used to select the specified element 
+element.class Selector 
+which is used to select the specified element 
 with the specified class.
 For example, p.intro selects only <p> elements with class="intro"
 
@@ -156,55 +141,24 @@ html element separated by commas.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------------------------                       Slector:pseudo-class {
                                                                    property: value; 
                                                                     } 
-Pseudo class selectors is used to target and style elements based on their state, 
+Q. EXPLAIN WHAT IS PSEUDO CLASS SELECTOR ? 
+Pseudo class selectors are used to target and style elements based on their state, 
 adding a bit interactivity.
-For example
+For example it is used generally for: 
 */
 
 /* Styling Visted and Unvisted Links Differently  */                  
 
-/* Unisited Links */
+/* For Unisited Links */
 a:link {
-    color: rgb(12, 4, 156);
+    color: red;
 }
-/* Visted links */
+/* For already Visted links */
 a:visited{
- color: rgb(92, 141, 239);   
+ color: blueviolet;   
 }
 
 
@@ -217,17 +171,17 @@ a:hover {
 a:active {
     color: black;
 }
-/* Note that these two styles only applied to stoic. WHY ? 
-                                and WHY link Stoic has a yellow highlight ? 
-
-Another thing here ':hover' called pesudo-class whereas 'a' is the selctor 
+ 
+/*
+Here ':hover' is pesudo-class whereas 'a' is the selctor 
 targeting element <a> */
+
 
 /* We can also combine pseudo-class with html class */ 
 a.highlight:hover {
-    color: rgb(15, 15, 13);
+    color: green;
     font-size: 22px;
-}
+}   /* This is applied to Link of X which has a class */
 
 
 /* Hover on div */
@@ -239,7 +193,7 @@ a.highlight:hover {
     color: white;
     background-color: brown;
 
-}
+} /* This is clearly seen, Hover on Div */
 
 
 
@@ -279,7 +233,8 @@ li:nth-child(odd) {
     color: red;
 }
 
-/* Re-look of imp pesudo classes
+/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ? 
+   Re-look of imp pesudo classes
    1. Whether link is visted or not - :link for not visted and :visted
    2. Hovering mouse pointer - :hover
    3. user click activation - :active 
@@ -289,9 +244,6 @@ li:nth-child(odd) {
    7. for a different language - :lang() 
    and simply pseudo class targets elements state, denoted by : single colon 
    */
-
-
-
 
 
 
