@@ -21,20 +21,6 @@ KEY CONCEPTS COVERED:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Control flow refers to the order in which statements are exceuted. 
 These statements allows us to make decisions, repeat actions, and control
 the flow of excecution of in our code. These are fundamentals to any 
@@ -52,12 +38,6 @@ met. */
 
 
 
-
-
-
-
-
-
 // general syntax of if statement without else
 if (true) {
     console.log('This is true or Anything would Print');
@@ -72,8 +52,9 @@ let x = 10;
 let y = 5;
 
 if (x > y) {
-    console.log(`${x} is greater than ${y}`); // Template literal method 
+    console.log(`${x} is greater than ${y}`); // Note the Template literal method 
 }
+
 // Uisng else with if 
 if (x === y) {
     console.log(`${x} is equal to ${y}`);
@@ -84,12 +65,12 @@ if (x === y) {
 // Now there is else if which can handle more than one conditions. 
 // lets play around date object to understand it in a intersting way. 
 
-const d = new Date(7, 6, 2023, 8, 0, 0);  // We used date object here to create a new date 
+const d = new Date(7, 6, 2023, 8, 0, 0);  // date object creates a new date 
 const hour = d.getHours();  // This will return set hour that is 8 if consoled 
 console.log(hour);
 if (hour < 12 ) {
     console.log('Good Morning');
-} else if (hour < 18) {   
+} else if (hour < 18) {                  // we can have many else if but one else last
    console.log('Good Afternoon');
 } else {
     console.log('Good Night');
@@ -115,19 +96,12 @@ if (hours < 12 ) {
     }
 }
 
-/* We can have multiple conditions in single a if statement using operators
+/* Q. CAN WE HAVE MULTIPLE CONDITIONS IN IF ELSE STATEMENTS ?  
+We can have multiple conditions in a if else statement using operators
 like && or || for example */
-if (hours >=7 && hours < 15) {
+if (hours >=6 && hours < 15) {
     console.log('Work Hard, Cum Hard');
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -136,7 +110,7 @@ if (hours >=7 && hours < 15) {
 alternative to nested ifs as it provides a better readilibity. 
 Lets take another date object for switch example.*/
 
-const d3 = new Date(2024, 1, 1, 11, 0, 0);
+const d3 = new Date(2024, 6, 1, 11, 0, 0);
 const month = d3.getMonth(); // This would return set month that is 1 (jan). 
 
 const hour2 = d3.getHours();
@@ -144,19 +118,20 @@ console.log(hour2);
 // Swicth will take an expression or variable as its argument 
 switch(month) {
     case 1:
-        console.log('Last Month before Job Applying');
+        console.log('This is January');
         break;
     case 2:
-        console,log('Job Hunt Start..good luck');
+        console,log('This is February');
         break;
     default:
-        console.log('Last days of Dec and Whole Jan is very imp. for me.');
+        console.log('There is no such month');
 }
 /* The value of expression or variable is compared with the values of 
 each case. We need break to break down from exceution if matched but 
 we don't need break for last or deafult case. If break is omitted, the program
-     continues execution inside the switch statement 
-(and will execute statements under the next case, and so on */
+continues execution inside the switch statement and will execute statements 
+under the next case, and so on 
+Q. WHY DO WE NEED BREAK KEYWORD IN SWITCH STATEMENT ? */
 
 // Also we could use switch like this
 switch (true) {
@@ -172,16 +147,19 @@ switch (true) {
 
 
 
-
-
 /* FALSY AND TRUTHY VALUES 
+Q. EXPLAIN WHAT IS FASLY AND TRUTHY VALUES IN JS ? ***
 
-Falsy Values - Values evaluated to be false in a boolean context 
-The falsy values in JavaScript are:-
+Falsy Values - Values evaluated to be false in a boolean context or the values that
+are not false intially but will become after boolean conversion. 
+Q. HOW MANY FASLY VALUES ARE THERE IN JS ? 
+
+The 5 falsy values in JavaScript are:-
 false - The boolean value false.
-0 - The number zero.
--0 - Negative zero.
-0n - BigInt zero.
+0 - The number zero including, 
+-0 - Negative zero
+0n - BigInt zero
+
 "" or '' - Empty string.
 null - The null value.
 undefined - The undefined value.
@@ -197,7 +175,7 @@ true - The boolean value true
 function () {} - empty function 
 */
 // check it here 
-let z = [];
+let z = undefined;
 if (z) {
     console.log('This is truthy');
 } else {
@@ -205,7 +183,8 @@ if (z) {
 }
 console.log(Boolean(z));
 
-// Problems or confusion that arise for these values  
+// Q. WHAT KIND OF PROBLEMS WE MAY FACE FOR FASLY VALUES AND HOW TO DEAL WITH IT ? 
+// Problems or confusion that arise for these values like with 0, []
 
    // lets say we have web form asking how many children we have 
 const Children = 0;  // We have no children but still asking to enter 
@@ -216,15 +195,16 @@ if (Children) {
 }   // 0 is a fasly value so 2nd consoles 
    // so we can do this 
 const Childrens = 0; 
-if (Childrens != undefined) {     // this resolves 
+if (Childrens != undefined) {     // this can be resolved using logical operators 
     console.log(`You have ${Childrens} Children`);
 } else {
     console.log("Please enter your number of children");
 }    
+/* The variable Childrens is explicitly assigned a value of 0, which is a 
+   defined value so the the condition becomes true  */
 
-
-     // Checking for empty arrays 
-     // Checking how many posts 
+// Checking for empty arrays 
+// or Checking how many posts 
 
 const posts = [];
 if (posts){
@@ -264,20 +244,69 @@ if (Object.keys(users).length > 0){
 console.log(false == 0);
 console.log('' == 0);
 console.log(null == undefined);
+/*
+Q. EXPALIN THE DIFFERENCE BETWEEN STRICT AND LOOSE EQUALITY OPERATOR ? ***
+   Loose equality performs type conversion and returns value true while
+   Strict equality returns false if unmatched in type. 
+
+*/
 
 
 
+// Boolean Logic and Logical Operators 
+/* Boolean logic uses true or false values to solve problems using several 
+   logical operators like AND, OR , NOT (I hope we remember truth tables,
+   with AND all has to be true to be true and OR only one has to be true to be 
+   true and NOT is inversion of someting !). 
+   Here we represent those using &&, || and ! 
+   Note: && in JS evaluates expressions from left to right and returns the first 
+         falsy value it encounters. If all values are truthy, 
+         it returns the last value.
+        
+        || returns first truthy value it encounters or the last value 
+   
+   */
+   
+   let ahh;
+   ahh = 10 && 20;   
+   ahh = 10 && 0 && 20;  
+   console.log(ahh);
+   // Practical uses of these behaviour in React 
+   const Reactpost = [];
+   Reactpost.length > 0 && console.log(Reactpost[0]); // we don't wanna show undefiend 
+
+
+// Logical Assignment Operators 
+/*
+||= assigns right side value only if left side value is a fasly value 
+*/
+let hope = false; 
+if (!hope) {
+    hope = 100;
+}
+console.log(hope);
+// short cut way of doing it is using logical assigment operator 
+// let hope2 = false || 100;  even more straight forward and simple
+let hope2 = 0;  // if set to a falsy 
+hope2 ||= 100;  // this would set other not for truthy 
+console.log(hope2); 
+/*
+Similarly we have 
+&&= assigns right side value only if left is a truthy value 
+??=
+*/
+
+/*
+Q. WHAT IS THE DIFFERENCE BETWEEN STATEMENTS AND EXPRESSIONS ? 
+  Expressions produces a value even a single number value or any boolean value 
+  on the other hand statements are bigger piece of code which is exceuted and 
+  necessarily doesn't produce a value by itself. Expressions along with declarations
+  make ups statement 
+*/
 
 
 
-
-
-
-
-
-
-
-// Now looping statements and first we face for loop 
+// Now looping statements and first we will see 'for loop' 
 /* lets look at syntax of for loop 
 for (IntaialExp; Condition; IncreExp) {
     code block to run as long as condition is met; 
@@ -294,7 +323,8 @@ for (let i=0; i<=10; i = i + 1) {   // Incrementing by 1
   for (let i=0; i<=10; i = i + 2) {   
       console.log('Number- ' + i);
 }
-/* Using const in for loop will give error as we want the initilaized 
+/* Q. WHAT HAPPENS WHEN WE USE CONST IN FOR LOOP ? WILL IT GIVE AN ERROR AND WHY ?  
+Using const in for loop will give error as we want the initilaized 
 variable that is i to be changed in every iteration which is not possible 
 with const. */
 
@@ -304,20 +334,21 @@ with const. */
     if (i === 7) {
         console.log('7 is my favourite number'); // for 7 this will print 
     } else {
-        console.log('Number - ' + i); // for other numbers this 
+        console.log('Number - ' + i); // for other numbers this will print 
     }
 }
 
 // Nesting Loops 
-
 for (let i=0; i<=10; i++) {   
     console.log('Number- ' + i);
-  for (let j = 0; j<=10; j++) {
+  for (let j = 1; j<=10; j++) {
   console.log(`${i} * ${j} = ${i*j}`);
    }
 }
+// Q. CREATE SIMPLE MULTIPLICATION TABLE OF A GIVEN NUMBER SAY 10 OR UPTO 10 
 
-// Loop through Array OR Note: We have better alternative like for..each method 
+// Loop through Array 
+// OR Note: We have better alternative like for..each method 
 
 const fruits = ['🍇', '🍉', '🍌', '🍋', '🍑'];
  for (let i=0; i< fruits.length; i++) {
@@ -328,6 +359,7 @@ const fruits = ['🍇', '🍉', '🍌', '🍋', '🍑'];
    }
 }
 
+// Q. EXPLAIN THE USE OF BREAK IN A FOR LOOP. **
 // Breaks allows us to break from a loop
 for (let i=0; i<=20; i++) {   
     if (i === 15) {
@@ -337,8 +369,9 @@ for (let i=0; i<=20; i++) {
      console.log('Number- ' + i);
  }
 
-/* Then we have Continue. While other one breaks out of entire loop here 
-   it breaks from iteration and goes on.. */
+/* Q. EXPLAIN THE USE OF CONTINUE IN LOOP AND HOW IT DIFFERS FROM BREAK ? 
+Then we have Continue. While other one breaks out of entire loop here 
+it breaks from iteration and goes on.. */
 for (let i=0; i<=20; i++) {  
     if ( i === 13 ) {
       console.log('Skipping 13th..');
@@ -358,20 +391,19 @@ while (i<10) {
     console.log('Number- ' + i);
     i++;
 }
-/* Very similar and alternative to for loop. Note for loop is best if we 
-        know the number of times loop to run is known.
-Also note to not forget incremental as without it the condition will not be false and it 
+/* Q. EXPLAIN THE DIFFERENCE BETWEEN FOR LOOP AND WHILE LOOP ? WHICH IS TO BE USED ?  
+Very similar and alternative to for loop. Note for loop is best if we 
+know the number of times loop to run is known.
+Also note not forget incremental as without it the condition will not be false and it 
 would run infinitly.
 */
 
 // Using while loop to loop over array
-
 j = 0;
 const arr = [10, 20, 30, 40];
-while (j<arr.length) {
+while (j < arr.length) {
     console.log(arr[j])
     j++;
-
 }
 
 // Nesting while loop 
@@ -387,14 +419,15 @@ while (i2<=5) {
     i2++;
 }
 
-// do while ensures that code block runs atleast once even if the condition is not matched 
-  // code block executes first here 
- let l = 21;
+/* Q. HOW DO WHILE DIFFERS FROM WHILE LOOP ? 
+do while ensures that code block runs atleast once even if the condition is not
+matched code block executes first here (it runs regardless of while) */
+ let l = 20;
  do {
-    console.log('Number ' + l);
+    console.log('Our Number is ' + l);
     l++;
  } while(l<=20); // condition not matched still runs 21 
- // Note that we use break and continue here too like we did in for loops 
+ // Note that we can use break and continue here too like we did in for loops 
 
 
 

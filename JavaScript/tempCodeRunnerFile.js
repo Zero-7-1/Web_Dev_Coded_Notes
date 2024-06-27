@@ -1,3 +1,5 @@
-(function () {
-    let x = "Hello!!";  // I will invoke myself
-  })();
+ let l = 20;
+ do {
+    console.log('Our Number is ' + l);
+    l++;
+ } while(l<=20);
