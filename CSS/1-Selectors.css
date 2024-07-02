@@ -30,7 +30,7 @@
 
 /* As the name suggests selectors selects the html elements that we want to style and
   we various types slectors in CSS: 
-
+  Q. HOW MANY TYPES OF SELECTORS ARE THERE IN CSS ? 
   1. Simple or Basic selectors
   2. Pseudo-class selectors 
   3. Pesudo-element selectors
@@ -41,7 +41,10 @@
 
 */ 
 
-/* ----------------------------------------------  1.  Simple or Basic Selectors */
+/* ----------------------------------------------  1.  Simple or Basic Selectors 
+Q. WHAT ARE BASIC OR SIMPLE SELECTORS ?
+In basic or simple selectors we have universal selector, id selector and 
+class selector */
 
 /* Universal Selector selects all html elements 
    
@@ -56,7 +59,7 @@
 */
 
 
-/*A common practice to do this in all css files (refer box-model)
+/*A common practice to do this in all css files (also refer box-model)
    * {
           padding: 0;
           margin: 0;
@@ -88,22 +91,24 @@ adding padding or border we use border-box value.   */
   /* Assigned width of div 500px but Actual width is  
      500px + left padding + right padding + left border + right border 
 =    500px + 20px + 20px + 10px + 10px 
-=    560px (actual assigned 500px) 
+=    560px , actual assigned 500px
 Note that margin would not be considered for calculation as it is outside the box. 
 */
 
 }
 .scale {
-    width: 500px; // acts as a measurer to check 500px width below 
+    width: 500px; /*acts as a measurer to check 500px width below*/
     height: 50px;
     background: wheat;
     
 }
 .border-box {
     box-sizing: border-box;  /* This will eliminate above content-box behaivour */
+    border: 5px solid black;
     width: 500px;
-    padding: 50px; // included within assigned width 
-    border: 1px solid red;  // content is adjusted according to assigned width
+    padding: 50px; /* included within assigned width */
+    /* content is adjusted according to assigned width */
+
 }
 
 
@@ -144,9 +149,8 @@ html element separated by commas.
 /* ------------------------------------                       Slector:pseudo-class {
                                                                    property: value; 
                                                                     } 
-Q. EXPLAIN WHAT IS PSEUDO CLASS SELECTOR ? 
-Pseudo class selectors are used to target and style elements based on their state, 
-adding a bit interactivity.
+Q. EXPLAIN WHAT IS PSEUDO CLASS SELECTOR ? ***
+Pseudo class selectors are used to target and style elements based on their state.
 For example it is used generally for: 
 */
 
@@ -170,9 +174,9 @@ a:hover {
 /* Selects and styles an element that is being activated by user */
 a:active {
     color: black;
-}
+} 
  
-/*
+/*  A simple doubt why these are not applied to Y, Z links 
 Here ':hover' is pesudo-class whereas 'a' is the selctor 
 targeting element <a> */
 
@@ -181,7 +185,7 @@ targeting element <a> */
 a.highlight:hover {
     color: green;
     font-size: 22px;
-}   /* This is applied to Link of X which has a class */
+}   /* This is applied to Link of Y, Z which has a class */
 
 
 /* Hover on div */
@@ -206,21 +210,25 @@ input:focus {
 
 
 
-
+ 
 /* :first-child pesudo-class  selects and styles the first child element 
 of its parent. And here we have to use .class-name first so that we know parent.*/
+
 .parent-container p:first-child {
-    font-weight: bold;
-    color: blue;
-}   /* Here <div> has 3 childs and style we applied to first one */
-   /* similarly we have :last-child*/ 
-  
-   /* :nth-child(n) pseudo class selects and styles nth children of a parent and 
-  n determines which child should be selected. */
+    background-color: #1515e6;
+}
+/* Doubt understood the concept but first child para is not styled here 
+   Here <div> has 3 childs and style we applied to first one 
+   :nth-child(n) pseudo class selects and styles nth children of a parent and 
+   n determines which child should be selected.
+   similarly we have :last-child*/
+
+
+
 
 /* Style even-numbered list items */
 li:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #272424;
 }
 /* Style odd-numbered list items */
 li:nth-child(odd) {
@@ -233,7 +241,7 @@ li:nth-child(odd) {
     color: red;
 }
 
-/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ? 
+/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ? ***
    Re-look of imp pesudo classes
    1. Whether link is visted or not - :link for not visted and :visted
    2. Hovering mouse pointer - :hover
