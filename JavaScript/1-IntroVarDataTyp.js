@@ -1,20 +1,3 @@
-
-/*    
-      **********
-      KEY CONCPETS COVERED:    
-      ---> INTRO - JS AS INTERPRETED, WEAK, DYNAMIC LANGUAGE 
-      ---> VARIABLES - VAR, CONST, LET - HOISTING 
-      ---> DATA TYPES - CONVERSION - METHODS & PROPERTIES OF TYPES 
-      ---> MATH OBJECT - DATA OBJECT   
-      ---> strict mode                        
-      ************
-*/
-
-
-
-
-
-
 // Q. JAVASCRIPT IS WHAT KIND LANGUAGE ? 
    // Interpreated, Weak, Dynamic 
 

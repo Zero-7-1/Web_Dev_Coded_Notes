@@ -1,25 +1,13 @@
-/*
- *************
- KEY CONCEPTS COVERED:
- ---> ARRAY - SPECIAL VARIBALE AND AN OBJECT 
 
-
- *************
- 
-*/
-
-
-
-
-
-
-/* Arrays are special type of variable which can hold more than one value, it is also a 
-special type of object and also a js data structure.
+/* Arrays are special type of variable which can hold more than one value, it is also
+ a special type of object and also a js data structure.
 typeof operator in JavaScript returns "object" for arrays
 */
+  
 
+/* ---------------------------------------------ARRAY LITERAL & CONSTRUCTOR METHOD */
 
-// Creatio of Array using literal method 
+// Creation of Array using literal method 
 const arr_name = ["item1", 
                 "item2", 
                 "and so on"];   // spaces and line breaks are not important 
@@ -34,7 +22,8 @@ heros [1] = "Iron Man";
 heros [2] = 'Captain America';
 console.log(heros);     
 
-// Accessing array elements with index numbers and yes elements can be of any data type 
+// Accessing array elements with index numbers and yes elements can be of 
+   // any data type 
 const cars = ['BMW', 'jagaur', 'Audi'];
 cars [2] = 'Beattle';  // Arrays are mutable, they can be changed 
 const car = cars[2];
@@ -58,8 +47,7 @@ console.log(p);
 
 
 
-//  Array Methods 
-
+/* -------------------------------------------------------------ARRAY METHODS */
 // toString() converts an array to a string of (comma separated) array values
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits);
@@ -149,11 +137,6 @@ console.log(sages);
 console.log(sages[2][0]); // accesing a element through that nested array 
 
 
-
-
-
-
-
 // Sorting Arrays 
 const toy =['ironman', 'thor', 'batman'];
 toy.sort();
@@ -188,7 +171,7 @@ If the result is positive, b is sorted before a.
 If the result is 0, no changes are done with the sort order of the two values */
 
 
-// Array Iteration 
+
 
 
 

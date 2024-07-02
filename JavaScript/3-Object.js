@@ -1,21 +1,3 @@
-/*
-  ***************
-  KEY CONCEPTS COVERED: 
-  --BASICS--
-  ---> OBJECTS - NON-PRIMITIVE DATA TYPE 
-  ---> OBJECT CREATION 
-  ---> ACCESSING OBJECT DATA - DOT VS BRACKET NOTATION 
-
-  --ADVANCED--
-  ---> 
-  ***************
-
-  
-
-
-*/
-
-
 /* 
   Q. EXPLAIN WHAT IS OBJECT IN JS ? 
 - Objects in js are non-primitive data types which represents a collection of key value 
@@ -36,7 +18,7 @@
    e. g. var num = new Number(42); // Creates a Number object
 
 - JavaScript object also inherits the properties of another object, 
-  known as its “prototype.” (later in OOPS)
+  known as its “prototype.” (later in OOPs)
 
 - As we know from OOPs languages that objects are instances of class. But here in js 
   it is bit different from other oops languages. JS uses prototype based inheritence.
@@ -53,8 +35,8 @@ Q. DO WE HAVE VARIOUS CATEGORIES OF OBJECTS IN JS ?
 3. User-Defined Object: Any object created by the execution of JavaScript code.
 
 
-Q. WHICH ONE YOU SHOULD USE OBJECT OR ARRAY ? AND WHY ? 
-   (IMP)
+Q. WHICH ONE YOU SHOULD USE OBJECT OR ARRAY ? AND WHY ? ***
+
 Arrays and Objects both data strcutures are used to essentially group together 
 different variables that belongs together. The big difference is that in Objects the 
 order does not matter while retrieval but in Arrays the order in which we specify the
@@ -64,6 +46,10 @@ Objects is best for unstructured data.
 
 
 //  Object Creation  Q. EXPALIN VARIOUS WAYS OF OBJECT CREATION.
+
+
+/* --------------------------------OBEJCT LITERAL METHOD, DOT & BRACKET NOTATIONS */
+
 
 /* Creating object simply by using literal method i.e. using curly brace and 
 defining key-value pairs to initialize object's properties. 
@@ -82,7 +68,7 @@ checkAvailability: function() {
 };
   
 /*  Q. WHAT ARE THE DIFFERENT WAYS OF ACCESIING DATA THAT IS PROPERTIES AND METHODS 
-       IN AN OBJECT ? WHAT IS THE BEST WAY AND WHY ? 
+       IN AN OBJECT ? **
     Accessing properties or functions using dot notation 
     the dot is known as memeber  operator which has object to its left and 
     properties or functions to its right
@@ -91,18 +77,20 @@ checkAvailability: function() {
 console.log(Hotel);
 console.log(Hotel.hotelName); // dot will retrive data from Hotel Object 
 console.log(Hotel.checkAvailability()); 
-console.log(Hotel['checkAvailability']());  // bracket notation, key name as a string
-console.log(Hotel['roomTypes']);       // note where we keep () in function in bracket way
 
+console.log(Hotel['checkAvailability']());  // bracket notation, key name as a string
+console.log(Hotel['roomTypes']);       
+// note where we keep () in function in bracket way
 
 /*
 Q. WHATS THE DIFFERENCE BETWEEN THE USAGE OF DOT AND BRACKET NOTATION ? OR 
-   WHEN WE SHOULD CONSIDER TO USE BRACKET NOTATION ?
-  (V.IMP)
+   WHEN WE SHOULD CONSIDER TO USE BRACKET NOTATION ? ***
+  
   The simplest and the easiest way is to use dot notation especially when we know 
-  the property that we're going to use very well. But there are many cases where we have to 
-  use bracket notations. And the advantage of bracket notation is that we can use an 
-  expression which computes to a value and this value severs as key for accessing property.
+  the property that we're going to use very well. But there will be many cases where 
+  we have to use bracket notations. And the advantage of bracket notation is that we 
+  can use an expression which computes to a value and this value severs as key for 
+  accessing property.
   This is most helpful when we don'nt know the property yet or property name is not a
   valid js identifer.
 */
@@ -117,16 +105,20 @@ let personX = {
 console.log(personX["name"]); // normal bracket notation
 let prop = "name";   // property name is stored in a variable outside object 
 console.log(personX[prop]); // ["prop"] wrong, no need of quotes for variable here 
+// here prop variable evaluates to key name 
 
-// evaluates to an expression corresponding to key 
+
+
+// lets take another example 
 const ehh = {
   "firstName":"ABC",
   "lastName":"XYZ"
-}
+};
 const nameKey = "Name";  // ignoring first and last here 
 console.log(ehh['first' + nameKey]); // evaluates to firstName through concatnation 
 console.log(ehh['last' + nameKey]);  // evaluates to lastName through concatnation 
 
+// lets take a practical example 
 // When property name has spaces or any other special characters
 // For example an object conataining CSS styles  
 let styles = {
@@ -135,18 +127,20 @@ let styles = {
 };
 console.log(styles["background-color"]); 
 
-// 2. When property name starting with a number 
+// Here is another example 
+// When property name starting with a number 
 let data = {
   "2020": 100,
   "2021": 200
 };
 console.log(data["2020"]); 
 
-// Property names defined at runtime 
+// More practical example would be 
+// When Property names defined at runtime 
 /* suppose we are building an object that based on user input or data 
 from API 
 */
-let userInput = "favoriteColor"; // let it be a user feild 
+let userInput = "favoriteColor"; // let it be a user feild
 let value = "blue";  // user choice 
 
 let userPreferences = {}; // let it empty object 
@@ -179,7 +173,7 @@ console.log(College2["City"]);     // Viewing new property
                      delete  College2["City"] */
 
 
-// We can have more complex values in objects like here in point2 exaple  
+// We can have more complex values in objects like here in point2 example  
 const point = {
   x:1, 
   y:1
@@ -213,6 +207,11 @@ const BioData = {
 }; 
 console.log(BioData);
 console.log(BioData.Address.location);
+
+
+
+/* -----------------------------------------------------OBJECT CONSTRUCTOR METHOD */
+
 
 
 // Another way for Creating objects is by Constructor Notation
@@ -412,87 +411,6 @@ person3.sayHello();
 
 
  
- // More about Object Properties  
- 
- /* Object's - Together the key-value pair is also known as property of a object. */
-
- 
- 
- /* Properties can usually be changed, added, and deleted, but some are read only. 
-Property attributes are metadata associated with each property, 
- which control how the property behaves and how it can be manipulated. 
- 
- There are three primary property attributes:
-
- 1. Writable Attribute: This attribute specifies whether the value of the property can be
-  modified or reassigned. If a property is writable, its value can be changed; 
-  if not, it remains immutable.
-
-  2. Enumerable Attribute: The enumerable attribute determines whether the property 
-name is visible when iterating over the object's properties using a loop 
-(e.g., a for...in loop). If a property is enumerable, it will be included in these iterations;
- if not, it will be skipped.
-
- 3. Configurable Attribute: The configurable attribute specifies whether a property can be 
-deleted, and whether its attributes can be altered. If a property is configurable, 
-it can be removed from the object, and its attributes can be changed; otherwise, 
-it remains fixed.
-  */
-const person = {};
-
-Object.defineProperty(person, 'name', {
-  value: 'John',
-  writable: false,    // This property is read-only
-  enumerable: true,    // It's visible during iteration
-  configurable: false  // It can't be deleted or have its attributes changed
-});
-
-console.log(person.name);  // OP3
-person.name = 'Doe';   // Attempting to change the value (will fail if writable is false)
-delete person.name; // Attempting to delete the property (will fail if configurable is false)
-/* New to ECMAScript (Scripting language specification that defines core features and behavior
- of scripting languages, and JS is the implementation of the ES standard) */
-
-
-
-
-
-
-
-
-
-
-
- /* Object Attributes- Also known as internal properties or internal slots that are 
-associated with every object which defines and controls characteristics of an object 
-These attributes are not directly accessible or modifiable through regular JavaScript code 
-but are essential for understanding how objects behave and interact with each other. 
-There are three primary object attributes:
-1. Prototype - The prototype establishes the object's inheritance hierarchy
-which refers to another object, known as the object's prototype. */
-const parent = { x: 10 };
-const child = Object.create(parent);
-console.log(child.x); // 10 Inherited from the prototype (parent)  OP4
-
-/*The Object.create() method allows  to create a new object with a specified 
-prototype object. This is useful when you want to create objects with a shared 
-set of properties and methods.
-*/
-/* 2. Class - The class attribute is a string that categorizes the type of an object. 
-It is used internally by JavaScript engines to classify objects based on their nature. 
-For example, built-in objects like arrays, functions, and regular expressions have 
-specific class names that help identify their type.
-*/
-console.log(Object.prototype.toString.call([])); //  OP5
-/* Object.prototype.toString is built-in JavaScript method 
-      that returns a string representation of an object's type. */
-
-/* 3. Extensible Flag - The extensible flag specifies whether new properties can be added to
- the object. If an object is extensible (the default behavior), we can add new properties 
- to it. If the extensible flag is set to false, we cannot add new properties,
-  delete existing ones, or change their attributes.  */
-const nonExtensibleObj = Object.preventExtensions({});
-nonExtensibleObj.newProperty = 42; // Throws an error only in strict mode.
 
 
 

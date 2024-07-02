@@ -1,15 +1,4 @@
 /*
-  *****************
-  KEY CONCEPTS COVERED:
-  ---> FUNCTION - DECLARATION, EXPRESSION AND ARROW FUNCTION
-
-
-  *****************
-
-*/
-
-
-  /*
    Q. DEFINE JS FUNCTION. 
    Functions can hold many lines of codes which can declared and can be resused in 
    other parts of the code performing same tasks . Additionally we can pass data 
@@ -142,7 +131,7 @@ console.log(output);
 
 // As we know functions are object so they have both methods and properties 
 // we may use arguments.length property which will returns the number of arguments
-
+  
 
 
 
