@@ -20,14 +20,8 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
     border: 3px solid rgb(23, 23, 22);
     background-color: rgb(146, 227, 16);
 }
-/* When we add another element under this, it just goes at buttom of previous element */
-
-
-
-
-
-
-
+/* When we add another element under this, it just goes at buttom of previous element 
+*/
 
 
 
@@ -116,7 +110,7 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
                                                        (should be same)  
                             = Result / 2  
   Centering Vertically - take height rest is same  
-  This is a method we have better ways like transfrom which we shall see */
+  This is a method we have better ways like transfrom which we shall see later soon */
 .child-div-5 {
     position: absolute;
     height: 50px;
