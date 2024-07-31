@@ -1,10 +1,11 @@
 /*
-Postioning specifies type of postion method for an element. 
-It is a layout technique used to control the placement of elements on a web page. 
-After specifying the postion type the top, left, buttom and right
-properties are used to adjust the postioning. 
+Postioning is one of the layout techniques used to control the 
+placement of elements on a web page. 
+After specifying the postion we could use margin top, left, buttom and right
+properties to adjust the postioning. 
+
 Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND 
-   RELATIVE POSTIONS. EXPLAIN FIXED POSTION.  
+   RELATIVE POSTIONS. EXPLAIN FIXED POSTION.  ***
 */
 
 
@@ -23,11 +24,21 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
 /* When we add another element under this, it just goes at buttom of previous element 
 */
 
+/* Q. DIFFERENCIATE BETWEEN RELATIVE AND ABSOLUTE POSITIONS. ***
+*/
 
 
-
-/* 2. Relative Postion - Generally we make parent element relative and its children
-      inside the parent we make absolute. By this we can now postion the child 
+/* 2. Relative Position - Relative position means or by setting postion relative, the 
+      element is positioned relative to its normal position. We can move this element 
+      but the space occupied by the element will remain in the document flow that means 
+      even if we move the element from normal postion the other elements will not be 
+      adjusted and fill the gap. 
+      
+      But this not case for Absolute postion, here the element is removed from document 
+      flow and other elements will take the space. 
+      
+      Generally we make a parent element relative and its all children
+      we make absolute. By this we can now postion the children  
       elements anywhere inside the parent.  */
 
 
@@ -38,22 +49,21 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
 
 
 .parent-div {
-    position: relative; /*if we remove this then it will be under static div*/
+    position: relative; 
     height: 300px;
     width: 500px;
-    top: 40px;
-    margin-left: 350px; /* We could just write top, buttom, left, right 
-                              while using positions, no need to mention margin */
+    margin-top: 40px;
+    left: 350px; /* We could just write top, buttom, left, right 
+                    while using positions, no need to mention margin */
     border: 3px solid rgb(15, 15, 15);
     background-color: rgb(152, 226, 14);
 }
 
 
 /* 3. Absolute Postion - Elements with position absolute are positioned relative 
-      to their nearest positioned ancestor. If no such ancestor exists, 
-      they are positioned relative to the initial containing block 
-      (usually the <html> or <body>). We can set postions of these elements with
-      respect to its ancestor element generally a relative. 
+      to their nearest positioned ancestor (other than static). 
+      If there is no such ancestor, it is positioned relative to the initial 
+      containing block (usually the viewport) 
 
 */
 
@@ -120,6 +130,19 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
     border: 3px solid pink;
     background-color: red;
 }
+
+/*This outer div will be positioned relative to viewport not our parent div 
+note that parent div is not ancestor of this test div for that it has to be inside the
+parent div*/
+.outerdiv{
+  position: absolute;
+  background-color: aqua;
+  top: 100px;
+}
+
+
+
+
 
 /*   
   Q. WHAT IS THE DEFAULT POSTIONING OF AN ELEMENT WITH POSITION ABSOLUTE ? 
