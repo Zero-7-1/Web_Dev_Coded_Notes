@@ -269,11 +269,11 @@ li:nth-child(odd) {
 /*----------------------------------------                Selector::pseudo-element {
                                                                     property: value
                                                                  }    
-Styles specific parts of an element's content or generate content that is not present 
-in the actual HTML, denoted by :: double colon       */
+Pesudo element selector styles specific parts of an element's content or it
+generate content that is not present in the actual HTML, denoted by :: double colon       */
 
-/*::before & ::after Pseudo-element is used to insert content before & after the actual 
-content of an element */
+/*::before and ::after, allows us to insert content into the DOM without 
+  altering the HTML.  */
 h1::before {
     content: "🔍";
 
