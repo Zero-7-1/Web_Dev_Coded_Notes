@@ -50,11 +50,11 @@ z = 5;
 p = 5;
 r = z+p;
 console.log(r);
-/* In these cases js treats above variables as global variables & attaches it to global 
-object i.e. window for browsers. */
+/* In these cases js treats above variables as global variables & attaches it to 
+global object i.e. window for browsers. */
 
 
-// WHY VAR IS NOT USED ANYMORE ? 
+// WHY VAR IS NOT USED ANYMORE ? ** OR EXPLAIN JS VARIABLE DECLARATION ? *** 
 
 
 /* Only use var to support old browsers, it doesn't have block level 
@@ -139,7 +139,7 @@ We shall see scope again in functions file
 
 
 
- // Q. WHAT IS 'HOISTING' IN JAVASCRIPT ? 
+ // Q. WHAT IS 'HOISTING' IN JAVASCRIPT ? ***
 
 
 /* In the beggining we saw that we can use variables directly without declaring them 
@@ -173,7 +173,8 @@ console.log('myName', myName);
 
 console.log(x)        // initialized with undefined 
 var x = 5;           // var x; is hoisted but not x = 5.
-//This can lead to unexpected results and bugs  
+//This can lead to unexpected results and bugs as it will give undefined 
+// instead of throwing error 
 
 
 // Q. IS HOISTING EXCLUSIVE FOR VAR ? WHAT ABOUT LET AND CONST ?  
@@ -188,7 +189,7 @@ let x = 10; // reference error, can not access x before initialization
      // but why ? we got this error ? and why not in var ?
       // because in var variable was given 'undefined' value 
 
-// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ) IN JAVASCRIPT 
+// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ) IN JAVASCRIPT ***
 
   // because of  Temporal Dead Zone(TDZ)
   /* It is the time taken between declaring the variable (using let or const) and 
@@ -221,19 +222,6 @@ string literls
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // DATA TYPES 
 /* JS is a dynamically typed language - it will automatically figure out the data type
 based on the value we assign to the variable at run time and these types can also 
@@ -246,7 +234,7 @@ console.log(foo);
 /* Also JS is weakly typed i.e. it performs type conversion when mismatch with
 types instead throwing errors.
 
-Type Conversion (Implicit)- JS Converts one or more values to a common data type
+Type Coercion (Implicit)- JS Converts one or more values to a common data type
                             for any operation to proceed. 
 Implicit Rules like:
 - String Concatenation: When we use the + operator to concatenate values, js will 
@@ -255,9 +243,6 @@ convert non-string values to strings.
 - When we use comparison operators (e.g., ==, !=, >, <), js may convert values to a 
 common data type before comparing them. 
 */
-
-
-
 
 let equality = 5 == "5";  // Result: true (automatic type conversion for equality)
 console.log(equality);
@@ -273,7 +258,7 @@ In this example, the non-boolean operand is automatically converted to a boolean
 for the logical AND operation.
 
 // Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION SCNARIOS AND HOW WE CAN 
-         // AVOID THESE TYPE CONVERSIONS ? 
+         // AVOID THESE TYPE CONVERSIONS ? **
 
 
 To avoid issues related to automatic type conversion, some developers prefer to 
@@ -285,7 +270,7 @@ same for equality.  */
 This type conversion can lead to unexpected results if we're not careful. 
 So it's often a good practice to be explicit about data types and use type casting.
 
-// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES. 
+// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES. ***
 
 Type Casting (Explicit)- Explicitly changing the data type of a value using 
 some functions or methods. */
@@ -295,12 +280,12 @@ let ExpNum = Number("8.14");
 console.log(typeof(ExpNum));  
 
 let EmpStr = Number(""); // this example is important
-console.log(EmpStr);  // why 0 ? coz it's default for number 
+console.log(EmpStr);  // why 0 ? coz it's default for number ***
 
 let NotNum = Number("John"); // also this one 
-console.log(typeof(NotNum)); // NaN (but type is number) if conversion is not possible. 
+console.log(typeof(NotNum)); // NaN (but type is number) if conversion not possible. 
 
-// - parseInt() converts to an integer or whole number
+// - parseInt() converts to an integer or whole number {doubt}
 
 /* note:   parses the string from left to right until it encounters a 
            character that is not a valid part of an integer, and then it stops.
@@ -313,7 +298,8 @@ console.log(typeof(NotNum)); // NaN (but type is number) if conversion is not po
           
            parsing stops at the first non-numeric character
 */
-const intNum = parseInt("123"); // Converts to an integer
+const intNum = parseInt("123.899"); // Converts to an integer
+console.log(intNum);
 console.log(typeof(intNum)); 
 
 const binaryString = "1010"; // 10 in binary. 
@@ -331,12 +317,12 @@ let spacedString = '   42';  // White spaces will be ignored here
 let parsedInt = parseInt(spacedString);
 console.log(parsedInt); 
 
-// - parseFloat() converts string into a floating-point number.
+// - parseFloat() converts string into a floating-point number. {doubt}
 /* Note: - parses the string until it reaches an invalid character and then stops.
          - does ignore leading white space.
          - does not take a radix argument; it always assumes base 10.
  */
-         let spacedString2 = "   42.5";
+         let spacedString2 = "   42.90";
          let parsedFloat = parseFloat(spacedString2);
          console.log(parsedFloat); // Output: 42.5
          
@@ -348,12 +334,12 @@ const weString = String(aNum);
 console.log(weString);
 console.log(typeof(weString));
 
-// WHERE WE SHOULD USE EXPLICIT TYPE CONVERSION ? 
+// WHERE WE SHOULD USE EXPLICIT TYPE CONVERSION ? *
 /* Note that Scenarios where we should consider using explicit type conversion in 
 JavaScript are-  while user input processing. */
  
 
-// DIFFERENTIATE BETWEEN PRIMITIVES AND NON-PRIMITIVE DATA TYPES ? 
+// DIFFERENTIATE BETWEEN PRIMITIVES AND NON-PRIMITIVE DATA TYPES ? **
 
 /* Primtive vs Reference- 
 - Primitive data types are simple data types, its values can not be changed directly 
@@ -366,7 +352,7 @@ For example suppose we have x = 3.17 and if we do
 x = 9.11 then this value overides the previous value 
 which is not essentially a direct change but rather reassignment.
 
--Also Primitives stores single vlaue unlike non primitives like objects 
+-Also Primitives stores single value unlike non primitives like objects 
 which stores many value. and Primitive types stores a copy of exact value directly 
 in the memory but non-primitives store reference to the memory location rather
 exact value.
@@ -374,7 +360,7 @@ exact value.
 - Operations with primitives are faster. */
 
 
-// WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  METHODS & PROPERTIES.  
+// WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  METHODS & PROPERTIES.*** 
  
 // JS has 7 primitive data types and 1 reference data type (Object)
 
@@ -384,7 +370,7 @@ let text = "Sudhanshu Sekhar Barik"
 let length = text.length   // length property (note this not a function or method)
 console.log("Your name's lenghth is " + length + " including spaces");
 
-// slicing - substring() with two index no. to slice in between  
+// slicing - substring() with two index no. to slice in between, will slice 2nd
 let originalString = "Sudhanshu";
 let slicedString = originalString.substring(0,5); 
 console.log(slicedString);
@@ -397,7 +383,7 @@ console.log(upperCase_name);
 console.log(lowerCase_name);
 
 // Q. SUPPOSE USERS INPUTS HIS NAME IN ALL LOWERCASE BUT WE NEED FIRST LETTER OF 
-   // FIRSTNAME AND LASTNAME TO BE UPPER CASE ONLY, HOW CAN WE DO THIS ? 
+   // FIRSTNAME AND LASTNAME TO BE UPPER CASE ONLY, HOW CAN WE DO THIS ? ***
 /* To lowercase only specific characters in a string, we can manually manipulate the 
 string by targeting those characters. This can be done by converting string to arrays 
 and then modify specific elements (best way) */
@@ -419,7 +405,7 @@ console.log(newString);
 
 // 2. Numbers - with and without decimals 
 // Extra large or extra small numbers can be written with scientific notation
-// Q. SOMETIMES WE HAVE 'E' WITHIN A NUMBER, WHAT IS IT ? 
+// Q. SOMETIMES WE HAVE 'E' WITHIN A NUMBER, WHAT IS IT ? *
 let a = 123e5;
 let b = 123e-5;
 console.log(a);
@@ -491,7 +477,7 @@ console.log(500 + tX);
 let Boo = (10<5);
 console.log(Boo); // false 
 
-// Q. IS UNDEFINED AND NULL ARE DATA TYPES IN JS ? WHATS THE DIFFERENCE ? 
+// Q. IS UNDEFINED AND NULL ARE DATA TYPES IN JS ? WHATS THE DIFFERENCE ?***
 // 5. Undefined - represents a variable that is declared but not assigned 
 let MyVar;
 console.log(MyVar);
@@ -538,11 +524,6 @@ stored in the heap memory and accessed by reference  */
    -> Arrays 
    -> Functions 
    -> Date & Math Objects  */
-
-
-
-
-
 
 
 
@@ -623,8 +604,6 @@ console.log(date2);
 date2 = new Date(1999, 8, 4, 6, 30, 0);
 date2 = date2.getTime();
 console.log(date2);
-
-
 
 
 // Strict Mode - it will not work here but just for understanding 
