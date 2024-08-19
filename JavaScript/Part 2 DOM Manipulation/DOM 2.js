@@ -1,11 +1,11 @@
 // Creating and Appending Elements 
 /*  
 In many cases we would want to create elements and insert it to the document on some
-kind of event, we would look events after this but here we focus on what will happen 
-when an event is triggered i.e. insert, delete, etc. 
+kind of event, we would look event handling after this but here we focus on what will 
+happen when an event is triggered i.e. insert, delete, etc. 
 */
 
-// Q. HOW CAN WE ADD OR CREATE AN ELEMENT THROUGH DOM TO THE DOCUMENT  ? 
+// Q. HOW CAN WE ADD OR CREATE AN ELEMENT THROUGH DOM TO THE DOCUMENT  ? ***
 const div = document.createElement('div'); // a div has been created in memory 
 div.className = 'my-element'; // given a class to an element  
 div.id = 'element-id';  // similarly we gave an id 
