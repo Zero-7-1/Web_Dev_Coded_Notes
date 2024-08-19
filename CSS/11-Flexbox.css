@@ -1,16 +1,1 @@
-/* Before semantic html tables were used to design layouts then used dispaly, float and 
-postioning to adjust layout. But these methods are little painful so we have easier method that is 
-Flexbox.
-To get started with flexbox we need to wrap our targeting divs with a flex conatiner. Then we set 
-dispaly property to flex. */
 
-.flex-container{
-  display: flex;
-  background-color: blueviolet;
-}
-.flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-}
