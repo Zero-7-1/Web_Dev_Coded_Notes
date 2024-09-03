@@ -1,4 +1,7 @@
-// toExponential 
-const num3 = 12345.6789;
-const formattedNum3 = num3.toExponential(2); // formats to exponential notation  
-console.log(formattedNum3); // Output: "1.23e+4"
+
+function getRandom(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(item);
+}
+getRandom([1, 2, 3, 4, 5, 6, 7]);

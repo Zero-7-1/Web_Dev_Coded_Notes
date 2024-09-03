@@ -407,6 +407,34 @@ matched code block executes first here (it runs regardless of while) */
  // Note that we can use break and continue here too like we did in for loops 
 
 
+// Rest Operator 
+/*
+The rest operator in JavaScript allows us to collect all remaining elements 
+into an array. It is mostly used in function parameters to handle an indefinite 
+number of arguments, making functions more flexible. The rest operator is 
+represented by three dots (...) followed by a name, like ...args.
+*/
+ // Using the Rest Operator in Function Parameters
+ function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+  }
+  
+  console.log(sum(1, 2, 3)); // Output: 6
+  console.log(sum(4, 5, 6, 7)); // Output: 22
+  
+
+// extract the remaining elements of an array or properties of an object
+// (Destructuring Assignment) 
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+
+console.log(first);  // Output: 1
+console.log(second); // Output: 2
+console.log(rest);   // Output: [3, 4, 5], rest of elements 
 
 
- 
+const person = { name2: 'Alice', age: 25, job: 'Engineer' };
+const { name2, ...rest2 } = person;
+
+console.log(name2); // Output: 'Alice'
+console.log(rest2); // Output: { age: 25, job: 'Engineer' }
+

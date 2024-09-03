@@ -170,11 +170,62 @@ If the result is negative, a is sorted before b.
 If the result is positive, b is sorted before a.
 If the result is 0, no changes are done with the sort order of the two values */
 
+// EXPLAIN REDUCE METHOD AND ITS USAGE. 
+// Reduce Method 
+/*
+The reduce method in JavaScript is a powerful array method used to process an 
+array and reduce it to a single value.
+This method executes a callback function on each element of the array 
+(from left to right) and accumulates the result in a single return value.
+
+Reduce is useful for various array operations such as summing, finding averages, 
+and accumulating data into objects or other structures.
+
+The reduce method takes two main arguments:
+
+(1) Callback Function: This function is executed on each element of the array, 
+and it receives four arguments:
+i. Accumulator - The accumulated value previously returned in the last invocation 
+                 of the callback, or the initial value, if supplied
+ii. Current Value - The current element being processed in the array
+
+iii. Current Index (Optional) - The index of the current element being processed
+iv. Array (Optional) - The array reduce was called upon
+
+(2) Initial Value (Optional): A value to use as the first argument to the 
+first call of the callback. If no initial value is supplied, the first element 
+in the array will be used as the initial accumulator value, and reduce will 
+start from the second element.
+
+*/
 
 
+// use reduce method to sum up all the numbers in an array
+const numbers = [1, 2, 3, 4, 5];
 
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
 
+console.log(sum); 
 
+/*
+This works as follows
+The initialValue is 0 in this example. This is the starting point for the 
+accumulator.
+
+First Iteration: accumulator is 0 (initial value), currentValue is 1. 
+The result is 0 + 1 = 1.
+
+Second Iteration: accumulator is 1 (from the previous result), currentValue is 2.
+The result is 1 + 2 = 3.
+so on.. 
+
+Note: If an initialValue is not provided, reduce uses the first element of 
+the array as the initial accumulator value and starts the iteration with the 
+second element.
+
+*/
 
 
 

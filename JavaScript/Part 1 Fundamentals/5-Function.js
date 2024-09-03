@@ -1,8 +1,8 @@
 /*
    Q. DEFINE JS FUNCTION. 
-   Functions can hold many lines of codes which can declared and can be resused in 
-   other parts of the code performing same tasks . Additionally we can pass data 
-   to the function, function can also return data too.  
+   Functions can hold many lines of codes which can declared and can be resused 
+   in other parts of the code performing same tasks . Additionally we can pass 
+   data to the function, function can also return data too.  
    
    Function's type is obejct.
 
@@ -19,25 +19,57 @@
 
 
 /* Q. WHAT'S THE DIFFERENCE BETWEEN FUNCTION AND METHOD ? 
-Functions vs Methods - Key difference is that methods are associated with objects or 
-class, method is also a function but the name is used in oops where function is part 
+Functions vs Methods - Key difference is that methods are associated with objects 
+or class, method is also a function but the name is used in oops where function is part 
 of a class whereas normal functions are independent of any class  */ 
 
  
 
 // function usage 1 without a return 
  
-function fun_name(a, b) {    // parameters acts as varibles for function, gets defined 
-    let result = a + b;         // once we call the function, represents the input data 
+function fun_name(a, b) {  // parameters acts as varibles for function
+    let result = a + b;   
     console.log("Sum of a and b is " + result);
 }
 fun_name(5,5); // ivoking the function with arguments for parameters
+/*
+We could provide a default parameter for a, b (Like a=3, a=4) so that if we 
+don't pass any arguments while function call default parameter value will be 
+arguments. 
+Similarly we could use Rest operator in Functions.
+*/
 
 // Q. DIFFERENTIATE BETWEEN PARAMETER AND ARGUMENTS IN A FUNCTION
 /*
-Parameter as learned earlier are the varibales whose value needed to be passed while
-calling the function, simply that value is known as arguments for parameters 
+Parameter as learned earlier are the varibales whose value needed to be passed 
+while calling the function, simply that value is known as arguments for parameters 
 */ 
+
+
+// Objects as parameters 
+
+function loginUser(user) {
+    return `The user ${user.name} with the id of ${user.id} is logged in`; 
+};
+const user = {
+    id: 1,
+    name: 'John'
+};
+
+console.log(loginUser(user)); 
+
+
+
+// Arrays as parameters, logs a random element from an array 
+
+function getRandom(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(item);
+}
+getRandom([1, 2, 3, 4, 5, 6, 7]);
+
+
 
 // function usage 2 with a return 
 function getArea(width, height) {
@@ -97,20 +129,20 @@ console.log("Using Array for Volume: " + volume_result);
 let age = yourAge(2024,1999);
 console.log("Hi your age is:  " + age); 
 
-/* In Function Expression, we don't use a name for the function (Anynomous Function), 
-   rest everything is same but we store it in a varibale and that variable will be then 
-   caryy the function value.   
+/* In Function Expression, we don't use a name for the function 
+   (Anynomous Function), rest everything is same but we store it in a varibale and that variable will be then 
+   cary the function value.   
    Function declarations are hoisted and can be called before their declaration 
    in the code. But Function expressions are not hoisted and can only be 
    called after they have been defined in the code.
 */ 
 
 
-
-  // Arrow Function
+// Arrow Function
  // Q. EXPLAIN ABOUT ARROW FUNCTION IN JS AND WHY WE SHOULD USE IT ? 
   /*
   It is a special form of function expression that is shorter and faster to write.
+  Note:
   Arrow functions do not have their own 'this'. 
   They are not well suited for defining object methods.
   Arrow functions are not hoisted. They must be defined before they are used.
@@ -133,8 +165,6 @@ console.log(output);
 // we may use arguments.length property which will returns the number of arguments
   
 
-
-
 // Q. CAN FUNCTION CALL ANOTHER FUNCTION ? 
 // Functions calling another function 
 
@@ -149,7 +179,7 @@ function jucieMaker(apple, orange) {
                    ${OrangePiece} oranges pieces`;
     return jucie;
 };
-
+ 
 myJuice = jucieMaker(1,3);
 console.log(myJuice); // return say juice with no of fruits pieces  
 
@@ -169,3 +199,7 @@ The () at the end immediately invokes the function.
     let x = "Hello!!";  // I will invoke myself
   }
 ) ();
+
+
+
+
