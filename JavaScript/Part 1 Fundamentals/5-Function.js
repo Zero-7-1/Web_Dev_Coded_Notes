@@ -138,9 +138,10 @@ console.log("Hi your age is:  " + age);
 */ 
 
 
-// Arrow Function
- // Q. EXPLAIN ABOUT ARROW FUNCTION IN JS AND WHY WE SHOULD USE IT ? 
-  /*
+ // Arrow Function
+// Q. WHAT IS ARROW FUNCTION IN JS  ? 
+
+/*
   It is a special form of function expression that is shorter and faster to write.
   Note:
   Arrow functions do not have their own 'this'. 
@@ -148,16 +149,22 @@ console.log("Hi your age is:  " + age);
   Arrow functions are not hoisted. They must be defined before they are used.
 */
 
-// lets convert our function expression example to arrow function 
+// Arrow Function Example 1 
+
 let yourAge2 = (presentYear, birthYear) => presentYear - birthYear; 
+
 /* if there are not multiple parameters, we don't need to enclose them 
    in parentheses. 
    => is used to separate the parameters from the function body.  
    we can omit the braces {} and the return keyword if the function 
    is a single statement
 */
-// above is same as this below one 
-const yourAge3 = (presentYear, birthYear) => { return presentYear - birthYear };
+
+// Arrow Function Example 2 (same as 1)
+
+const yourAge3 = (presentYear, birthYear) => { 
+                 return presentYear - birthYear };
+
 let output = yourAge3(2024, 1999);
 console.log(output);
 
