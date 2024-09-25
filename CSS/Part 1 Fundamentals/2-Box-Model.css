@@ -147,12 +147,6 @@ Q. EXPLAIN PADDING PROPERTY.*/
 }
 
 
-
-
-
-/*
-
-*/
 /* When we apply Height and Width, it is applied to the 
 content of element that is it do not include
 padding, margins or borders. It sets inside them.
@@ -183,11 +177,6 @@ property on the same element, and the value of
 the width property is larger than the max-width 
 property; the max-width property will be used 
 (and the width property will be ignored).*/
-
-
-
-
-
 
 
 /* Q. EXPLAIN WHAT IS BOX SIZING ? 
@@ -223,6 +212,7 @@ and border, and the content space is adjusted accordingly.
 /* Since the result of using the box-sizing: border-box; 
 is so much better, many developers want all elements on 
 their pages to work this way. So this generally applied 
-at the start universal for all elemnents (see this in selectors files)*/
+at the start universal for all elemnents (see this in selectors files)
+*/
 
 

@@ -24,7 +24,7 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
 /* When we add another element under this, it just goes at buttom of previous element 
 */
 
-/* Q. DIFFERENCIATE BETWEEN RELATIVE AND ABSOLUTE POSITIONS. ***
+/* Q. DIFFERENCIATE BETWEEN RELATIVE AND ABSOLUTE POSITIONS.
 */
 
 
@@ -140,10 +140,6 @@ parent div*/
   top: 100px;
 }
 
-
-
-
-
 /*   
   Q. WHAT IS THE DEFAULT POSTIONING OF AN ELEMENT WITH POSITION ABSOLUTE ? 
     By Default, an element with postion absolute is positioned at top-left (0,0)
@@ -153,13 +149,7 @@ parent div*/
      TO THE ENTIRE VIEWPORT ? 
      By ensuring that its none of its ancestors have a position property set other than
      default one static. 
-
-
 */
-
-
-
-
 
 
 /* 4. Fixed Postion - is positioned relative to the viewport, 
@@ -175,9 +165,6 @@ Generally used for menu bar or nav bar.*/
     background-color: aqua;
 }
  
-
-
-
 
 /*5. Sticky - An element with position sticky is positioned based on the 
      user's scroll position, In other words it acts as fixed only in its 

@@ -176,8 +176,8 @@ a:active {
     color: black;
 } 
  
-/*  A simple doubt why these are not applied to Y, Z links 
-Here ':hover' is pesudo-class whereas 'a' is the selctor 
+/*  A simple doubt may come why these are not applied to Y, Z links 
+so what ':hover' is pesudo-class whereas 'a' is the selctor 
 targeting element <a> */
 
 
@@ -256,16 +256,6 @@ li:nth-child(odd) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*----------------------------------------                Selector::pseudo-element {
                                                                     property: value
                                                                  }    
@@ -294,11 +284,6 @@ p.firstletter::first-letter{
     color: #ff0000;
     font-size: xx-large;
 }   /* this could have more practical use */
-
-
-
-
-
 
 
 
@@ -344,16 +329,6 @@ h2[class*="se"] {
     background-color: hotpink;
 }
 /* Attribute Selectors are most helpful in forms without using class and id */
-
-
-
-
-
-
-
-
-
- 
 
 
 
