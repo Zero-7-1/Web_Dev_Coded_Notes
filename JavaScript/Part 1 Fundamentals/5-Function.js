@@ -142,7 +142,10 @@ console.log("Hi your age is:  " + age);
 // Q. WHAT IS ARROW FUNCTION IN JS  ? 
 
 /*
-  It is a special form of function expression that is shorter and faster to write.
+  It is a special form of function expression that is shorter and faster to write, 
+  function keyword is not needed hence let and const can be used which can avoid 
+  hoisting issues. Its always recommeded to use Arrow functions while coding in JS. 
+  
   Note:
   Arrow functions do not have their own 'this'. 
   They are not well suited for defining object methods.
@@ -151,11 +154,13 @@ console.log("Hi your age is:  " + age);
 
 // Arrow Function Example 1 
 
-let yourAge2 = (presentYear, birthYear) => presentYear - birthYear; 
+const yourAge2 = (presentYear, birthYear) => presentYear - birthYear; 
 
-/* if there are not multiple parameters, we don't need to enclose them 
-   in parentheses. 
+/* if there are not multiple parameters, we don't even need to enclose them 
+   in parentheses.But () is needed for no parameters. 
+   
    => is used to separate the parameters from the function body.  
+   
    we can omit the braces {} and the return keyword if the function 
    is a single statement
 */
@@ -163,7 +168,8 @@ let yourAge2 = (presentYear, birthYear) => presentYear - birthYear;
 // Arrow Function Example 2 (same as 1)
 
 const yourAge3 = (presentYear, birthYear) => { 
-                 return presentYear - birthYear };
+    return presentYear - birthYear 
+};
 
 let output = yourAge3(2024, 1999);
 console.log(output);
@@ -176,9 +182,8 @@ console.log(output);
 // Functions calling another function 
 
 function cutFruit(fruit){
-    return fruit * 8; // say fruit is cut into 8 pieces before jucie
+    return fruit * 8; // say fruit is cut into 8 pieces 
 }; 
-
 function jucieMaker(apple, orange) {
     const applePiece = cutFruit(apple); // calling cutFruit()
     const OrangePiece = cutFruit(orange); // calling function in another function 
@@ -188,7 +193,8 @@ function jucieMaker(apple, orange) {
 };
  
 myJuice = jucieMaker(1,3);
-console.log(myJuice); // return say juice with no of fruits pieces  
+console.log(myJuice); // returns say juice with no of fruits pieces  
+
 
 
 // Self-Invoking Functions or Immediately-Invoked Function Expression (IIFE)

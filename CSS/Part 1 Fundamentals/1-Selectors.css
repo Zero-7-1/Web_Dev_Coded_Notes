@@ -27,18 +27,16 @@
 
 
 
-
 /* As the name suggests selectors selects the html elements that we want to style and
   we various types slectors in CSS: 
+  
   Q. HOW MANY TYPES OF SELECTORS ARE THERE IN CSS ? 
   1. Simple or Basic selectors
+  
   2. Pseudo-class selectors 
   3. Pesudo-element selectors
   4. Attribute selectors 
   5. Combinator selectors 
-
-
-
 */ 
 
 /* ----------------------------------------------  1.  Simple or Basic Selectors 
@@ -68,18 +66,18 @@ class selector */
        }
 */ 
 
-/* Q. EXPLAIN WHAT IS CSS RESET OR NORMALIZATION ? WHY IT IS NEEDED ? ***  
+/* Q. EXPLAIN WHAT IS CSS RESET OR NORMALIZATION ? WHY IT IS NEEDED ? 
 Above is a css reset or also called normalization. It removes the default 
 margin and padding that browsers apply to some elements. The font family sets 
 deafult font family for entire document. border-box ensures that the width and height 
 of an element inlcude padding and border but not include the margin. 
 
 
-Q. EXPLAIN WHAT IS BOX-SIZING AND DIFFERNCE BETWEEN BORDER-BOX AND CONTENT-BOX ? ***
+Q. EXPLAIN WHAT IS BOX-SIZING AND DIFFERNCE BETWEEN BORDER-BOX AND CONTENT-BOX ?
 box-sizing:
 This property is all about how total width and height of an element is calculated. 
 By default box-sizing is set to content-box, and that means when an elements has a 
-specified width or height and we add padding or border, it actual height and width
+specified width or height and we add padding or border, its actual height and width
 gets changed. To avoid this and make our element's height and width unaffected by 
 adding padding or border we use border-box value.   */
 
@@ -108,10 +106,7 @@ Note that margin would not be considered for calculation as it is outside the bo
     width: 500px;
     padding: 50px; /* included within assigned width */
     /* content is adjusted according to assigned width */
-
 }
-
-
 
 
 /* EXPLAIN THE DIFFERENCE BETWEEN ID AND CLASS SELECTOR ?  
@@ -137,8 +132,6 @@ For example, p.intro selects only <p> elements with class="intro"
 
 Another important thing to note that we can have more than one class within one 
 html element separated by commas. 
-
-
 */
 
 
@@ -175,17 +168,19 @@ a:hover {
 a:active {
     color: black;
 } 
- 
-/*  A simple doubt may come why these are not applied to Y, Z links 
-so what ':hover' is pesudo-class whereas 'a' is the selctor 
+/* ':hover' is pesudo-class whereas 'a' is the selctor
 targeting element <a> */
+/* This style is applied on LINK X - STOIC*/ 
+/* But a simple doubt may come why these are not applied to Y, Z links 
+this is because Y Z links have another styling with a different class. */
 
 
 /* We can also combine pseudo-class with html class */ 
 a.highlight:hover {
     color: green;
     font-size: 22px;
-}   /* This is applied to Link of Y, Z which has a class */
+}   /* This is applied to only Link of Y, Z which has a class that's why these
+      appears different from LINK X. */
 
 
 /* Hover on div */
@@ -199,31 +194,23 @@ a.highlight:hover {
 
 } /* This is clearly seen, Hover on Div */
 
-
-
-/* :focus pseudo-class selects and styles element when it receives focus by user */
+/* :focus pseudo-class selects and styles element when it receives focus by user which
+is specially used while designing forms */
 input:focus {
     border: 5px solid #c7d343;
     background: #e6e9c5;
 }
-/* This would be great visually appealing for log in and reg forms */
 
-
-
- 
 /* :first-child pesudo-class  selects and styles the first child element 
 of its parent. And here we have to use .class-name first so that we know parent.*/
 
 .parent-container p:first-child {
     background-color: #1515e6;
 }
-/* Doubt understood the concept but first child para is not styled here 
-   Here <div> has 3 childs and style we applied to first one 
+/* Here <div> has 3 childs and style we applied to first one 
    :nth-child(n) pseudo class selects and styles nth children of a parent and 
    n determines which child should be selected.
    similarly we have :last-child*/
-
-
 
 
 /* Style even-numbered list items */
@@ -241,7 +228,7 @@ li:nth-child(odd) {
     color: red;
 }
 
-/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ? ***
+/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ?
    Re-look of imp pesudo classes
    1. Whether link is visted or not - :link for not visted and :visted
    2. Hovering mouse pointer - :hover
@@ -250,6 +237,7 @@ li:nth-child(odd) {
    5. first child of a parent - :first-child 
    6. nth child of a parent -   :nth-child()
    7. for a different language - :lang() 
+   
    and simply pseudo class targets elements state, denoted by : single colon 
    */
 
@@ -262,8 +250,10 @@ li:nth-child(odd) {
 Pesudo element selector styles specific parts of an element's content or it
 generate content that is not present in the actual HTML, denoted by :: double colon       */
 
-/*::before and ::after, allows us to insert content into the DOM without 
-  altering the HTML.  */
+/*
+::before and ::after, allows us to insert content into the DOM without 
+altering the HTML. Note this not a pratical example of ::bedfore and ::after
+*/
 h1::before {
     content: "🔍";
 
@@ -286,15 +276,22 @@ p.firstletter::first-letter{
 }   /* this could have more practical use */
 
 
+/* Q. WHAT ARE THE VARIOUS PSEUDO ELEMENT SLECTORS USED IN CSS ?
+   Re-look of imp pseudo element selectors. 
+   1. ::after and ::before with content property - used to insert content after or 
+      before someting without altering document but in DOM. 
+   2. ::first-letter - selects first letter of a text or para for styling 
+   3. ::first-line - selects first line of a text or para for styling
+*/
 
 
 
 
 
-/*----------------------------------------------                 Attribute Selectors 
 
-- The [attribute] selector is used to select elements with a specified attribute. 
-- They select an element using the presence of a given attribute or attribute value. 
+/* ----------------------------------------------               Attribute Selectors 
+
+- The [attribute] selector is used to select elements with a specified attribute.  
 - Attribute selectors can be used with various types of operators that change the 
 selection criteria accordingly */
 
@@ -302,7 +299,7 @@ selection criteria accordingly */
    and value */
 a[target="_blank"] {
     background-color: yellow;
-  }   /* here lies the answer to why link stoic appears yellow */
+  }   /* this is why link stoic has yellow bg */
 
 
 
@@ -323,42 +320,62 @@ whose value can be exactly the specified value, or the specified value followed 
 h1[class|="top"] {
     background-color: aquamarine;
 }
-/* [attribute*="value"] selector is used to select elements whose attribute value contains a
- specified value (The value does not have to be a whole word!)*/
-h2[class*="se"] {
+/* [attribute*="value"] selector is used to select elements whose attribute value 
+contains a specified value (The value does not have to be a whole word!)*/
+h2[class*="le"] {
     background-color: hotpink;
 }
-/* Attribute Selectors are most helpful in forms without using class and id */
+/* 
+
+Attribute Selectors are most helpful in forms without using class and id. 
+
+Q. EXPLAIN SOME ATTRIBUTE SELECTORS USED WITH SOME OPERATORS ? 
+
+~=
+$=
+^=
+|=
+*=  - selects attribute value with certain key word or value 
+
+
+*/
 
 
 
-/*-------------------------------------------------------------Combinator Selectors*/ 
+/*  --------------------------------------------------------- Combinator Selectors  */ 
 /* A CSS selector can contain more than one simple selector. 
 Between the simple selectors, we can include a combinator that explains 
 the relationship between the selectors */
 
-/* descendant selector (space) matches all elements that are descendants of a specified element.*/
-.descendant p{
+/* desandant selector (space by default) matches all elements  that are part of 
+a specified element.*/
+.combinators p{
     background-color: #0d0e0d;
     color: #ff0000;
 }
-/* Child Selector (>) selects all elements that are the children of a specified element */
-.descendant > p{
+/* Child Selector (>) selects all elements that are the children of a specified element 
+*/
+.combinators > p{
     font-style: italic;
 }  /* This is actually usefull when we have nested elemnets so that we can apply style 
        to its direct children */
-/*adjacent sibling selector (+) is used to select an element that is directly after another 
-specific element. Sibling elements must have the same parent element, 
+
+/*adjacent sibling selector (+) is used to select an element that is directly after 
+another specific element. Sibling elements must have the same parent element, 
 and "adjacent" means "immediately following".*/
-.descendant +p {
+.combinators +p {
     background-color: yellow;
 }
 /* general sibling selector (~) selects all elements that are next siblings of a specified element.*/
-.descendant ~ p {
+.combinators ~ p {
     text-align: center;
 }
-
-
+/*
+Q. EXPLAIN VARIOUS TYPES OF COMBINATOR SELECTORS ?
+>
++
+~
+*/
 
 
 

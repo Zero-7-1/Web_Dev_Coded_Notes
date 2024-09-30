@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"    href="../../CSS/1- CSS Fundamentals/1-Selectors.css">  
+    <link rel="stylesheet"    href="../../CSS/Part 1 Fundamentals/1-Selectors.css">  
     <!-- rel attribute of link is important for linking css to html -->
     <title> Basic CSS 1 </title>
 </head>
@@ -21,29 +21,21 @@
     </div>
 
 
-
-
-
-
-    
     <!-- understand pseudo class selector -->
-
-
-    <!-- An html element is a fundamental building block that defines the 
-    structure and content of web page and attributes provides additional info
-    about html element -->
     
     <a class="link-style" 
     href="https://en.wikipedia.org/wiki/Stoicism#:~:text=Stoicism%20teaches%20the%20development%20of,the%20universal%20reason%20(logos)." 
     target="_blank"> LINK X - STOIC </a>
-    <!-- 
+    <!-- (to be shifted html fundamentals)
+
+        Q. WHAT IS THE DEFAULT VALUE IF TARGET ATTRIBUTE OF ANCHOR TAG ? 
          target attribute of Anchor:
         - Specifies where the linked document should be displayed 
-        - _self opens in the same window
+        - _self opens in the same window (default)
         - _blank opens in the new window 
     -->
 
-        <!-- separate class than above link-style -->
+<!-- separate class than above link-style -->
 <p><a class="highlight" href="https://twitter.com/home?"> LINK of Y </a> </p>
 <p><a class="highlight" href="https://twitter.com/"> LINK of Z </a> </p>
 
@@ -81,8 +73,6 @@
  <p lang="fr">Ce paragraphe est en français.</p>
 
 
-
- 
  <!-- understand pesudo element selector  -->
 <h1> THIS DEMONSTRATES ':: before' applied to h1 </h1>
 <h2> THIS DEMONSTRATES ':: after' applied to h2</h2>
@@ -103,27 +93,24 @@
 </div>
 
 
-
-
-
-
 <!-- Understand attribute Selector -->
-<img src="sansa-stark-game-of-thrones-uhdpaper.com-4K-99.jpg" 
+<img src="../../HTML/got-demo.jpg" 
 alt="demo" title="sansa"  width="150" height="113">
-<img src="sansa-stark-game-of-thrones-uhdpaper.com-4K-99.jpg" 
+<img src="../../HTML/got-demo.jpg" 
 alt="demo" title="sansa-"  width="150" height="113">
+
 <p class="jon snow"> You Know Nothing Jon Snow </p>
-<p class="snow jon">You Know Everything JOn </p>
+<p class="snow jon"> You Know Everything JOn </p>
 
 <h1 class="top"> Hello </h1>
 <h1 class="top-up"> World </h1>
 <h1 class="topup"> Bye World</h1>
 
-<h2 class="sex"> Everyone loves to do eat Apple </h2>
+<h2 class="apple"> I eat Apple </h2>
 
-<div class="descendant"> 
+<div class="combinators"> 
     <p> Hello How ARE YOU </p>
-    <p> FUCK YOU </P>
+    <p> Good  </P>
 </div>
 <p> I am applied through + </p>
 <p> Will In get styled through ~ Yes</p>

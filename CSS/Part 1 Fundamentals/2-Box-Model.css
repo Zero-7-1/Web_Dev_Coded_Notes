@@ -1,12 +1,12 @@
 /* Box Model 
 In CSS box model we consider every html element as a box which consists of 4 parts
-: content, padding, borders 
-and margins. */
+: content, padding, borders and margins. 
+*/
 
 
 /* Border 
-Q. HOW DO YOU SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROPERTY
-    AND ITS VALUES ? */
+Q. HOW TO SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROPERTY
+   AND ITS VALUES ? */
 .borderstyle {
     border-style: solid;
     border-width: 20px 10px 20px 30px; 
@@ -18,10 +18,7 @@ Q. HOW DO YOU SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROP
     border: 2px solid gold;
     border-radius: 10px; 
     /*We can define radius for rounded 
-    corners. Perfect circle with 50% value with width height value same 
-    and also we could serach internet for fancy border radius values.
-    Q. HOW CAN WE CREATE ROUNDED CORNERS FOR AN HTML ELEMENT'S BORDER ? 
-    Q. HOW MAKE PERFECT CIRCLE USING BORDER PROPERTY ? 
+    corners. Q. HOW CAN WE CREATE ROUNDED CORNERS FOR AN HTML ELEMENT'S BORDER ? 
     */
 } 
 /*We can also specify all the individual border
@@ -32,9 +29,6 @@ Q. HOW DO YOU SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROP
     border-bottom: 5px dotted yellow;
     border-right: 5px dotted yellow;
 }
-
-
-
 
 /*Margin defines area outside an element's 
 defined border. Generraly we achieve space between two elements through margin 
@@ -81,10 +75,6 @@ width/height, padding too.*/
   .child {
     margin: inherit;
   }
-
-
-
-
 
 /* Q. EXPLAIN WHAT IS MARGIN COLLAPSE ? 
 Margin Collapse refers to a css behaviour 
