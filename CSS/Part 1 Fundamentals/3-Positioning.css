@@ -5,7 +5,7 @@ After specifying the postion we could use margin top, left, buttom and right
 properties to adjust the postioning. 
 
 Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND 
-   RELATIVE POSTIONS. EXPLAIN FIXED POSTION.  ***
+   RELATIVE POSTIONS. EXPLAIN FIXED POSTION.
 */
 
 
@@ -14,18 +14,16 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
 
 /* 1. Static postion is the default postion of an element that is not 
        positoned in any special way. Static positioned elements are not 
-    affected by the top, bottom, left, and right properties. */
+      affected by the top, bottom, left, and right properties. */
 .static {
     height: 100px;
     width: 130px;
     border: 3px solid rgb(23, 23, 22);
     background-color: rgb(146, 227, 16);
 }
-/* When we add another element under this, it just goes at buttom of previous element 
-*/
+/* When we add another element under this, it just goes at buttom of previous element*/
 
-/* Q. DIFFERENCIATE BETWEEN RELATIVE AND ABSOLUTE POSITIONS.
-*/
+/* Q. DIFFERENCIATE BETWEEN RELATIVE AND ABSOLUTE POSITIONS.*/
 
 
 /* 2. Relative Position - Relative position means or by setting postion relative, the 
@@ -66,9 +64,6 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
       containing block (usually the viewport) 
 
 */
-
-
-
 
 .child-div-1 {
     position: absolute;
@@ -120,7 +115,7 @@ Q. HOW MANY TYPES OF POSTIONS PROPERTIES ARE THERE ? EXPLAIN ABSOLUTE AND
                                                        (should be same)  
                             = Result / 2  
   Centering Vertically - take height rest is same  
-  This is a method we have better ways like transfrom which we shall see later soon */
+  This is a method we have better ways like using transfroms */
 .child-div-5 {
     position: absolute;
     height: 50px;

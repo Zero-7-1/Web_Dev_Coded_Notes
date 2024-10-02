@@ -1,7 +1,8 @@
-/*  Display is a most important layout technique for controlling the layout
-   of the web page. It is used to specify how an element is shown on a web page.
-   Every HTML element has a default display value, inline or block. Display property 
-   allows to change this default display value. 
+/*  Q. EXPLAIN DISPLAY PROPERTY AND WHAT ARE VARIOUS DISPLAY PROPERTIES ? 
+    Display is a most important layout technique for controlling the layout
+    of the web page. It is used to specify how an element is shown on a web page.
+    Every HTML element has a default display value, inline or block. Display property 
+    allows to change this default display value. 
 
 For example,
 we have block level elements like <div>, <h1>..<h6>, <p>, <form>, <table>, <li> etc.
@@ -18,7 +19,7 @@ in block level, so we have inline-block value for display where element itself i
 formatted as an inline element, but we can apply height and width values 
 Q. WHAT IS INLINE-BLOCK VALUE OF DISPLAY PROPERTY ? */
 
-
+  
 .blockLevel {
     display: inline-block;
     border: 2px solid blue; 
@@ -38,7 +39,7 @@ Q. WHAT IS INLINE-BLOCK VALUE OF DISPLAY PROPERTY ? */
     padding-top: 43px; /* padding will work for inline elements  for some cases */
 }
 
-/* Rememeber the block level can be used for a vertical layout of elements and inline
+/* The block level can be used for a vertical layout of elements and inline
    for a horizontal layout but their are style restrictions for inline elements 
    so it is often best to use inline-block. */
  

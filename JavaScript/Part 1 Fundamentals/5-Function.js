@@ -13,7 +13,7 @@
 
 
    Functions in js are actually just values, its not a type, so if its a value 
-   we can store it in a variable, we will get back to this later. 
+   we can store it in a variable, will get back to this later. 
 */
 
 
@@ -32,35 +32,35 @@ function fun_name(a, b) {  // parameters acts as varibles for function
     console.log("Sum of a and b is " + result);
 }
 fun_name(5,5); // ivoking the function with arguments for parameters
-/*
+/*  Q. WHAT IS DEFAULT PARAMETER ? 
 We could provide a default parameter for a, b (Like a=3, a=4) so that if we 
 don't pass any arguments while function call default parameter value will be 
 arguments. 
-Similarly we could use Rest operator in Functions.
 */
 
 // Q. DIFFERENTIATE BETWEEN PARAMETER AND ARGUMENTS IN A FUNCTION
 /*
-Parameter as learned earlier are the varibales whose value needed to be passed 
-while calling the function, simply that value is known as arguments for parameters 
+Parameter are the varibales whose value needed to be passed 
+while calling the function, simply that value is known as arguments for parameters. 
 */ 
 
 
 // Objects as parameters 
+// Q. CAN OBJECTS BE PASSED AS PARAMETERS TO A FUNCTION ? 
 
 function loginUser(user) {
     return `The user ${user.name} with the id of ${user.id} is logged in`; 
-};
+}
 const user = {
     id: 1,
     name: 'John'
 };
-
 console.log(loginUser(user)); 
 
 
 
 // Arrays as parameters, logs a random element from an array 
+// Q. CAN ARRAYS BE PASSED AS PARAMETERS TO FUNCTION ? 
 
 function getRandom(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
@@ -71,7 +71,7 @@ getRandom([1, 2, 3, 4, 5, 6, 7]);
 
 
 
-// function usage 2 with a return 
+// function with return 
 function getArea(width, height) {
     return width * height;  // returns any value from fucntion 
 }
@@ -89,8 +89,6 @@ whereas,
 In return, we can use the returned value for further processing outside the 
 function. 
 */
-
-// function usage 3 
 
 function calArea(width,height){
     var area = width * height;
@@ -139,7 +137,7 @@ console.log("Hi your age is:  " + age);
 
 
  // Arrow Function
-// Q. WHAT IS ARROW FUNCTION IN JS  ? 
+// Q. EXPLAIN HOW TO WRITE ARROW FUNCTION IN JS  ? 
 
 /*
   It is a special form of function expression that is shorter and faster to write, 
@@ -149,7 +147,6 @@ console.log("Hi your age is:  " + age);
   Note:
   Arrow functions do not have their own 'this'. 
   They are not well suited for defining object methods.
-  Arrow functions are not hoisted. They must be defined before they are used.
 */
 
 // Arrow Function Example 1 
@@ -174,11 +171,11 @@ const yourAge3 = (presentYear, birthYear) => {
 let output = yourAge3(2024, 1999);
 console.log(output);
 
-// As we know functions are object so they have both methods and properties 
+// Functions are object so they have both methods and properties 
 // we may use arguments.length property which will returns the number of arguments
   
 
-// Q. CAN FUNCTION CALL ANOTHER FUNCTION ? 
+// Q. CAN A FUNCTION CALL ANOTHER FUNCTION ? 
 // Functions calling another function 
 
 function cutFruit(fruit){
@@ -198,20 +195,22 @@ console.log(myJuice); // returns say juice with no of fruits pieces
 
 
 // Self-Invoking Functions or Immediately-Invoked Function Expression (IIFE)
-/*
+/* Q. WHAT ARE SELF-INVOKING FUNCTIONS OR IIFE ? 
 The primary purpose of an IIFE is to create a new scope for variables,
-preventing them from polluting the global scope. This can be particularly useful 
-for encapsulating code and avoiding variable name conflicts.
+preventing them from polluting the global scope. 
 
-The function is defined within parentheses ( and ). This ensures that the function 
-is treated as an expression rather than a declaration.
-The () at the end immediately invokes the function.
+This can be particularly useful for encapsulating code and avoiding variable 
+name conflicts.
+
+The function is defined within parentheses ( function() ). 
+This ensures that the function is treated as an expression rather than a declaration.
+Add another pair of () at the end which will immediately invoke the function.
 
 */
 (function () {
-    let x = "Hello!!";  // I will invoke myself
+    console.log("Hello!!");  
   }
-) ();
+) ();  // I will invoke myself
 
 
 

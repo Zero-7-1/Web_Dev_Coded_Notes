@@ -72,6 +72,8 @@ margin and padding that browsers apply to some elements. The font family sets
 deafult font family for entire document. border-box ensures that the width and height 
 of an element inlcude padding and border but not include the margin. 
 
+Q. WHY MARGIN IS NOT INCLUDED IN TOTAL WIDTH AND HEIGHT OF AN ELEMENT ? 
+
 
 Q. EXPLAIN WHAT IS BOX-SIZING AND DIFFERNCE BETWEEN BORDER-BOX AND CONTENT-BOX ?
 box-sizing:

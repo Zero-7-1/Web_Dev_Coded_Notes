@@ -15,7 +15,6 @@ compilation which is known as JIT (Just in Time) compilation
 */
 
 
-
 // Q. IS SEMICOLON NECCESSARY FOR JS CODES ? 
 
  /*   
@@ -39,11 +38,6 @@ resulting in the function returning undefined rather than the intended object
 { bar: 'hello' }. */
 
 
-
-
-
-
-
 /* JS variables can be declared directly without any data type or keyword 
      when used (not recommended) *
 z = 5;
@@ -54,12 +48,12 @@ console.log(r);
 global object i.e. window for browsers. */
 
 
-// WHY VAR IS NOT USED ANYMORE ? ** OR EXPLAIN JS VARIABLE DECLARATION ? *** 
+// WHY VAR IS NOT USED ANYMORE ?  OR EXPLAIN JS VARIABLE DECLARATION ? 
 
 
-/* Only use var to support old browsers, it doesn't have block level 
+/* Only use var to support old browsers, it doesn't have block level so
 it would be very bad idea to use var in a block level statement 
-like function or if statement etc.. 
+like function or if statement
 */
 
 /* We use const if we are absolutely sure about the value doesn't change as const 
@@ -91,8 +85,6 @@ powers.Yellow="changed";
 powers.black="dark"; // can add 
 console.log(powers);
 
-
-
 /* 
 CAN: (What we can in const)
 Change the elements of const ARRAY
@@ -105,6 +97,8 @@ let can't be redeclared but can be reassigned and have block level scope
 let and const has to be declared before use and have block level scope 
 
 let and const declared outside a block can have global scope 
+
+Q. DIFFERENTIATE BETWEEN LET AND CONST ? WHAT SHUOULD BE USED FOR WHAT ? 
 */
 
 let dr = "Sam"; // global let variable 
@@ -117,11 +111,14 @@ const mr = "John"; // global const
 mr = "Sam"; // trying reassign, vs code will not show syntax error but 
 console.log(mr); // at runtime we get 'Assignment to constant variable error' 
 
+/*
+The key difference between let and const is that using let we can reassign but 
+const even does not allows that. Rest everything is same. 
+*/
 
 
 
-
-/* Block Scope 
+/* Block Scope Q. EXPLAIN BLOCK SCOPE. 
 Block-level scope refers to the scope of variables or identifiers 
 declared within a block of code. In many programming languages, including JavaScript,
 a block is defined by a pair of curly braces {}. Examples of blocks include if 
@@ -135,11 +132,7 @@ We shall see scope again in functions file
  */
 
 
-
-
-
-
- // Q. WHAT IS 'HOISTING' IN JAVASCRIPT ? ***
+ // Q. EXPLAIN WHAT IS 'HOISTING' IN JAVASCRIPT ? 
 
 
 /* In the beggining we saw that we can use variables directly without declaring them 
@@ -160,19 +153,20 @@ js engine runs through our codes twice
                      (Actual Execution)
 
 Definition of 'Hoisting' - The default behaviour of JavaScript to process 
-variable and function declarations before executing the rest of the code, 
-which can sometimes lead to unexpected behavior if not understood properly.
+variable and function declarations before executing the rest of the code (that
+is intialization is done later), which can sometimes lead to unexpected results
+like undefined. 
 */
 console.log('myName', myName); // myName undefined here 
 var myName = 'John Wick';   
 console.log('myName', myName);
 /* No matter how we are declaring, js will always go through 
    1. Declaration 2. Initialization 3. Utilization 
- */
+*/
 
 
 console.log(x)        // initialized with undefined 
-var x = 5;           // var x; is hoisted but not x = 5.
+var x = 5;           // var x; is hoisted (moved to top) but not x = 5.
 //This can lead to unexpected results and bugs as it will give undefined 
 // instead of throwing error 
 
@@ -189,26 +183,19 @@ let x = 10; // reference error, can not access x before initialization
      // but why ? we got this error ? and why not in var ?
       // because in var variable was given 'undefined' value 
 
-// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ) IN JAVASCRIPT ***
-
-  // because of  Temporal Dead Zone(TDZ)
+// Q. EXPLAIN 'TEMPORAL DEAD ZONE (TDZ) IN JAVASCRIPT 
   /* It is the time taken between declaring the variable (using let or const) and 
      initializing the variable. During this period accessing the variable will 
      give reference error  */
  let lang;  //Beginning of the temporal dead zone
  console.log(lang); // ReferenceError as accessed in the TDZ.
- myName = 'Javascript'; // Ending of the temporal dead zone
-
-// we limit here to variable hoisting, we shall see other like function hoisting later  
+ myName = 'Javascript'; // Ending of the temporal dead zone  
   
 /* Best Practice:   
 - Use let and const instead of var or auto declaration as 
   they provide block level scope 
 - always declare variables at the beiginning of the scope 
 */ 
-
-
-
 
 
 /* Identifiers - Unique names of variables 
@@ -220,22 +207,23 @@ string literls
 
 
 
-
-
 // DATA TYPES 
 /* JS is a dynamically typed language - it will automatically figure out the data type
 based on the value we assign to the variable at run time and these types can also 
 change. */
 
 let foo = 42; // foo is a number
-foo = "Liku"; //  foo is now string 
+foo = "Lucky"; //  foo is now string 
 console.log(foo);  
+ 
+/* 
+Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION SCNARIOS AND HOW WE CAN AVOID 
+   THESE TYPE CONVERSIONS ? 
 
-/* Also JS is weakly typed i.e. it performs type conversion when mismatch with
+Also JS is weakly typed i.e. it performs type conversion when mismatch with
 types instead throwing errors.
-
 Type Coercion (Implicit)- JS Converts one or more values to a common data type
-                            for any operation to proceed. 
+                          for any operation to proceed. 
 Implicit Rules like:
 - String Concatenation: When we use the + operator to concatenate values, js will 
 convert non-string values to strings.
@@ -257,10 +245,7 @@ let logicalAnd = "hello" && true;  // Result: true (type conversion to boolean)
 In this example, the non-boolean operand is automatically converted to a boolean 
 for the logical AND operation.
 
-// Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION SCNARIOS AND HOW WE CAN 
-         // AVOID THESE TYPE CONVERSIONS ? **
-
-
+/* 
 To avoid issues related to automatic type conversion, some developers prefer to 
 use strict equality (===) and inequality (!==) operators, 
 which do not perform type coercion and require both value and type to be the 
@@ -270,7 +255,7 @@ same for equality.  */
 This type conversion can lead to unexpected results if we're not careful. 
 So it's often a good practice to be explicit about data types and use type casting.
 
-// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES. ***
+// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES.
 
 Type Casting (Explicit)- Explicitly changing the data type of a value using 
 some functions or methods. */

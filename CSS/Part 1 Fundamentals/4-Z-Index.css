@@ -1,11 +1,14 @@
 /*
-Q. EXPLAIN WHAT IS Z-INDEX IN CSS ?
+Q. EXPLAIN WHAT IS Z-INDEX IN CSS ? HOW IT WORKS ? AND WHAT -VE Z-INDEX SPECIFIES ? 
    The z-index property specifies the stack order of an element 
    (which element should be placed in front of, or behind the others).
    Note that, 
    z-index only works on positioned elements as positioned elememts can sometimes
-   overlap. It also works for flex items 
-   An element can have a positive or negative stack order
+   overlap. 
+   It also works for flex items. 
+   An element can have a positive or negative stack order.
+   An element with greater stack order is always above an element with 
+   a lower stack order
 */
 .parent {
    position: relative; 
@@ -36,7 +39,7 @@ Q. EXPLAIN WHAT IS Z-INDEX IN CSS ?
    left: 200px;
    border: 3px solid red;
    background-color: pink;
-   z-index: 2;
+   
 }
 
 .child3 {
@@ -47,12 +50,10 @@ Q. EXPLAIN WHAT IS Z-INDEX IN CSS ?
    left: 200px;
    border: 3px solid red;
    background-color: yellow;
-   z-index: 3;
+   
 }
 /*
 In above styles all the 3 children of the parent div overlaps and without
 z index only children 3 that is last one will appear. We can play around by 
 adjusting z index values within children to keep the desired children in front. 
-Note- An element with greater stack order is always above an element with 
-a lower stack order 
 */

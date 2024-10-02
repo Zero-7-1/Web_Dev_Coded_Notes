@@ -32,7 +32,7 @@ if (x > y) {
     console.log(`${x} is greater than ${y}`); // Note the Template literal method 
 }
 
-// Uisng else with if 
+// Using else with if 
 if (x === y) {
     console.log(`${x} is equal to ${y}`);
 } else {
@@ -125,7 +125,7 @@ switch (true) {
 
 
 /* FALSY AND TRUTHY VALUES 
-Q. EXPLAIN WHAT IS FASLY AND TRUTHY VALUES IN JS ? ***
+Q. EXPLAIN WHAT IS FASLY AND TRUTHY VALUES IN JS ? 
 
 Falsy Values - Values evaluated to be false in a boolean context or the values that
 are not false intially but will become after boolean conversion. 
@@ -222,7 +222,7 @@ console.log(false == 0);
 console.log('' == 0);
 console.log(null == undefined);
 /*
-Q. EXPALIN THE DIFFERENCE BETWEEN STRICT AND LOOSE EQUALITY OPERATOR ? ***
+Q. EXPALIN THE DIFFERENCE BETWEEN STRICT AND LOOSE EQUALITY OPERATOR ?
    Loose equality performs type conversion and returns value true while
    Strict equality returns false if unmatched in type. 
 
