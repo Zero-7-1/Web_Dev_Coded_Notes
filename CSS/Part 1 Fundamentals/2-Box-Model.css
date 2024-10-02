@@ -1,0 +1,167 @@
+/* Box Model 
+In CSS box model we consider every html element as a box which consists of 4 parts
+: content, padding, borders and margins. 
+*/
+
+
+/* Border 
+Q. HOW TO SET BORDER AROUND AN HTML ELEMENT IN CSS ? EXPLAIN THE BORDER PROPERTY
+   AND ITS VALUES ? */
+.borderstyle {
+    border-style: solid;
+    border-width: 20px 10px 20px 30px; 
+    /* top-right-buttom-left */
+    border-color: gold;
+}
+/*Border shortcut first width - style - color*/
+.bordershortcut {
+    border: 2px solid gold;
+    border-radius: 10px; 
+    /*We can define radius for rounded 
+    corners. Q. HOW CAN WE CREATE ROUNDED CORNERS FOR AN HTML ELEMENT'S BORDER ? 
+    */
+} 
+/*We can also specify all the individual border
+ properties for just one side*/
+.onesideborder {
+    border-left: 5px solid yellowgreen;
+    border-top: 5px dotted yellow;
+    border-bottom: 5px dotted yellow;
+    border-right: 5px dotted yellow;
+}
+
+/*Margin defines area outside an element's 
+defined border. Generraly we achieve space between two elements through margin 
+property. 
+Q. EXPLAIN MARGIN PROPERTY AND ITS SHORTHAND METHODS.
+*/
+.margin-demo{
+    border: 5px solid burlywood;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    margin-left: 80px;
+    margin-right: 90px;
+}
+/* Margin Shortcut*/
+.margin-demo2 {
+    margin: 200px 100px ;
+    border:1px solid gold ;
+}
+/*   Q. HOW TO KNOW WHICH SIDES IN MARGIN SHORTHAND PROPERTY ? 
+   - One value means all 4 margin sides
+   - Two value means 1st part for buttom & top 
+   and 2nd part for right & left. 
+   - When we have three values then 1st part 
+   is for top, 2nd part is for left & right and
+   3rd part is for buttom. 
+   - When we have four values then 
+    then top-right-buttom-left (clockwise) 
+*/
+
+
+/*
+Q. WHAT HAPPENS WHEN WE USE AUTO VALUE WITH MARGIN ?
+We could use margin: auto; to horizontally center an element within its container.
+This is commonly used for centering block level elements. 
+*/
+   
+
+/* Sometimes we can Inherit the value from
+the parent of a child element.This works can work with border, 
+width/height, padding too.*/
+.parent {
+    margin: 60px;
+  }
+  .child {
+    margin: inherit;
+  }
+
+/* Q. EXPLAIN WHAT IS MARGIN COLLAPSE ? HOW IT CAN BE AVOIDED ? 
+Margin Collapse refers to a css behaviour 
+where top and bottom margins of elements are 
+sometimes collapsed into a single margin and 
+instead of adding two margins we get the value
+that is equal to the largest of the two margins.
+
+This does not happen on left and right margins! 
+
+Margin Collapse happens in 3 scenes:
+- Vertical Adajacent Block level Siblings 
+(One below Other)
+- Empty block level elements havin top and bottom
+padding 
+We can use techniques like adding padding 
+or borders instead of margin to add space between
+elements OR 
+use this on the container 
+overflow: hidden;*/
+
+.Margin-Collapse {
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    background-color: lightblue;
+    border: 5px solid gray;
+}
+.box-collapse-1 {
+    color: blue;
+    margin-bottom: 5px;
+    background-color: lightblue;
+    
+}
+  .box-collapse-2 {
+    color: green;
+    margin-top: 2px;
+    background-color: lightblue;
+    
+  }
+/*Here the h1 element has a bottom margin of 
+5px and the h2 element has a top margin of 2px. 
+So, the vertical margin between h1 and h2 should have
+been 7px (5px + 2px). However, due to margin 
+collapse, the actual margin ends up being 5px.
+*/
+
+
+/* Padding is the space around an element's content, 
+inside of any defined borders 
+Note that padding shortcut is similar to margins. 
+Q. EXPLAIN PADDING PROPERTY.*/
+.padding {
+    padding: 100px;
+    border: 2px solid orange;  
+}
+
+
+/* When we apply Height and Width, it is applied to the 
+content of element that is it do not include
+padding, margins or borders. It sets inside them.
+When we calculate actual size of element, we include
+both padding and border. Note we dont include margin
+even if it affects total space. 
+Margins come into play when positioning elements 
+in relation to other elements, and they are not 
+part of the actual size of the element.*/
+
+.hight-width-1 {
+   height: 50px;
+   width: 100%;
+   background-color: aqua;
+}
+/*
+Q. EXPLAIN THE MAX-WIDTH PROPERTY ? 
+max-width - A problem occurs when the browser window
+is smaller than the width of the element. Then the
+browser adds a horizontal scrollbar to the page.*/
+.hight-width-2 {
+    max-width: 500px;
+    background-color: antiquewhite;
+}
+/*Using max-width instead, in this situation, 
+will improve the browser's handling of small windows. 
+
+Q. WHAT WILL HAPPEN IF WE HAVE BOTH WIDTH AND MAX WIDTH PROPERTY ? 
+If both the width property and the max-width 
+property on the same element, and the value of 
+the width property is larger than the max-width 
+property; the max-width property will be used 
+(and the width property will be ignored).*/

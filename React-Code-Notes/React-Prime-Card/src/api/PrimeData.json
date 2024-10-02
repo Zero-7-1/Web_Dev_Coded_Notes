@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "seriesName": "LOTR: The Rings of Power",
+    "seriesRatings": "8+",
+    "seriesAbout": "The Lord of the Rings: The Rings of Power is a prequel to The Lord of the Rings that takes place in Middle-earth during the Second Age. The story covers the forging of the Rings of Power, the rise of Sauron, the fall of Númenor, and the alliance between Elves and Men.",
+    "seriesGenre": "High Fantasy",
+    "seriesLink": "https://www.amazon.com/LOTR-Rings-of-Power",
+    "seriesImage": "images/rop.jpg"
+  },
+  {
+    "id": 2,
+    "seriesName": "The Boys",
+    "seriesRatings": "18+",
+    "seriesAbout": "The Boys is a darkly comedic series about a group of vigilantes who take on corrupt superheroes.",
+    "seriesGenre": "Action, Comedy, Drama",
+    "seriesLink": "https://www.amazon.com/The-Boys",
+    "seriesImage": "images/tb.jpg"
+  },
+  {
+    "id": 3,
+    "seriesName": "The Great",
+    "seriesRatings": "16+",
+    "seriesAbout": "The Great is a satirical, comedic drama about the rise of Catherine the Great from outsider to the longest-reigning female ruler in Russia's history.",
+    "seriesGenre": "Comedy, Drama, History",
+    "seriesLink": "https://www.amazon.com/The-Great",
+    "seriesImage": "images/tg.jpg"
+  },
+  {
+    "id": 4,
+    "seriesName": "Mirzapur",
+    "seriesRatings": "18+",
+    "seriesAbout": "Mirzapur is an Indian crime thriller web series that revolves around drugs, guns, and lawlessness in the city of Mirzapur, Uttar Pradesh.",
+    "seriesGenre": "Crime, Thriller, Action",
+    "seriesLink": "https://www.amazon.com/Mirzapur",
+    "seriesImage": "images/mp.jpg"
+  },
+  {
+    "id": 5,
+    "seriesName": "Spartacus",
+    "seriesRatings": "18+",
+    "seriesAbout": "Spartacus is a historical drama series that follows the life of the gladiator Spartacus and his rebellion against the Roman Republic.",
+    "seriesGenre": "Action, Biography, Drama",
+    "seriesLink": "https://www.amazon.com/Spartacus",
+    "seriesImage": "images/sp.jpg"
+  }
+]
+

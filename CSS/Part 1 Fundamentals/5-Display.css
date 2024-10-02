@@ -1,0 +1,93 @@
+/*  Q. EXPLAIN DISPLAY PROPERTY AND WHAT ARE VARIOUS DISPLAY PROPERTIES ? 
+    Display is a most important layout technique for controlling the layout
+    of the web page. It is used to specify how an element is shown on a web page.
+    Every HTML element has a default display value, inline or block. Display property 
+    allows to change this default display value. 
+
+For example,
+we have block level elements like <div>, <h1>..<h6>, <p>, <form>, <table>, <li> etc.
+these elements always start with a new line and takes up full width available though
+its content may not take that much width.
+Whereas,
+inline elements like <span>, <img>, <a> etc. do not start on new line and only takes up 
+neccessary width for content.
+Q. EXPLAIN THE DIFFERENCE BETWEEN BLOCK AND INLINE ELEMENTS.
+*/   
+
+/* We can't apply some properties like width and height to inline elements but we can 
+in block level, so we have inline-block value for display where element itself is 
+formatted as an inline element, but we can apply height and width values 
+Q. WHAT IS INLINE-BLOCK VALUE OF DISPLAY PROPERTY ? */
+
+  
+.blockLevel {
+    display: inline-block;
+    border: 2px solid blue; 
+    background-color: yellow;
+    height: 200px; /*we can apply height and width to block level */ 
+    width: 219px;
+}
+/* Without the display property set to inline block:
+  Even though we have adjusted the width of our above div still the below inline 
+  element goes to its buttom not taking space left by div.*/
+
+.inlineLevel {
+    display: inline-block; 
+    border: 2px solid black;
+    text-decoration: none;
+    height: 159px; /* Height and width will not work without display */
+    padding-top: 43px; /* padding will work for inline elements  for some cases */
+}
+
+/* The block level can be used for a vertical layout of elements and inline
+   for a horizontal layout but their are style restrictions for inline elements 
+   so it is often best to use inline-block. */
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

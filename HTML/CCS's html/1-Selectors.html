@@ -1,0 +1,124 @@
+<!-- HTML Boilerplate ! TAB -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"    href="../../CSS/Part 1 Fundamentals/1-Selectors.css">  
+    <!-- rel attribute of link is important for linking css to html -->
+    <title> Basic CSS 1 </title>
+</head>
+<body>
+     
+    <div class="content-box"> 
+        <p> Content Box </p>
+    </div>
+    
+    <div class="scale"> Width 500px </div>
+    
+    <div class="border-box"> 
+        <p> Border Box </p>
+    </div>
+
+
+    <!-- understand pseudo class selector -->
+    
+    <a class="link-style" 
+    href="https://en.wikipedia.org/wiki/Stoicism#:~:text=Stoicism%20teaches%20the%20development%20of,the%20universal%20reason%20(logos)." 
+    target="_blank"> LINK X - STOIC </a>
+    <!-- (to be shifted html fundamentals)
+
+        Q. WHAT IS THE DEFAULT VALUE IF TARGET ATTRIBUTE OF ANCHOR TAG ? 
+         target attribute of Anchor:
+        - Specifies where the linked document should be displayed 
+        - _self opens in the same window (default)
+        - _blank opens in the new window 
+    -->
+
+<!-- separate class than above link-style -->
+<p><a class="highlight" href="https://twitter.com/home?"> LINK of Y </a> </p>
+<p><a class="highlight" href="https://twitter.com/"> LINK of Z </a> </p>
+
+
+<!-- Hover Effect -->
+<div class="hover-div"> HOVER ON DIV </div>
+
+
+<!--  focus in user input -->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+
+
+
+
+<!-- understand first child -->
+<div class="parent-container">
+    <p>This is the first child of our parent div.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+</div>
+
+
+
+
+<!-- understand nth-child() pseudo class -->
+ <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+ </ul>
+ <!-- Understand language pseudo class -->
+ <p lang="fr">Ce paragraphe est en français.</p>
+
+
+ <!-- understand pesudo element selector  -->
+<h1> THIS DEMONSTRATES ':: before' applied to h1 </h1>
+<h2> THIS DEMONSTRATES ':: after' applied to h2</h2>
+
+<!-- understand ::first-line and ::first-letter -->
+<p class="firstline"> Ancient Rome was a great Civilisation. <br>
+    It formed the base of what we see today
+    especially in the west.
+</p>
+<p class="firstletter"> Ancient Rome </p>
+
+<div class="container">
+    <p>Paragraph 1</p>
+    <div>Div 1</div>
+    <p>Paragraph 2</p>
+    <div>Div 2</div>
+    <p>Paragraph 3</p>
+</div>
+
+
+<!-- Understand attribute Selector -->
+<img src="../../HTML/got-demo.jpg" 
+alt="demo" title="sansa"  width="150" height="113">
+<img src="../../HTML/got-demo.jpg" 
+alt="demo" title="sansa-"  width="150" height="113">
+
+<p class="jon snow"> You Know Nothing Jon Snow </p>
+<p class="snow jon"> You Know Everything JOn </p>
+
+<h1 class="top"> Hello </h1>
+<h1 class="top-up"> World </h1>
+<h1 class="topup"> Bye World</h1>
+
+<h2 class="apple"> I eat Apple </h2>
+
+<div class="combinators"> 
+    <p> Hello How ARE YOU </p>
+    <p> Good  </P>
+</div>
+<p> I am applied through + </p>
+<p> Will In get styled through ~ Yes</p>
+
+
+
+
+
+ 
+</body>
+</html>

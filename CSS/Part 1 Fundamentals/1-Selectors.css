@@ -1,0 +1,453 @@
+/* Q. WHAT ARE THE VARIOUS WAYS WE CAN ADD CSS TO HTML ? 
+   There are 3 ways we add CSS to any HTML document
+   
+   In inline we use 'style' attribute to add css directly to HTML tags. 
+   e.g. <html style="background: red"> </html> 
+
+   In internal we add css within <style> element inside head tag.
+   e.g. <head>
+           <style>
+            html {
+                background: red;
+            } 
+           </style>
+        </head> 
+
+   Finally, we use mostly external CSS, where we keep all styles in separate file and 
+   link to html using link tag in head. Additionally we need to mention relation of 
+   file linked with html that is "stylesheet" with rel attribute and we href attribute 
+   will have to address to the folder containing CSS. 
+   e.g. <link rel="stylesheet" href="../location"> 
+   
+   Q. WHAT EXACTLY THIS . OR ../ CONVEYS IN LOCATION PATH ?
+      . (one dot) means current directory and ..(double dot) means parent directory 
+      of current directory. When we use '../' in a file path it refers to go up 
+      to one level in the directory structure.
+   */
+
+
+
+/* As the name suggests selectors selects the html elements that we want to style and
+  we various types slectors in CSS: 
+  
+  Q. HOW MANY TYPES OF SELECTORS ARE THERE IN CSS ? 
+  1. Simple or Basic selectors
+  
+  2. Pseudo-class selectors 
+  3. Pesudo-element selectors
+  4. Attribute selectors 
+  5. Combinator selectors 
+*/ 
+
+/* ----------------------------------------------  1.  Simple or Basic Selectors 
+Q. WHAT ARE BASIC OR SIMPLE SELECTORS ?
+In basic or simple selectors we have universal selector, id selector and 
+class selector */
+
+/* Universal Selector selects all html elements 
+   
+
+*  {
+      ... 
+   }                           
+   
+   
+   
+   
+*/
+
+
+/*A common practice to do this in all css files (also refer box-model)
+   * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: 'Times New Roman', Times, serif;
+       }
+*/ 
+
+/* Q. EXPLAIN WHAT IS CSS RESET OR NORMALIZATION ? WHY IT IS NEEDED ? 
+Above is a css reset or also called normalization. It removes the default 
+margin and padding that browsers apply to some elements. The font family sets 
+deafult font family for entire document. border-box ensures that the width and height 
+of an element inlcude padding and border but not include the margin. 
+
+Q. WHY MARGIN IS NOT INCLUDED IN TOTAL WIDTH AND HEIGHT OF AN ELEMENT ? 
+
+
+Q. EXPLAIN WHAT IS BOX-SIZING AND DIFFERNCE BETWEEN BORDER-BOX AND CONTENT-BOX ?
+box-sizing:
+This property is all about how total width and height of an element is calculated. 
+By default box-sizing is set to content-box, and that means when an elements has a 
+specified width or height and we add padding or border, its actual height and width
+gets changed. To avoid this and make our element's height and width unaffected by 
+adding padding or border we use border-box value.   */
+
+ .content-box {
+    width: 500px;
+    background: yellow;
+    padding: 20px;   /*This makes content area wider 20px + 20px */ 
+    border: 10px solid red; /*This makes content area wider 10px + 10px */ 
+  /* Assigned width of div 500px but Actual width is  
+     500px + left padding + right padding + left border + right border 
+=    500px + 20px + 20px + 10px + 10px 
+=    560px , actual assigned 500px
+Note that margin would not be considered for calculation as it is outside the box. 
+*/
+
+}
+.scale {
+    width: 500px; /*acts as a measurer to check 500px width below*/
+    height: 50px;
+    background: wheat;
+    
+}
+.border-box {
+    box-sizing: border-box;  /* This will eliminate above content-box behaivour */
+    border: 5px solid black;
+    width: 500px;
+    padding: 50px; /* included within assigned width */
+    /* content is adjusted according to assigned width */
+}
+
+
+/* EXPLAIN THE DIFFERENCE BETWEEN ID AND CLASS SELECTOR ?  
+ID Selector uses id attribute of an html element. ID of an element is used to 
+select only one unique element whereas class selectors can style many elementts 
+sharing common class name. 
+Note: Id/class can not start with a number. 
+      # for id names and . for class names  
+                  
+Besides this we can directly target html elements by their name and also can group
+them like
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+Another important selector which we may come across 
+element.class Selector 
+which is used to select the specified element 
+with the specified class.
+For example, p.intro selects only <p> elements with class="intro"
+
+Another important thing to note that we can have more than one class within one 
+html element separated by commas. 
+*/
+
+
+
+
+
+
+/* ------------------------------------                       Slector:pseudo-class {
+                                                                   property: value; 
+                                                                    } 
+Q. EXPLAIN WHAT IS PSEUDO CLASS SELECTOR ? ***
+Pseudo class selectors are used to target and style elements based on their state.
+For example it is used generally for: 
+*/
+
+/* Styling Visted and Unvisted Links Differently  */                  
+
+/* For Unisited Links */
+a:link {
+    color: red;
+}
+/* For already Visted links */
+a:visited{
+ color: blueviolet;   
+}
+
+
+/* Hover Pseudo-class */
+/* Selects and styles an element when the mouse pointer is over it */
+a:hover {
+    color: white;
+}
+/* Selects and styles an element that is being activated by user */
+a:active {
+    color: black;
+} 
+/* ':hover' is pesudo-class whereas 'a' is the selctor
+targeting element <a> */
+/* This style is applied on LINK X - STOIC*/ 
+/* But a simple doubt may come why these are not applied to Y, Z links 
+this is because Y Z links have another styling with a different class. */
+
+
+/* We can also combine pseudo-class with html class */ 
+a.highlight:hover {
+    color: green;
+    font-size: 22px;
+}   /* This is applied to only Link of Y, Z which has a class that's why these
+      appears different from LINK X. */
+
+
+/* Hover on div */
+.hover-div {
+    background-color: blueviolet;
+    text-align: center;
+}
+.hover-div:hover {
+    color: white;
+    background-color: brown;
+
+} /* This is clearly seen, Hover on Div */
+
+/* :focus pseudo-class selects and styles element when it receives focus by user which
+is specially used while designing forms */
+input:focus {
+    border: 5px solid #c7d343;
+    background: #e6e9c5;
+}
+
+/* :first-child pesudo-class  selects and styles the first child element 
+of its parent. And here we have to use .class-name first so that we know parent.*/
+
+.parent-container p:first-child {
+    background-color: #1515e6;
+}
+/* Here <div> has 3 childs and style we applied to first one 
+   :nth-child(n) pseudo class selects and styles nth children of a parent and 
+   n determines which child should be selected.
+   similarly we have :last-child*/
+
+
+/* Style even-numbered list items */
+li:nth-child(even) {
+    background-color: #272424;
+}
+/* Style odd-numbered list items */
+li:nth-child(odd) {
+    background-color: #1515e6;
+}
+
+/* :lang() pesudo-class */
+/* Style paragraphs in French */
+:lang(fr) {
+    color: red;
+}
+
+/* Q. WHAT ARE THE VARIOUS PSEUDO CLASSES USED IN CSS ?
+   Re-look of imp pesudo classes
+   1. Whether link is visted or not - :link for not visted and :visted
+   2. Hovering mouse pointer - :hover
+   3. user click activation - :active 
+   4. input focus - :focus 
+   5. first child of a parent - :first-child 
+   6. nth child of a parent -   :nth-child()
+   7. for a different language - :lang() 
+   
+   and simply pseudo class targets elements state, denoted by : single colon 
+   */
+
+
+
+
+/*----------------------------------------                Selector::pseudo-element {
+                                                                    property: value
+                                                                 }    
+Pesudo element selector styles specific parts of an element's content or it
+generate content that is not present in the actual HTML, denoted by :: double colon       */
+
+/*
+::before and ::after, allows us to insert content into the DOM without 
+altering the HTML. Note this not a pratical example of ::bedfore and ::after
+*/
+h1::before {
+    content: "🔍";
+
+
+}
+h2::after {
+    content: "🔍";
+}
+
+/* ::first-line pseudo-element is used to add a special style to the first line of 
+   a text */
+p.firstline::first-line{
+    font-weight: bold;
+}
+/* similarly ::first-letter pseudo-element is used to add a 
+  special style to the first letter of a text */
+p.firstletter::first-letter{
+    color: #ff0000;
+    font-size: xx-large;
+}   /* this could have more practical use */
+
+
+/* Q. WHAT ARE THE VARIOUS PSEUDO ELEMENT SLECTORS USED IN CSS ?
+   Re-look of imp pseudo element selectors. 
+   1. ::after and ::before with content property - used to insert content after or 
+      before someting without altering document but in DOM. 
+   2. ::first-letter - selects first letter of a text or para for styling 
+   3. ::first-line - selects first line of a text or para for styling
+*/
+
+
+
+
+
+
+/* ----------------------------------------------               Attribute Selectors 
+
+- The [attribute] selector is used to select elements with a specified attribute.  
+- Attribute selectors can be used with various types of operators that change the 
+selection criteria accordingly */
+
+/* [attribute="value"] Selector used to select elements with a specified attribute 
+   and value */
+a[target="_blank"] {
+    background-color: yellow;
+  }   /* this is why link stoic has yellow bg */
+
+
+
+/*[attribute~="value"] Selector used to select elements with an attribute value 
+containing a specified word*/
+img[title~="sansa"] {
+    border: 5px solid yellow;
+  }
+/*[attribute$="value"] selector used to select elements whose attribute value 
+   ends with a specified value.*/
+p[class$="snow"] {
+    background: aqua;
+}
+/*Similarly we have [attribute^="value"] selector is used to select elements with the 
+specified attribute, whose value starts with the specified value.*/
+/*[attribute|="value"] selector used to select elements with the specified attribute, 
+whose value can be exactly the specified value, or the specified value followed by a hyphen (-).*/
+h1[class|="top"] {
+    background-color: aquamarine;
+}
+/* [attribute*="value"] selector is used to select elements whose attribute value 
+contains a specified value (The value does not have to be a whole word!)*/
+h2[class*="le"] {
+    background-color: hotpink;
+}
+/* 
+
+Attribute Selectors are most helpful in forms without using class and id. 
+
+Q. EXPLAIN SOME ATTRIBUTE SELECTORS USED WITH SOME OPERATORS ? 
+
+~=
+$=
+^=
+|=
+*=  - selects attribute value with certain key word or value 
+
+
+*/
+
+
+
+/*  --------------------------------------------------------- Combinator Selectors  */ 
+/* A CSS selector can contain more than one simple selector. 
+Between the simple selectors, we can include a combinator that explains 
+the relationship between the selectors */
+
+/* desandant selector (space by default) matches all elements  that are part of 
+a specified element.*/
+.combinators p{
+    background-color: #0d0e0d;
+    color: #ff0000;
+}
+/* Child Selector (>) selects all elements that are the children of a specified element 
+*/
+.combinators > p{
+    font-style: italic;
+}  /* This is actually usefull when we have nested elemnets so that we can apply style 
+       to its direct children */
+
+/*adjacent sibling selector (+) is used to select an element that is directly after 
+another specific element. Sibling elements must have the same parent element, 
+and "adjacent" means "immediately following".*/
+.combinators +p {
+    background-color: yellow;
+}
+/* general sibling selector (~) selects all elements that are next siblings of a specified element.*/
+.combinators ~ p {
+    text-align: center;
+}
+/*
+Q. EXPLAIN VARIOUS TYPES OF COMBINATOR SELECTORS ?
+>
++
+~
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* A note about <div> tag of html which is commonly used for styling 
+
+<div> tag is used as conatiner for HTML elements and is used to group various sections 
+or parts of web page together. Understanding its usage is very crucial. 
+
+<div> by default is a block element, meaning that it takes all available width, 
+and comes with line breaks before and after.
+
+It doesn't have any attrbutes but rather class or id name.
+
+There are lots of ways to center a div which we shall look but the most simple ones 
+is to set margin property to auto and this works for div element with not 100% width. 
+
+<div> is widly used in float, flex and grid which we shall see their respective files 
+like aligning <div> elements side by side. 
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

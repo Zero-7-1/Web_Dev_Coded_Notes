@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.O">
+    <title> Document Object Model </title>
+</head>
+<body>
+    <div class="container">
+    <h1 class="headsGroup" id="head-title"> Understand DOM </h1>
+    <a href="https://en.wikipedia.org/wiki/JavaScript"> JavaScript  </a>
+
+    <p id="getElement"> JavaScript is cool..  </p>
+    
+    <!-- line of code below  is an inline JavaScript event handler which we shall see 
+        in details. Here it instructs the browser to execute JavaScript code when the
+         button is clicked -->
+  
+         <button type="button" 
+            onclick="document.getElementById('getElement').style.fontSize='35px'">
+                        Click Me!</button>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
+
+
+
+        <h2> I love JavaScript </h2>
+        
+        <ul>
+            <li class="items"> Lord of the Rings </li>
+            <li class="items"> The Hobbit        </li>
+        </ul>
+
+    </div>
+
+
+   
+
+    <h1> Traversing the DOM (Element Nodes) </h1>
+    <div class="parent">
+        <div class="child"> Child 1 </div>
+        <div class="child"> Child 2 </div>
+        <div class="child"> Child 3 </div>
+    </div>
+
+
+    
+    <h1> Traversing the DOM (All Nodes) </h1>
+    <div class="parent2">
+        <div class="child2"> Child 1 </div>
+        <div class="child2"> Child 2 </div>
+        <div class="child2"> Child 3 </div>
+    </div>
+
+<!--It's generally a good practice to place <script> 
+tags at the end of the <body> section to ensure that the HTML
+content is parsed and loaded before the script is
+executed.-->
+<script src="../../JavaScript/Part 2 DOM Manipulation/DOM 1.js"> </script>
+</body>
+</html> 

@@ -1,0 +1,101 @@
+/*
+Suppose we have a parent container element within it some child elements, here 
+in this case if we make parent div as dispaly: flex; then all the child elements 
+will be arranged horizonatlly one after another by default. Basically it creates 
+two axis vertically and horizontally, by default it is flex-direction: row; that 
+is in horizontally. To make it vertically we make flex direction: column;.  
+
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+    font-family: "Urbanist", sans-serif;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    background-color: hsl(0, 0%, 96%);
+  }
+  
+  #main-heading {
+    font-size: 6.2rem;
+    color: #1e1403;
+    margin: 3rem 0;
+  } 
+
+
+/* Flex Container ------ Main Focuse Area ---------------------------- */
+  .flex-container {
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    background: linear-gradient(to right, #514a9d, #24c6dc);
+    color: #fff;
+    
+    /* Flexbox Container Properties */
+    display: flex;
+    flex-direction: row;
+    /* 
+       - This makes child elements to be arranged in horizonatal row. 
+       - By default here flex-direction: row; is set (no need to write again). 
+       - If we set value as column then it will be again arranged vertically. 
+       - There is also row-reverse and column reverse which starts from 
+         extreme right side. 
+    */
+    justify-content: center;
+    /*
+    - This used to move or justify postion of items or childs of flex container only
+      horizonatally. 
+    - By default is flex-start  (not required to explictly mention it)
+    - flex-end moves to extreme right 
+    - center moves to middle or center, also note that it will work as long as 
+      direction is row, if made column then we have to use allign-items to move it
+      to center horizonatally. 
+    - space-around distrubtes some spaces between items but in the ends space may
+      appear less. 
+    - To eqaully distrubute spaces and end items should stick to conatiner we use 
+      space-between. 
+    - If we want end items not to stick with container and all of equal spaces then 
+      we may use space-evenly.
+    */
+    align-items: center;
+    /*
+    - Similarly, to move or justify items vertically we have allign-items and its 
+      default value is flex-start
+    - flex-end makes items moves to buttom 
+    - here also we have a center 
+    - We can even center a div with a div just by flex, justify content center and 
+      align items center. 
+    */
+    gap: 20px; 
+    /* we could make some gaps between items, also note that this is the 
+    gap between two items so end items gap will not be equal to that between 
+    items */
+    
+  }
+  
+
+
+/* Items or Children of Flex Container */
+  .item {
+    min-width: 200px;
+    height: 100px;
+    aspect-ratio: 1; 
+    background-image: linear-gradient(to right top, #004d7a, #00bf72, #a8eb12);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    font-size: 24px;
+  }
+  
+
+  .item-2 {
+    flex-grow: 1;
+    /*This takes available space between both the ends of first and last items*/
+  }
