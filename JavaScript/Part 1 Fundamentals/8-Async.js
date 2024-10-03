@@ -1,18 +1,20 @@
 /*
 Q. EXPLAIN WHAT IS ASYNCHRONOUS PROGRAMMING IN JS ? 
 Normally (in synchronous environment), tasks are executed one after the other, and 
-each task waits for the previous one to finish. If a task, like fetching data from a 
-server, takes a long time, it blocks the entire program. 
+each task waits for the previous one to finish. If a task, like fetching data from 
+a server, takes a long time, it blocks the entire program. 
 
-JavaScript by default executes code synchronously. 
+Q. BY DEFAULT JS IS SYNC OR ASYNC ?
+JavaScript by default executes code synchronously (It is single threaded).
 
 Asynchronous programming in JavaScript allows the execution of tasks to continue 
 while waiting for others to complete, rather than blocking the entire program's 
 execution for one waiting program. 
 
-Key concepts of Asynchronous Programming are:
-- > Callbacks
-- > Promises 
+
+Key Concepts of Asynchronous Programming:
+- > Callback Function 
+- > Promise Object  
 - > asyn/await 
 */
 
@@ -21,18 +23,19 @@ Key concepts of Asynchronous Programming are:
 /*
 Q. WHAT IS CALLBACK ? 
 A callback is a function that is passed as an argument to another function and 
-is executed after the first function has completed its task. In simple terms, 
-it's like saying:
+is executed after the first function has completed its task. 
 
-1. "Hey Function do this task."
-2. "Once you're done, call the another function to finish up."
+Q. WHAT IS THE OBJECTIVE OF A CALLBACK FUNCTION ? 
+
+The main objective of a callback function is to do some task after a async 
+operation is complete or either report error if task fails. 
+
+It important to not that callback function is not waiting for the async task 
+to finish rather it is scheduled to run or it is like the task will respond 
+through callback. 
 
 JavaScript uses callbacks to handle asynchronous operations like fetching data from 
 an API, reading a file, or waiting for a user to click a button. 
-
-Since JavaScript executes code line by line, callbacks help ensure that certain 
-tasks wait for others to complete before running.
-
 */
 
 // Callback Example 1 
@@ -46,7 +49,7 @@ function greeting(name) {     // name is undefined here
     callback(name); // This is where the callback is executed
   }
   
-  processUserInput(greeting);
+  processUserInput(greeting); // greeting is used as callback parameter's argument
   // greeting() is passed as the callback function to processUserInput()
  // processUserInput() calls the greeting function after getting the name, 
 //and the result is: "Hello, World_".
@@ -100,8 +103,7 @@ function displayMessage(message) {
   function handleData(message) {
     console.log(message);
   }
-  
-  fetchData(handleData);
+ fetchData(handleData);
   
 
   // Callback Example 4
