@@ -1,10 +1,16 @@
-/*
+/* Q. EXPLAIN FLEXBOX or DISPLAY-FLEX PROPERTY.  
 Suppose we have a parent container element within it some child elements, here 
 in this case if we make parent div as dispaly: flex; then all the child elements 
-will be arranged horizonatlly one after another by default. Basically it creates 
-two axis vertically and horizontally, by default it is flex-direction: row; that 
-is in horizontally. To make it vertically we make flex direction: column;.  
+will be arranged or stacked horizonatlly one after another by default. Basically it 
+creates two axis vertically and horizontally, by default it is flex-direction: row; 
+that is in horizontally. To make it vertically we make flex-direction: column;.  
+Q. WHAT IS THE DEFAULT DIRECTION OF DISPLAY-FLEX ?  
 
+Q. EXPLAIN WHAT IS MAIN AXIS AND CROSS AXIS IN FLEXBOX ?
+Flex property creates two axis for the div. 
+By default that is flex-direction: row; main axis goes by horizonatally and cross
+goes by vertically. Items inside the flexbox flow towards main axis and main axis 
+gets reversed to cross axis when we change flex direction to column. 
 */
 
 
@@ -31,10 +37,12 @@ is in horizontally. To make it vertically we make flex direction: column;.
   } 
 
 
+
+
 /* Flex Container ------ Main Focuse Area ---------------------------- */
   .flex-container {
-    width: 60%;
-    height: 500px;
+    width: 70%;
+    height: auto; /* 250px for other, auto for align-content & wrap*/
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
     background: linear-gradient(to right, #514a9d, #24c6dc);
@@ -44,16 +52,16 @@ is in horizontally. To make it vertically we make flex direction: column;.
     display: flex;
     flex-direction: row;
     /* 
-       - This makes child elements to be arranged in horizonatal row. 
+       - This makes child elements to be arranged in horizonatal row (main axis). 
        - By default here flex-direction: row; is set (no need to write again). 
        - If we set value as column then it will be again arranged vertically. 
        - There is also row-reverse and column reverse which starts from 
          extreme right side. 
     */
     justify-content: center;
-    /*
-    - This used to move or justify postion of items or childs of flex container only
-      horizonatally. 
+    /*  Q. EXPLAIN JUSTIFY-CONTENT OF FLEXBOX ? SOME OF ITS VALUES. 
+    - This used to move or justify postion of items or childs of flex container 
+      only horizonatally (along main axis). 
     - By default is flex-start  (not required to explictly mention it)
     - flex-end moves to extreme right 
     - center moves to middle or center, also note that it will work as long as 
@@ -66,36 +74,56 @@ is in horizontally. To make it vertically we make flex direction: column;.
     - If we want end items not to stick with container and all of equal spaces then 
       we may use space-evenly.
     */
-    align-items: center;
-    /*
-    - Similarly, to move or justify items vertically we have allign-items and its 
-      default value is flex-start
+    align-items: center; 
+   /* Q. EXPLAIN ALIGN-ITEMS OF FLEXBOX ? 
+    - Similarly, to move or justify items vertically (along cross axis) we have 
+      allign-items and its default value is also flex-start
     - flex-end makes items moves to buttom 
     - here also we have a center 
+      Q. HOW TO CENTER A DIV INSIDE ANOTHER DIV ? 
     - We can even center a div with a div just by flex, justify content center and 
       align items center. 
+
+    Note: If we change the flex-direction to column then we would use align-item
+    to postion horizonatlly not vertically. Similarly for vertcial we would use
+    justify-content. 
     */
-    gap: 20px; 
+    gap: 20px;
     /* we could make some gaps between items, also note that this is the 
     gap between two items so end items gap will not be equal to that between 
     items */
     
+    flex-wrap: wrap; /* wrap ables to move some items to buttom if there are many 
+                        items instead of stacking together
+                    */
+    align-content: center;  /* After using wrap we can unlock allign-content 
+                           which can be used to make a good layout */
   }
   
 
 
-/* Items or Children of Flex Container */
+/* Items Properties or Children of Flex Container */
   .item {
-    min-width: 200px;
+    width: 100px;
     height: 100px;
-    aspect-ratio: 1; 
     background-image: linear-gradient(to right top, #004d7a, #00bf72, #a8eb12);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
     font-size: 24px;
+    flex: 1; /*This dirstributes space equally to all childs, additonlally 
+                there could gap in between  */
   }
   
 
   .item-2 {
-    flex-grow: 1;
-    /*This takes available space between both the ends of first and last items*/
+    /*flex-grow: 1; */
+    /* This takes available space between both the ends of first and last items */
+    /* flex-shrink: 5; */
+    /* We can shrink after growing the item and it can shrink further when
+       we make tab smaller, Make sure not use min-width to shrink to work */
+   /* align-self: flex-end; */ /* align-self is used to move a single item*/
+  } 
+  
+  .item-3 {
+    /* flex-basis: 200px;  */  /*Overrides the width of a item */
+    
   }
