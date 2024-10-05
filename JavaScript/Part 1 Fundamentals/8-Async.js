@@ -36,6 +36,11 @@ through callback.
 
 JavaScript uses callbacks to handle asynchronous operations like fetching data from 
 an API, reading a file, or waiting for a user to click a button. 
+
+Callbacks are widely used in a route handler method passed as an argument to 
+get() method of express. (Refere major project or Express folder)
+
+Callbacks are also use in listen() method http module 
 */
 
 // Callback Example 1 

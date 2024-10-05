@@ -45,10 +45,10 @@ Objects is best for unstructured data.
 */
 
 
-//  Object Creation  Q. EXPALIN VARIOUS WAYS OF OBJECT CREATION.
+//  Object Creation  Q. HOW OBJECT IS CREATED IN JAVASCRIPT ? 
 
 
-/* --------------------------------OBEJCT LITERAL METHOD, DOT & BRACKET NOTATIONS */
+/* -----------------------------OBEJCT LITERAL METHOD OR DOT & BRACKET NOTATIONS */
 
 
 /* Creating object simply by using literal method i.e. using curly brace and 
@@ -210,7 +210,7 @@ console.log(BioData.Address.location);
 
 
 
-/* -----------------------------------------------------OBJECT CONSTRUCTOR METHOD */
+/* --------------------------------------------------Object Constructor Method */
 
 
 
@@ -218,7 +218,8 @@ console.log(BioData.Address.location);
 /* The 'new' keyword and the object constructor creates a blank object, 
 then we can add properties and methods to the object using dot noation. 
 
-Now what is Constructor, we will see this here only later */ 
+Now what is Constructor, we will see this later */ 
+
 const hotel2 = new Object(); 
 hotel2.name = "MoonKnight";
 hotel2.rooms = 40;
