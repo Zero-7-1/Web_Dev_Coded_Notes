@@ -18,7 +18,7 @@ export const State = () => {
   
 
 /* Q. WHAT IS STATE IN REACT ? 
- Genrally using normal variables that is going to change inside a component will
+ Generally using normal variables that is going to change inside a component will
  not be read by react. For that we have states. 
  So state is a built-in object that stores data specific to a component and 
  allows the component to keep track of changing information over time.
@@ -37,11 +37,11 @@ export const State = () => {
  There are many ways of state management in react
 
 1. Localy (For managing state within a single component) we manage the state 
-   using hooks (built-in functions) like useState. ✔️
-
+   using hooks (built-in functions) like useState. 
+  
 2. Globally (For applications that require state to be shared across multiple 
    components) we could use Context API 
-
+  
 3. Popularly an additional library is used widely called Redux
 
 4. For External server state management libraries like React Query or Axios
@@ -70,5 +70,8 @@ initialState: The initial value for the 'state' variable
 
 useState returns array with two elements, one undefined and other function
 
+Q. DOES STATE VARIABLE'S VALUE RESETS TO INTIAL VALUE AFTER RE-RENDER ?
+No, it does not because react remembers the current value of the state 
+variable. 
 
 */
