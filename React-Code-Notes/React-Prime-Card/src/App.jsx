@@ -10,8 +10,8 @@ KEY TOPICS COVERED IN THIS MINI PROJECT:
 Q. EXPALIN WHAT IS JSX ? 
    - JSX stands for JavaScript XML (JavaScript Syntax Extension)
    - It basically the syntax used here in react that allows us to write 
-     HTML elements in JavaScript and react puts in DOM without any DOM methods for
-     us to write like createElement or appendChild internally. 
+     HTML elements in JavaScript and react puts in DOM without any DOM methods 
+     for us to write like createElement or appendChild internally. 
    
      - In React behind the scene this happens basically:
        React.createElement("h1", "null", "Hello From React");
@@ -36,7 +36,8 @@ Components are  resuable pieces of codes to build elements on a page, it can be 
 thought as custom HTML element. Compnonets can be broken down into smaller ones 
 and can be called composition. These are great ways of building UIs providing 
 scalability and easier to maintain. 
--  Components are like JavaScript functions that returns HTML or specifically JSX
+-  Components are like JavaScript functions that returns HTML or 
+   specifically JSX
 -  A componnet always starts with capital letter as here in our App.jsx
 -  Components are always starts with upper case by convention 
 
@@ -64,10 +65,12 @@ Q. WHAT KIND OF APPLICATIONS WE COULD BUILD USING REACT ?
 import React from "react"; 
 
 // importing Prime Series Component here which was default export
-import PrimeSeries from "./components/PrimeSeries";  // this is a default import 
+import PrimeSeries from "./components/PrimeSeries";  
+// this is a default import 
 
 //importing Footer and Header here which was named exports 
-import { Footer, Header } from "./components/PrimeSeries"; // this is a named import  
+import { Footer, Header } from "./components/PrimeSeries"; 
+// this is a named import  
 
 // Above Imports can be also writtern as combined both Default and Named   
 // import PrimeSeries, {Header, Footer} from .. 
@@ -86,8 +89,8 @@ export const App = () => {
    };
 
 /*   More about JSX 
-- Each JSX expression must have one parent element, which means if we try to retrun
-  multiple elements, react will through error.
+- Each JSX expression must have one parent element, which means if we try to 
+  retrun multiple elements, react will through error.
    
    Q. WHY CAN'T WE RETURN MULTIPLE ELEMENTS AT THE SAME TIME ? 
    In JSX everything is returned as object and even in plain JS one function
@@ -96,8 +99,8 @@ export const App = () => {
 - Remember when we return we need to have one parent and if we have multiple 
   JSX codes then use () with return
 
-- Every JSX tag needs to be colsed. We can use self-closing tags for elements that 
-  don't have children like img tag like this <img src="#" /> 
+- Every JSX tag needs to be colsed. We can use self-closing tags for elements 
+  that don't have children like img tag like this <img src="#" /> 
 
 Q. WHAT IS REACT FRAGMENT AND WHY WE NEED REACT FRAGMENT ?
 - In these code of a previous version   
