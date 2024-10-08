@@ -21,7 +21,7 @@ Key Concepts of Asynchronous Programming:
 
 // Callbacks 
 /*
-Q. WHAT IS CALLBACK ? 
+Q. WHAT IS CALLBACK FUNCTION ? 
 A callback is a function that is passed as an argument to another function and 
 is executed after the first function has completed its task. 
 
@@ -29,18 +29,19 @@ Q. WHAT IS THE OBJECTIVE OF A CALLBACK FUNCTION ?
 
 The main objective of a callback function is to do some task after a async 
 operation is complete or either report error if task fails. 
-
-It important to not that callback function is not waiting for the async task 
+(It important to not that callback function is not waiting for the async task 
 to finish rather it is scheduled to run or it is like the task will respond 
-through callback. 
+through callback.) 
 
 JavaScript uses callbacks to handle asynchronous operations like fetching data from 
-an API, reading a file, or waiting for a user to click a button. 
+Server or an API or waiting for a user to click a button. 
 
-Callbacks are widely used in a route handler method passed as an argument to 
-get() method of express. (Refere major project or Express folder)
+Callbacks can used in a route handler method passed as an argument to 
+get() method to get user requestes to server and give response according to it.
 
-Callbacks are also use in listen() method http module 
+Callbacks can also used in listen() method of http module to listen to a speicific
+port, once the server is connnected to the the port the callback function is 
+exceuted.  
 */
 
 // Callback Example 1 
