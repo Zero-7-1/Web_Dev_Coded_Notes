@@ -7,11 +7,11 @@ KEY TOPICS COVERED IN THIS MINI PROJECT:
 - > PROPS 
 
    
-Q. EXPALIN WHAT IS JSX ? 
-   - JSX stands for JavaScript XML (JavaScript Syntax Extension)
-   - It basically the syntax used here in react that allows us to write 
+Q. EXPALIN WHAT IS JSX ? *
+   - JSX stands for JavaScript Syntax Extension
+   - It is basically the syntax used in react that allows to write 
      HTML elements in JavaScript and react puts in DOM without any DOM methods 
-     for us to write like createElement or appendChild internally. 
+     like createElement or appendChild internally. 
    
      - In React behind the scene this happens basically:
        React.createElement("h1", "null", "Hello From React");
@@ -31,24 +31,38 @@ Q. EXPALIN WHAT IS JSX ?
 */
 
 /*
-Q. EXPLAIN WHAT ARE COMPONENTS IN REACT ? 
-Components are  resuable pieces of codes to build elements on a page, it can be also 
-thought as custom HTML element. Compnonets can be broken down into smaller ones 
-and can be called composition. These are great ways of building UIs providing 
-scalability and easier to maintain. 
--  Components are like JavaScript functions that returns HTML or 
-   specifically JSX
--  A componnet always starts with capital letter as here in our App.jsx
--  Components are always starts with upper case by convention 
+Q. EXPLAIN WHAT ARE COMPONENTS IN REACT ? * 
+Components are  resuable pieces of codes to build elements on a page, it can be 
+also thought as custom HTML element. Compnonets can be broken down into smaller 
+ones and can be called composition. These are great ways of building UIs 
+providing scalability and easier to maintain. 
 
-Q. HOW MANY TYPES OF COMPONENTS ARE THERE IN REACT ? 
-We had an old one Class Components which is not used anymore as it was 
-more lengthy so Functional Components which is used today widely. 
- 
-Q. BY DEFAULT WHICH COMPONENT IS RENDERED IN REACT ? AND WHERE IT IS LOCATED ? 
+-  Components are like JavaScript functions that returns HTML or 
+   specifically JSX. 
+-  A componnet always starts with capital letter as here in App.jsx
+
+Q. HOW MANY TYPES OF COMPONENTS ARE THERE IN REACT AND WHAT'S THE 
+   DIFFERENCE ? * 
+Class Components are not used anymore as it was more lengthy so 
+Functional Components are used today widely. 
+
+- Class components is defined using ES6 class syntax, needs to 
+  extend React.Component and have a render method. 
+  Whereas, 
+  Functional Components are defined using a simple JavaScript function that 
+  returns JSX. (Easier synatx of Functional Components)
+
+- Functional components were at first stateless but introduction of Hooks
+  solved this.
+  However.
+  In class components state is managed using this.state and updated using 
+  this.setState(). (Class components offers state management without Hooks)
+
+
+Q. BY DEFAULT WHICH COMPONENT IS RENDERED IN REACT ? AND WHERE IT IS LOCATED ? * 
    By default only App component is rendered which is located inside main.jsx 
    Note that every react app must have one component and that is called 
-   Root component 
+   Root component. 
 
 Q. WHAT KIND OF APPLICATIONS WE COULD BUILD USING REACT ?
       SPA - Single Page Applications loads a single html file namely index.html
@@ -61,12 +75,12 @@ Q. WHAT KIND OF APPLICATIONS WE COULD BUILD USING REACT ?
              limitations whereas SSRs can be hosted using vercel or netlify. 
 */
 
-// not needed nowdays, imports React Library 
-import React from "react"; 
+
+import React from "react"; // not needed nowdays, imports React Library 
 
 // importing Prime Series Component here which was default export
 import PrimeSeries from "./components/PrimeSeries";  
-// this is a default import 
+// using default import 
 
 //importing Footer and Header here which was named exports 
 import { Footer, Header } from "./components/PrimeSeries"; 
@@ -78,7 +92,7 @@ import { Footer, Header } from "./components/PrimeSeries";
 
 
 // App component is exported too to main.jsx 
-export const App = () => {
+export const App = () => {   
        return (
          <> 
              <Header/> 
@@ -92,15 +106,9 @@ export const App = () => {
 - Each JSX expression must have one parent element, which means if we try to 
   retrun multiple elements, react will through error.
    
-   Q. WHY CAN'T WE RETURN MULTIPLE ELEMENTS AT THE SAME TIME ? 
+   Q. WHY CAN'T WE RETURN MULTIPLE ELEMENTS AT THE SAME TIME ? * 
    In JSX everything is returned as object and even in plain JS one function
    can't return multiple values.
-
-- Remember when we return we need to have one parent and if we have multiple 
-  JSX codes then use () with return
-
-- Every JSX tag needs to be colsed. We can use self-closing tags for elements 
-  that don't have children like img tag like this <img src="#" /> 
 
 Q. WHAT IS REACT FRAGMENT AND WHY WE NEED REACT FRAGMENT ?
 - In these code of a previous version   
@@ -112,8 +120,12 @@ Q. WHAT IS REACT FRAGMENT AND WHY WE NEED REACT FRAGMENT ?
    <PrimeSeries/> 
    </div>
    We don't need the div which creates a extra node behind the scene which is 
-   unecessary so we should use <React.Fragment> instead of div which we get from React
-   or simply use sugar react syntax <> </>  
+   unecessary so we should use <React.Fragment> instead of div which we get 
+   from React or simply use its  shorter syntax '<> </>'.   
+
+   Q. WHAT ARE IMPORTS AND EXPORTS ?* 
+   In JavaScript (ES6+), import and export are used to share code 
+   between files or modules.  
 */
 
 

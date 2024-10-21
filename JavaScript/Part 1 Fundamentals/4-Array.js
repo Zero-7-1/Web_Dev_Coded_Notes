@@ -47,7 +47,7 @@ console.log(p);
 
 
 
-/* -------------------------------------------------------------ARRAY METHODS */
+/* ---------------------------------------------------------- ARRAY METHODS */
 // toString() converts an array to a string of (comma separated) array values
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits);
@@ -227,7 +227,61 @@ second element.
 
 */
 
+// map() Method 
+/*
+map() iterates over every element of an array, applies a function to each 
+element, and then returns a new array with the transformed values.
+
+array.map(callback(currentValue, index, array), thisArg)
+
+callback function is executed on each element of the array.
+currentValue is the current element being processed.
+index (optional) of the current element.
+array (optional) on which map() was called.
+thisArg (optional) is a value to use as 'this' when executing the callback 
+function.
+*/
+
+// A basic map() example 1 
+const number = [1, 2, 3, 4, 5];
+// Use map() to create a new array with each number doubled
+const doubled = number.map(number => number * 2);
+console.log(doubled); 
+console.log(number); 
+
+// Basic map() example 2
+// We have an array of user objects, and we want to extract only the names
+const user = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 35 }
+];
+// extracting names into a new array
+const names = user.map(user => user.name);
+console.log(names); 
 
 
+// Basic map() example 3
+/* index parameter in map() if needed. For instance, adding the index to each 
+value */
+
+const numbers2 = [10, 20, 30, 40];
+// map() to add the index to each value
+const result = numbers2.map((num, index) => num + index);
+console.log(result); // Output: [10, 21, 32, 43]
+
+// Basic map() example 4
+/* passing a second argument (thisArg) to the map() method to set the 
+value of this inside the callback function. */ 
+const multiplier = {
+  factor: 3
+};
+
+const numbers3 = [1, 2, 3];
+// map() with thisArg to multiply each number by the factor
+const multiplied = numbers3.map(function(num) {
+  return num * this.factor;
+}, multiplier); // passing `multiplier` as thisArg
+console.log(multiplied); 
 
 
