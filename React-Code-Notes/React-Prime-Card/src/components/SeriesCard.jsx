@@ -2,9 +2,11 @@ import React from 'react';
 
 
 /* 
-In SeriesCard, destructured series directly in the function parameters so that
-now, instead of using props.series.seriesName, etc. , we can directly use seriesName, 
+In SeriesCard, destructured series props directly in the function parameters so that
+instead of using props.series.seriesName, etc. , we can directly use seriesName, 
 seriesRatings, etc.
+
+The SeriesCard component receives two props: series and canWatch.
 */
 export const SeriesCard = ({ series: 
          { seriesImage, seriesName, seriesRatings, seriesAbout, seriesGenre }, 

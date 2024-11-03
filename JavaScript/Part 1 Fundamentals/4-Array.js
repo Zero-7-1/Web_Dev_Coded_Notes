@@ -227,6 +227,8 @@ second element.
 
 */
 
+
+
 // map() Method 
 /*
 map() iterates over every element of an array, applies a function to each 
@@ -235,9 +237,13 @@ element, and then returns a new array with the transformed values.
 array.map(callback(currentValue, index, array), thisArg)
 
 callback function is executed on each element of the array.
+
 currentValue is the current element being processed.
+
 index (optional) of the current element.
+
 array (optional) on which map() was called.
+
 thisArg (optional) is a value to use as 'this' when executing the callback 
 function.
 */
@@ -285,3 +291,30 @@ const multiplied = numbers3.map(function(num) {
 console.log(multiplied); 
 
 
+// Array Destructuring
+// unpacking values from the array and assign them to variables
+// similar to Object Destructing 
+
+// In arrays we can even skip some values using two or more commas
+
+const veges = ["Potatos", "Brinjal", "Pumpkin", "Tomatos"];
+
+// Destructuring
+let [vege1,,,vege2] = veges;
+console.log(vege1); 
+console.log(vege2);
+
+
+
+
+
+// Q. HOW CAN YOU SWAP VALUES OF TWO VARIABLES WITHOUT NEEDING A THIRD VARIBALE ?
+let a = 1;
+let b = 2;
+
+[a, b] = [b, a]; 
+/* */
+
+
+console.log(a);
+console.log(b);

@@ -363,7 +363,26 @@ console.log(person3);
 person3.sayHello();
 
  
+// Object Destructuring 
+// unpacking object properties into variables
 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50
+};
+
+// Destructuring with Alias 
+let {lastName : name2} = person;
+console.log(name2);
+
+// Destructuring
+//let {lastName, firstName, country="US"} = person;
+//console.log(lastName);
+//console.log(firstName);
+
+// Destructuring is not destructive and it does not change the original object.
+// We could even use a default value for any potential missing properties like country
 
 
 

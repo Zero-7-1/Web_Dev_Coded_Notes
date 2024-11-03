@@ -9,9 +9,9 @@ KEY TOPICS COVERED IN THIS MINI PROJECT:
    
 Q. EXPALIN WHAT IS JSX ? *
    - JSX stands for JavaScript Syntax Extension
-   - It is basically the syntax used in react that allows to write 
-     HTML elements in JavaScript and react puts in DOM without any DOM methods 
-     like createElement or appendChild internally. 
+   - It is the syntax used in react that allows to write 
+     HTML elements in JavaScript and react puts these elements in DOM without any 
+     DOM methods like createElement or appendChild internally. 
    
      - In React behind the scene this happens basically:
        React.createElement("h1", "null", "Hello From React");
@@ -78,11 +78,12 @@ Q. WHAT KIND OF APPLICATIONS WE COULD BUILD USING REACT ?
 
 import React from "react"; // not needed nowdays, imports React Library 
 
-// importing Prime Series Component here which was default export
+/* importing Prime Series Component by simple writing name of it which 
+was default export */
 import PrimeSeries from "./components/PrimeSeries";  
 // using default import 
 
-//importing Footer and Header here which was named exports 
+//importing Footer and Header using curly braces here which was named exports 
 import { Footer, Header } from "./components/PrimeSeries"; 
 // this is a named import  
 
@@ -91,11 +92,12 @@ import { Footer, Header } from "./components/PrimeSeries";
 
 
 
-// App component is exported too to main.jsx 
-export const App = () => {   
+// App component is exported to main.jsx 
+export const App = (props) => {   
        return (
          <> 
-             <Header/> 
+             <h1> {props.title} </h1>
+             <Header name="John"/> 
              <PrimeSeries/> 
              <Footer/> 
          </>
@@ -123,7 +125,7 @@ Q. WHAT IS REACT FRAGMENT AND WHY WE NEED REACT FRAGMENT ?
    unecessary so we should use <React.Fragment> instead of div which we get 
    from React or simply use its  shorter syntax '<> </>'.   
 
-   Q. WHAT ARE IMPORTS AND EXPORTS ?* 
+   Q. WHAT ARE IMPORTS AND EXPORTS ? * 
    In JavaScript (ES6+), import and export are used to share code 
    between files or modules.  
 */

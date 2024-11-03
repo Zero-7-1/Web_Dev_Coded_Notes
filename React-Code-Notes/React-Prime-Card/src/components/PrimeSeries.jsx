@@ -12,18 +12,22 @@ import PrimeData from "../api/PrimeData.json";
 import { SeriesCard } from "../components/SeriesCard";
 
 
-
+ 
 
 /*
 Q. EXPLAIN ABOUT DEFAULT IMPORT AND EXPORT ? HOW IT DIFFERES FROM NAMED 
-   IMPORT AND EXPORT ? *
+   IMPORT AND EXPORT ? **
    We can give any name with default export but recommended to use file or 
    component name, then we import it in App.jsx with import keyword and 
    file name by specifying its location (automatically we should get location 
    inserted). 
    
-   Note that there can only be one default for each file so it is used for 
-   exporting many values in one component. But we can have many named exports.
+   There can only be one default for each file and it returns only one component 
+   so it is used for exporting many values in one component. But we can have 
+   many named exports.
+
+   In default export we write the keyword 'export' with 'default' at the end or after 
+   the component has been defined. 
    
    We used default for PrimeSeries component and names for Header and Footer
    here.. 
@@ -35,7 +39,7 @@ const PrimeSeries = () => {
    let userAge = 25; // this would come from database 
 
    const canWatch = (rating) => {
-      // Assuming ratings like "18+" require age >= 18
+      // "18+" series require age >= 18 whcich would be fectched from user db
       const ratingAge = parseInt(rating);
       if (userAge >= ratingAge) return "Watch Now";
       return "Turn off Kids Mode";
@@ -68,7 +72,7 @@ Warning: Each child in a list should have a unique "key" prop.
    );
 
 /*
-Two props passed in SeriesCard component one is Key for unique id and other is 
+Two props passed in SeriesCard component one is Key for unique id and other is for  
 current element. 
 */
 };
@@ -84,13 +88,13 @@ export default PrimeSeries; // this is a default export
    and many named in a sigle file)
 
    It allows to export multiple components from a single file unlike default 
-   which exports only one componet (within it we can return many values though). 
+   which exports only one component (within it we can return many values though). 
 
    The names of the exports matters here a lot
 */
 
-  export const Header = () => {
-    return <p> This would be Header </p> 
+  export const Header = (names) => {
+    return <p> Hello! {names.name} </p> 
   }
 
   export const Footer = () => {
