@@ -365,7 +365,6 @@ $=
 */
 
 
-
 /* Q. WHAT ARE COMBINATOR SELECTORS ? *** 
 
    A CSS selector can contain more than one simple selector. 
@@ -398,7 +397,7 @@ and "adjacent" means "immediately following".*/
     text-align: center;
 }
 /*
-Q. EXPLAIN VARIOUS TYPES OF COMBINATOR SELECTORS ?
+Q. EXPLAIN VARIOUS TYPES OF COMBINATOR SELECTORS ? **
 >
 +
 ~
