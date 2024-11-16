@@ -1,6 +1,4 @@
-const veges = ["Potatos", "Brinjal", "Pumpkin", "Tomatos"];
-
-// Destructuring
-let [vege1,,,vege2] = veges;
-console.log(vege1); 
-console.log(vege2);
+// Nested array destructuring
+const nested = [1,2,[3,4]];
+const [i, , j] = nested;
+console.log(i,j);

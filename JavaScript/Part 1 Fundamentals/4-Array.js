@@ -291,8 +291,11 @@ const multiplied = numbers3.map(function(num) {
 console.log(multiplied); 
 
 
-// Array Destructuring
-// unpacking values from the array and assign them to variables
+
+
+// Array Destructuring Q. EXPLAIN WHAT IS ARRAY DESTRUCTURING ? 
+
+// Unpacking values from the array and assign them to variables
 // similar to Object Destructing 
 
 // In arrays we can even skip some values using two or more commas
@@ -301,11 +304,9 @@ const veges = ["Potatos", "Brinjal", "Pumpkin", "Tomatos"];
 
 // Destructuring
 let [vege1,,,vege2] = veges;
+
 console.log(vege1); 
 console.log(vege2);
-
-
-
 
 
 // Q. HOW CAN YOU SWAP VALUES OF TWO VARIABLES WITHOUT NEEDING A THIRD VARIBALE ?
@@ -313,8 +314,38 @@ let a = 1;
 let b = 2;
 
 [a, b] = [b, a]; 
-/* */
+/* 
+Right Side Evaluation [b, a]
+Creates a temporary array with the current values of b and a, i.e., [2, 1].
 
+Destructuring Assignment [a, b] = [2, 1]
+The values from the array [2, 1] are destructured and assigned to a and b 
+respectively. a receives the value 2, and b receives the value 1
+*/
 
 console.log(a);
 console.log(b);
+
+/*
+Using destructuring we can have a function return multile values as an array
+and then we can destructure the array to variables.  
+*/
+const FoodOrder = {
+  categories: ["Dosa", "Idili", "Dahi Vada", "Upma"],
+  drinks: ["Coke", "Fanata", "Lemica"],
+  order: function (categoriesIndex, drinksIndex) {
+    return [this.categories[categoriesIndex], this.drinks[drinksIndex]];
+  }
+}
+console.log(FoodOrder.order(0,1));
+
+// Recieved two return values from the function
+const [breakfast, drinking] = FoodOrder.order(0,1);
+console.log(breakfast);
+console.log(drinking);
+
+// Nested array destructuring
+const nested = [1,2,[3,4]];
+//const [i, , j] = nested;
+//console.log(i,j);
+
