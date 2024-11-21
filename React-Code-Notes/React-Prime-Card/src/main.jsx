@@ -5,19 +5,15 @@ import { App } from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App title="Props" />
+    <App title="Sudhanshu's Movies & Series Recommendation"/>
   </React.StrictMode>,
 );
 
 
-/* Q. EXAPLIN THE ROOT COMPONENT OR WHAT IS THE DEFAULT COMPONENT IN REACT ? 
-This was previously called index.js.
-
-In a react application only one component is rendered and that is app.jsx
-It must contain atleast one compenent and that is app.jsx which called the 
-root component. Other components are created inside this root component. 
-Ultimately these components are converted to DOM fragments and placed to 
-exiting DOM 
-
-
+/* 
+Here in the root component we passed a attribute title with some string values 
+as an argument that is need to be passed to app component . In app component we 
+accept this argument using props object. To do this we have added props inside 
+parentheses of function declaration. Finally to access to this object property 
+we use dot notations. 
 */
