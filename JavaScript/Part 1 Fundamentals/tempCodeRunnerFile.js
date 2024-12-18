@@ -1,4 +1,3 @@
-// Nested array destructuring
-const nested = [1,2,[3,4]];
-const [i, , j] = nested;
-console.log(i,j);
+console.log('myName', myName); // myName undefined here 
+var myName = 'John Wick';   
+console.log('myName', myName);

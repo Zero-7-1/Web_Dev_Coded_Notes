@@ -18,11 +18,11 @@ compilation which is known as JIT (Just in Time) compilation
 // Q. IS SEMICOLON NECCESSARY FOR JS CODES ? 
 
  /*   
- In most cases js codes will run fine without semicolon and we might think that it is 
- optional or no need like python but it important to enforce use of semicolon in js.
- In js we have a mechanism called automatic semicolon insertion (ASI), this gives 
- the appearance that semicolons are optional but it might casue problems like one
- below 
+ In most cases js codes will run fine without semicolon and we might think that 
+ it is optional or no need like python but it important to enforce use of semicolon
+ in js. In js we have a mechanism called automatic semicolon insertion (ASI), this 
+ gives the appearance that semicolons are optional but it might casue problems like 
+ one below 
  */
 // problem we might face if we habbituate js without semicolon 
  function foo() {
@@ -48,20 +48,53 @@ console.log(r);
 global object i.e. window for browsers. */
 
 
-// WHY VAR IS NOT USED ANYMORE ?  OR EXPLAIN JS VARIABLE DECLARATION ? 
 
 
-/* Only use var to support old browsers, it doesn't have block level so
-it would be very bad idea to use var in a block level statement 
-like function or if statement
+
+
+
+
+/*********************************************************************************/
+// 1.2- JavaScript Variables 
+// var, let, const - Variable Scope - Hoisting 
+/*********************************************************************************/
+
+// WHY VAR IS NOT USED ANYMORE ? ***
+
+/* At first only var was there for variable declaration in JS which had these
+   two common problems:    
+   
+   1. it doesn't have block level scope so it would be very bad idea to use var in 
+   a block level statement like a function or control or loop statements as the var 
+   variable would leak out of block and be accessible outside block. By default 
+   var has function scope and if no nearest function then it will have global 
+   scope as global variable. 
+
+   2. var is hoisted in global scope (see Hoisting part of this file)
+
+   In the ES6 update let and const were introduced which solved most of var
+   problems 
 */
 
-/* We use const if we are absolutely sure about the value doesn't change as const 
+/* Block Scope 
+Q. EXPLAIN WHAT IS BLOCK LEVEL SCOPE. 
+Block-level scope refers to the scope of variables or identifiers 
+declared within a block of code. In many programming languages, including 
+JavaScript, a block is defined by a pair of curly braces {}. Examples of blocks 
+include if statements, for loops, while loops, and function definitions.
+
+In languages with block-level scope, variables declared within a block are 
+only accessible within that block and any nested blocks. 
+Once the block is exited, the variables declared within it are no longer accessible.
+
+We shall see scope again in functions file..  
+ */
+
+/* Q. EXPALIN const AND WHEN TO USE IT ?  
+We use const if we are absolutely sure about the value doesn't change as const 
 cant't be redeclared, reassigned and has block level scope i.e. they are accessible 
-in which block they were declared. We should use const when we declare:
-A new Array
-A new Object
-A new Function
+in which block they were declared. We should use const when we declare with array, 
+object, function.
 */
 
 // array 
@@ -85,20 +118,20 @@ powers.Yellow="changed";
 powers.black="dark"; // can add 
 console.log(powers);
 
-/* 
-CAN: (What we can in const)
-Change the elements of const ARRAY
-Change the properties of const OBJECT (not only value not Key)
+/* Q. FOR ARRAYS AND OBJECTS USING CONST WHAT ARE THE THINGS WE CAN DO ? **
+   We can replace and remove the elements of a const array. 
+   We can add or change the properties of a const object (only value not Key)
 */
 
 /*
 use let for other cases 
 let can't be redeclared but can be reassigned and have block level scope
 let and const has to be declared before use and have block level scope 
-
 let and const declared outside a block can have global scope 
 
-Q. DIFFERENTIATE BETWEEN LET AND CONST ? WHAT SHUOULD BE USED FOR WHAT ? 
+Q. DIFFERENTIATE BETWEEN LET AND CONST ? ***
+The key difference between let and const is that using let we can reassign but 
+const even does not allows that.
 */
 
 let dr = "Sam"; // global let variable 
@@ -111,34 +144,14 @@ const mr = "John"; // global const
 mr = "Sam"; // trying reassign, vs code will not show syntax error but 
 console.log(mr); // at runtime we get 'Assignment to constant variable error' 
 
-/*
-The key difference between let and const is that using let we can reassign but 
-const even does not allows that. Rest everything is same. 
-*/
+
+ // Q. EXPLAIN WHAT IS 'HOISTING' IN JAVASCRIPT ? ***
 
 
-
-/* Block Scope Q. EXPLAIN BLOCK SCOPE. 
-Block-level scope refers to the scope of variables or identifiers 
-declared within a block of code. In many programming languages, including JavaScript,
-a block is defined by a pair of curly braces {}. Examples of blocks include if 
-statements, for loops, while loops, and function definitions.
-
-In languages with block-level scope, variables declared within a block are 
-only accessible within that block and any nested blocks. 
-Once the block is exited, the variables declared within it are no longer accessible.
-
-We shall see scope again in functions file 
- */
-
-
- // Q. EXPLAIN WHAT IS 'HOISTING' IN JAVASCRIPT ? 
-
-
-/* In the beggining we saw that we can use variables directly without declaring them 
-and it was not recommeded - reason Hoisting and var has the same problem, infact 
-let and const has hoisting but they are hoisted in block level whereas var is 
-hoisted in global scope. 
+/* In the beggining we saw that we can use variables directly without declaring 
+them and it was not recommeded - reason Hoisting and var has the same problem, 
+infact let and const has hoisting but they are hoisted in block level whereas var 
+is hoisted in global scope. 
 
 Hoisting: 
 js engine runs through our codes twice 
@@ -154,16 +167,15 @@ js engine runs through our codes twice
 
 Definition of 'Hoisting' - The default behaviour of JavaScript to process 
 variable and function declarations before executing the rest of the code (that
-is intialization is done later), which can sometimes lead to unexpected results
-like undefined. 
+is intialization is done later), which leads to unexpected results like undefined. 
 */
-console.log('myName', myName); // myName undefined here 
+console.log('myName', myName); // myName undefined here, any other lang would 
+                              // have given error 
 var myName = 'John Wick';   
 console.log('myName', myName);
 /* No matter how we are declaring, js will always go through 
-   1. Declaration 2. Initialization 3. Utilization 
+   1. Declaration 2. Initialization 
 */
-
 
 console.log(x)        // initialized with undefined 
 var x = 5;           // var x; is hoisted (moved to top) but not x = 5.
@@ -171,11 +183,12 @@ var x = 5;           // var x; is hoisted (moved to top) but not x = 5.
 // instead of throwing error 
 
 
-// Q. IS HOISTING EXCLUSIVE FOR VAR ? WHAT ABOUT LET AND CONST ?  
+// Q. IS HOISTING EXCLUSIVE FOR VAR ? WHAT ABOUT LET AND CONST ? ***
   
-/* Let and const are also hoisted but in block scope 
-   whereas var is hoisted in global scope. */
-
+/* Let and const are also hoisted but in block scope and there is something called
+   Temperal Dead Zone (TDZ) exclusive for let and const for whcich accessing the 
+   variable in the first phase would give error. Whereas var is hoisted to global 
+   level scope. */
 
 /* In case  let and const we can't access the variable because of TDZ. */ 
 console.log(x)  
@@ -197,7 +210,6 @@ let x = 10; // reference error, can not access x before initialization
 - always declare variables at the beiginning of the scope 
 */ 
 
-
 /* Identifiers - Unique names of variables 
 rules of naming - case-sensitive, must beigin with letter(also $ and _), meaningful
 
@@ -207,18 +219,30 @@ string literls
 
 
 
+
+
+
+
+
+
+/*********************************************************************************/
+// 1.3- JavaScript Data Types  
+// Type Coercion (Implicit) - Type Conversion (Explicit) - Primitive and Reference 
+// Data Types with its related Methods and Properties 
+/*********************************************************************************/
+
 // DATA TYPES 
-/* JS is a dynamically typed language - it will automatically figure out the data type
-based on the value we assign to the variable at run time and these types can also 
-change. */
+/* JS is a dynamically typed language - it will automatically figure out the data 
+type based on the value we assign to the variable at run time and these types can 
+also change. */
 
 let foo = 42; // foo is a number
 foo = "Lucky"; //  foo is now string 
 console.log(foo);  
  
 /* 
-Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION SCNARIOS AND HOW WE CAN AVOID 
-   THESE TYPE CONVERSIONS ? 
+Q. GIVE SOME IMPLICIT OR AUTOMATIC JS TYPE CONVERSION OR TYPE COERCION SCNARIOS 
+  AND HOW WE CAN AVOID THESE TYPE CONVERSIONS ? ***
 
 Also JS is weakly typed i.e. it performs type conversion when mismatch with
 types instead throwing errors.
@@ -255,10 +279,10 @@ same for equality.  */
 This type conversion can lead to unexpected results if we're not careful. 
 So it's often a good practice to be explicit about data types and use type casting.
 
-// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES.
+// HOW CAN WE EXPLICITLY CAST DATA TYPES IN JS ? GIVE EXAMPLES. ***
 
-Type Casting (Explicit)- Explicitly changing the data type of a value using 
-some functions or methods. */
+Type Casting or Conversion (Explicit)- Explicitly changing the data type of a 
+value using some functions or methods. */
 
 // - Number() function casts a value to number. 
 let ExpNum = Number("8.14");
@@ -319,7 +343,7 @@ const weString = String(aNum);
 console.log(weString);
 console.log(typeof(weString));
 
-// WHERE WE SHOULD USE EXPLICIT TYPE CONVERSION ? *
+// WHERE WE SHOULD USE EXPLICIT TYPE CONVERSION ? ***
 /* Note that Scenarios where we should consider using explicit type conversion in 
 JavaScript are-  while user input processing. */
  
@@ -345,7 +369,8 @@ exact value.
 - Operations with primitives are faster. */
 
 
-// WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  METHODS & PROPERTIES.*** 
+// WHAT ARE VARIOUS DATA TYPES OF JS ? LOOK OUT ITS VARIOUS  
+// METHODS & PROPERTIES. *** 
  
 // JS has 7 primitive data types and 1 reference data type (Object)
 
@@ -403,7 +428,7 @@ console.log(d);
 // Floating point arithmetic is not always 100% accurate.
 
 
-// Q. WHAT IS NAN ? 
+// Q. WHAT IS NAN ? ***
 /* NaN (Not a Number) indicates that the number is not legal, it is a special 
 value we get due of meaningless operations on numbers
 */
@@ -437,7 +462,7 @@ const formattedNum3 = num3.toExponential(2); // formats to exponential notation
 console.log(formattedNum3); // Output: "1.23e+4"
 
 
-// Q. WHAT THE DIFFERENCE BETWEEN JS NUMBER AND BIGINT ? 
+// Q. WHAT THE DIFFERENCE BETWEEN JS NUMBER AND BIGINT ? **
 // 3. BigInt - 
 /* BigInt can be used to store integer values that are too 
 big to be represented by a normal JavaScript Number. As we know JavaScript integers 
@@ -462,7 +487,7 @@ console.log(500 + tX);
 let Boo = (10<5);
 console.log(Boo); // false 
 
-// Q. IS UNDEFINED AND NULL ARE DATA TYPES IN JS ? WHATS THE DIFFERENCE ?***
+// Q. IS UNDEFINED AND NULL ARE DATA TYPES IN JS ? WHATS THE DIFFERENCE ? ***
 // 5. Undefined - represents a variable that is declared but not assigned 
 let MyVar;
 console.log(MyVar);
@@ -492,14 +517,7 @@ myObj[mySymbol] = 'Hello, Symbol!';
 console.log(myObj[mySymbol]);  // Hello, Symbol!  
 
 
-
-
-
-
-
-
 // js non-primitive (reference types)
-
 
 /* There are actually 2 types of memory i.e. Stack and Heap. 
 Primitives are stored directly in the stack memory whereas reference types are 
@@ -509,8 +527,6 @@ stored in the heap memory and accessed by reference  */
    -> Arrays 
    -> Functions 
    -> Date & Math Objects  */
-
-
 
 
 /* The JavaScript Math object helps us to perform mathematical tasks on numbers. */
