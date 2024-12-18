@@ -1,5 +1,5 @@
 /*
-Q. EXPLAIN WHAT IS ASYNCHRONOUS PROGRAMMING IN JS ? 
+Q. EXPLAIN WHAT IS ASYNCHRONOUS PROGRAMMING IN JS ? **
 Normally (in synchronous environment), tasks are executed one after the other, and 
 each task waits for the previous one to finish. If a task, like fetching data from 
 a server, takes a long time, it blocks the entire program. 
