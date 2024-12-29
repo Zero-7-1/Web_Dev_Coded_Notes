@@ -1,4 +1,4 @@
-/*********************************************************************************/
+/********************************************************************************/
 /*
 Learning React.js with Movies Recommendation Card App (A mini Project) - > At first
 you will be prompted to type your age then according to user age and series would 
@@ -14,7 +14,7 @@ KEY TOPICS COVERED IN THIS MINI PROJECT:
 - > PROPS 
 
 */
-/*********************************************************************************/
+/********************************************************************************/
 
 
 /*
