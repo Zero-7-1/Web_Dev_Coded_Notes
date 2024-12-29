@@ -1,3 +1,9 @@
+/*********************************************************************************/
+// Learning React.js with Movies Recommendation Card App (A mini Project)
+// Concepts Covered - > 
+/*********************************************************************************/
+
+
 /* We need to use this PrimeSeries Component in App.jsx using import and 
    export and these are of various types like 
 
@@ -9,7 +15,7 @@
  
 import React from "react"; 
 import PrimeData from "../api/PrimeData.json"; 
-import { SeriesCard } from "../components/SeriesCard";
+import { SeriesCard } from "./SeriesCard";
 
 /*
 Q. EXPLAIN ABOUT DEFAULT IMPORT AND EXPORT ? HOW IT DIFFERES FROM NAMED 
