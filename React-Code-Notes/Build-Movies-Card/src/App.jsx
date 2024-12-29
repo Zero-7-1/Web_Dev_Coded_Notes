@@ -1,17 +1,11 @@
+/*********************************************************************************/
 /*
-Q. WHAT KIND OF APPLICATIONS WE COULD BUILD USING REACT ?
-      SPA - Single Page Applications loads a single html file namely index.html
-            then it loads a JavaScript bundle that includes entire UI or app,
-            basically content is loaded by javascript saving time. 
-
-      SSR - SPAs could have some problems with SEOs or first time slow page load,
-             so we could build a Server Side Rendered App which is done using
-             Next.js which is the framework of React. Note SPA has no hosting
-             limitations whereas SSRs can be hosted using vercel or netlify. 
-*/
+Learning React.js with Movies Recommendation Card App (A mini Project) - > At first
+you will be prompted to type your age then according to user age and series would 
+be shown, if user age is more than 18 than all series would be shown but if not 
+then some series will be hidden - > 
 
 
-/*
 KEY TOPICS COVERED IN THIS MINI PROJECT:   
 
 - > JSX & COMPONENTS 
@@ -19,7 +13,12 @@ KEY TOPICS COVERED IN THIS MINI PROJECT:
 - > LOOPS IN JSX
 - > PROPS 
 
-   
+*/
+/*********************************************************************************/
+
+
+/*
+
 Q. EXPALIN WHAT IS JSX ? *
    - JSX stands for JavaScript Syntax Extension
    - It is the syntax used in react that allows to write 

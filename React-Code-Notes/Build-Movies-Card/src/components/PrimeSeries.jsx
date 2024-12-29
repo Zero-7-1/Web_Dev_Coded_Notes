@@ -1,9 +1,3 @@
-/*********************************************************************************/
-// Learning React.js with Movies Recommendation Card App (A mini Project)
-// Concepts Covered - > 
-/*********************************************************************************/
-
-
 /* We need to use this PrimeSeries Component in App.jsx using import and 
    export and these are of various types like 
 
