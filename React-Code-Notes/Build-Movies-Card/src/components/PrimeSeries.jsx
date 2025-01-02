@@ -95,6 +95,7 @@ export default PrimeSeries; // this is a default export
 
   export const Header = (names) => {    
     return <p> Welcome ! {names.name} </p> 
+    /* here we use props object in Header to get data from parent in app.jsx*/
   };
 
   export const Footer = () => {
@@ -105,11 +106,16 @@ export default PrimeSeries; // this is a default export
   /*
   Props (or Properties)
 
-  Q. WHAT IS PROP ? WHAT IS PROP OBJECT ? ***
-  Props (short for properties) are used to pass data from one component to 
-  another in React. They work like function arguments that is the value passed 
-  to function parameters. The components sending the props data is parent and the 
-  reciever is the child. And child can not send data back to parent.  
+  Q. EXPLAIN WHAT IS PROP ? 
+   - Props (short for properties) are used to pass data from one component to 
+     another in React. 
+     
+   - They work like function arguments that is the value passed 
+     to function parameters or they are similar to how key-value pair works
+     in js object. 
+   
+    - The components sending the props data is parent and the 
+      reciever is the child. And child can not send data back to parent.  
 
   Each prop is a key-value pair. 
   */

@@ -114,21 +114,23 @@ import { Footer, Header } from "./components/PrimeSeries";
 // import PrimeSeries, {Header, Footer} from .. 
 
 // This App component is exported to main.jsx 
-export const App = (titles) => {         {/* We do not have to pass props here, 
-                                            but did to understand props, instead of 
-                                            props we could pass any name */}
-       return (
-         <> 
-             <h1> {titles.title} </h1> { /* We could make this h1 dynamic using 
-                                             props */}
-             
-             <Header name="John Doe"/>  {/* Here parent is Passing a prop named 
-                                          'name' */}
-             <PrimeSeries/> 
-             <Footer/> 
-         </>
-      );
-   };
+export const App = (title) => {         
+/* We do not have to pass props here, but did to understand props, instead of 
+props we could pass any name like title here. This gets the title attribute data
+that is passed in main.jsx */
+       
+  return (
+   <> 
+    <h1> {title.title} </h1> 
+    { /* We could make this h1 dynamic using props */}
+    
+    <Header name="John Doe"/>  
+    {/* Here parent is Passing a prop named 'name' */}
+    <PrimeSeries/> 
+    <Footer/> 
+   </>
+  );
+};
 
 /* More about JSX..  
 - Each JSX expression must have one parent element, which means if we try to 
