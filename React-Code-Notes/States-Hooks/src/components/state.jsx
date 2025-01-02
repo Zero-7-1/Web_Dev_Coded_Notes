@@ -7,11 +7,6 @@
 
 /***********************************************************************************/ 
 
-
-
-
-
-
 import { useState } from "react";  // we have to import every hook from react library
 
 export const State = () => {
