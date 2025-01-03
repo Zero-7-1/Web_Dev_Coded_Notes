@@ -1,11 +1,11 @@
-/********************************************************************************/
-/*
+/************************************************************************************
+
 Learning React.js with Movies Recommendation Card App (A mini Project) - > At first
 you will be prompted to type your age then according to user age, series would 
 be shown, if user age is more than 18 than all series would be shown but if not 
 then some series will be hidden. (Objective)  
-*/
-/********************************************************************************/
+
+************************************************************************************/
 /*
 Q. EXPALIN WHAT IS JSX ? **
    - JSX stands for JavaScript Syntax Extension
