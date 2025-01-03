@@ -1,10 +1,4 @@
-/*
-Q. WHAT IS THE ROLE OF THIS MAIN.JSX COMPONENT ? 
- - The main.jsx component's role is to render the App component into the DOM.
- - It is the entry point of the React application
- - It calls ReactDOM.createRoot to render the App component into the root element i.e.
-   <div id="root"> in index.html file.
-*/
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App.jsx'
